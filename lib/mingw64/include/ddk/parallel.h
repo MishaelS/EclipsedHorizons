@@ -23,16 +23,11 @@
 #ifndef __PARALLEL_H
 #define __PARALLEL_H
 
-#if __GNUC__ >=3
-#pragma GCC system_header
-#endif
+#include "ntddpar.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-#include "ntddk.h"
-#include "ntddpar.h"
 
 #define DD_PARALLEL_PORT_BASE_NAME        "ParallelPort"
 #define DD_PARALLEL_PORT_BASE_NAME_U      L"ParallelPort"
@@ -76,38 +71,38 @@ typedef struct _PARALLEL_1284_COMMAND {
 #define PAR_HAVE_PORT_KEEP_PORT           0x00000002
 
 typedef struct _MORE_PARALLEL_PORT_INFORMATION {
-  INTERFACE_TYPE  InterfaceType;
-  ULONG  BusNumber;
-  ULONG  InterruptLevel;
-  ULONG  InterruptVector;
-  KAFFINITY  InterruptAffinity;
-  KINTERRUPT_MODE  InterruptMode;
+	INTERFACE_TYPE  InterfaceType;
+	ULONG  BusNumber;
+	ULONG  InterruptLevel;
+	ULONG  InterruptVector;
+	KAFFINITY  InterruptAffinity;
+	KINTERRUPT_MODE  InterruptMode;
 } MORE_PARALLEL_PORT_INFORMATION, *PMORE_PARALLEL_PORT_INFORMATION;
 
-typedef NTSTATUS DDKAPI
-(*PPARALLEL_SET_CHIP_MODE)(
-  /*IN*/  PVOID  SetChipContext,
-  /*IN*/  UCHAR  ChipMode);
+typedef NTSTATUS
+(NTAPI *PPARALLEL_SET_CHIP_MODE)(
+	IN  PVOID  SetChipContext,
+	IN  UCHAR  ChipMode);
 
-typedef NTSTATUS DDKAPI
-(*PPARALLEL_CLEAR_CHIP_MODE)(
-  /*IN*/  PVOID  ClearChipContext,
-  /*IN*/  UCHAR  ChipMode);
+typedef NTSTATUS
+(NTAPI *PPARALLEL_CLEAR_CHIP_MODE)(
+	IN  PVOID  ClearChipContext,
+	IN  UCHAR  ChipMode);
 
-typedef NTSTATUS DDKAPI
-(*PPARCHIP_CLEAR_CHIP_MODE)(
-  /*IN*/  PVOID  ClearChipContext,
-  /*IN*/  UCHAR  ChipMode);
+typedef NTSTATUS
+(NTAPI *PPARCHIP_CLEAR_CHIP_MODE)(
+	IN  PVOID  ClearChipContext,
+	IN  UCHAR  ChipMode);
 
-typedef NTSTATUS DDKAPI
-(*PPARALLEL_TRY_SELECT_ROUTINE)(
-  /*IN*/  PVOID  TrySelectContext,
-  /*IN*/  PVOID  TrySelectCommand);
+typedef NTSTATUS
+(NTAPI *PPARALLEL_TRY_SELECT_ROUTINE)(
+	IN  PVOID  TrySelectContext,
+	IN  PVOID  TrySelectCommand);
 
-typedef NTSTATUS DDKAPI
-(*PPARALLEL_DESELECT_ROUTINE)(
-  /*IN*/ PVOID  DeselectContext,
-  /*IN*/ PVOID  DeselectCommand);
+typedef NTSTATUS
+(NTAPI *PPARALLEL_DESELECT_ROUTINE)(
+	IN PVOID  DeselectContext,
+	IN PVOID  DeselectCommand);
 
 /* PARALLEL_PNP_INFORMATION.HardwareCapabilities */
 #define PPT_NO_HARDWARE_PRESENT           0x00000000
@@ -138,17 +133,17 @@ typedef struct _PARALLEL_PNP_INFORMATION {
   PWSTR  PortName;
 } PARALLEL_PNP_INFORMATION, *PPARALLEL_PNP_INFORMATION;
 
-typedef BOOLEAN DDKAPI
-(*PPARALLEL_TRY_ALLOCATE_ROUTINE)(
-  /*IN*/ PVOID  TryAllocateContext);
+typedef BOOLEAN
+(NTAPI *PPARALLEL_TRY_ALLOCATE_ROUTINE)(
+  IN  PVOID  TryAllocateContext);
 
-typedef VOID DDKAPI
-(*PPARALLEL_FREE_ROUTINE)(
-  /*IN*/ PVOID  FreeContext);
+typedef VOID
+(NTAPI *PPARALLEL_FREE_ROUTINE)(
+  IN  PVOID  FreeContext);
 
-typedef ULONG DDKAPI
-(*PPARALLEL_QUERY_WAITERS_ROUTINE)(
-  /*IN*/  PVOID  QueryAllocsContext);
+typedef ULONG
+(NTAPI *PPARALLEL_QUERY_WAITERS_ROUTINE)(
+	IN  PVOID  QueryAllocsContext);
 
 typedef struct _PARALLEL_PORT_INFORMATION {
   PHYSICAL_ADDRESS  OriginalController;
@@ -169,9 +164,9 @@ typedef struct _PARALLEL_CHIP_MODE {
   BOOLEAN  success;
 } PARALLEL_CHIP_MODE, *PPARALLEL_CHIP_MODE;
 
-typedef VOID DDKAPI
-(*PPARALLEL_DEFERRED_ROUTINE)(
-  /*IN*/  PVOID  DeferredContext);
+typedef VOID
+(NTAPI *PPARALLEL_DEFERRED_ROUTINE)(
+	IN  PVOID  DeferredContext);
 
 typedef struct _PARALLEL_INTERRUPT_SERVICE_ROUTINE {
   PKSERVICE_ROUTINE  InterruptServiceRoutine;
@@ -196,60 +191,60 @@ typedef struct _PARALLEL_INTERRUPT_SERVICE_ROUTINE {
 #define IOCTL_INTERNAL_UNLOCK_PORT_NO_DESELECT \
   CTL_CODE (FILE_DEVICE_PARALLEL_PORT, 53, METHOD_BUFFERED, FILE_ANY_ACCESS)
 
-typedef USHORT DDKAPI
-(*PDETERMINE_IEEE_MODES)(
-  /*IN*/ PVOID  Context);
+typedef USHORT
+(NTAPI *PDETERMINE_IEEE_MODES)(
+  IN PVOID  Context);
 
 typedef enum _PARALLEL_SAFETY {
 	SAFE_MODE,
 	UNSAFE_MODE
 } PARALLEL_SAFETY;
 
-typedef NTSTATUS DDKAPI
-(*PNEGOTIATE_IEEE_MODE)(
-  /*IN*/ PVOID  Context,
-  /*IN*/ USHORT  ModeMaskFwd,
-  /*IN*/ USHORT  ModeMaskRev,
-  /*IN*/ PARALLEL_SAFETY  ModeSafety,
-  /*IN*/ BOOLEAN  IsForward);
+typedef NTSTATUS
+(NTAPI *PNEGOTIATE_IEEE_MODE)(
+  IN PVOID  Context,
+  IN USHORT  ModeMaskFwd,
+  IN USHORT  ModeMaskRev,
+  IN PARALLEL_SAFETY  ModeSafety,
+  IN BOOLEAN  IsForward);
 
-typedef NTSTATUS DDKAPI
-(*PTERMINATE_IEEE_MODE)(
-  /*IN*/  PVOID  Context);
+typedef NTSTATUS
+(NTAPI *PTERMINATE_IEEE_MODE)(
+	IN  PVOID  Context);
 
-typedef NTSTATUS DDKAPI
-(*PPARALLEL_IEEE_FWD_TO_REV)(
-  /*IN*/ PVOID  Context);
+typedef NTSTATUS
+(NTAPI *PPARALLEL_IEEE_FWD_TO_REV)(
+  IN  PVOID  Context);
 
-typedef NTSTATUS DDKAPI
-(*PPARALLEL_IEEE_REV_TO_FWD)(
-  /*IN*/ PVOID  Context);
+typedef NTSTATUS
+(NTAPI *PPARALLEL_IEEE_REV_TO_FWD)(
+  IN  PVOID  Context);
 
-typedef NTSTATUS DDKAPI
-(*PPARALLEL_READ)(
-  /*IN*/  PVOID  Context,
-  /*OUT*/ PVOID  Buffer,
-  /*IN*/  ULONG  NumBytesToRead,
-  /*OUT*/ PULONG  NumBytesRead,
-  /*IN*/  UCHAR  Channel);
+typedef NTSTATUS
+(NTAPI *PPARALLEL_READ)(
+	IN  PVOID  Context,
+	OUT PVOID  Buffer,
+	IN  ULONG  NumBytesToRead,
+	OUT PULONG  NumBytesRead,
+	IN  UCHAR  Channel);
 
-typedef NTSTATUS DDKAPI
-(*PPARALLEL_WRITE)(
-  /*IN*/  PVOID  Context,
-  /*OUT*/ PVOID  Buffer,
-  /*IN*/  ULONG  NumBytesToWrite,
-  /*OUT*/ PULONG  NumBytesWritten,
-  /*IN*/  UCHAR   Channel);
+typedef NTSTATUS
+(NTAPI *PPARALLEL_WRITE)(
+	IN  PVOID  Context,
+	OUT PVOID  Buffer,
+	IN  ULONG  NumBytesToWrite,
+	OUT PULONG  NumBytesWritten,
+	IN  UCHAR   Channel);
 
-typedef NTSTATUS DDKAPI
-(*PPARALLEL_TRYSELECT_DEVICE)(
-  /*IN*/ PVOID  Context,
-  /*IN*/ PARALLEL_1284_COMMAND  Command);
+typedef NTSTATUS
+(NTAPI *PPARALLEL_TRYSELECT_DEVICE)(
+  IN  PVOID  Context,
+  IN  PARALLEL_1284_COMMAND  Command);
 
-typedef NTSTATUS DDKAPI
-(*PPARALLEL_DESELECT_DEVICE)(
-  /*IN*/ PVOID  Context,
-  /*IN*/ PARALLEL_1284_COMMAND  Command);
+typedef NTSTATUS
+(NTAPI *PPARALLEL_DESELECT_DEVICE)(
+  IN  PVOID  Context,
+  IN  PARALLEL_1284_COMMAND  Command);
 
 typedef struct _PARCLASS_INFORMATION {
   PUCHAR  Controller;

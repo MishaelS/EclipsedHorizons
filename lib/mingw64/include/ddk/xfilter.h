@@ -20,19 +20,12 @@
  *
  */
 
-#ifndef __XFILTER_H
-#define __XFILTER_H
-
-#if __GNUC__ >=3
-#pragma GCC system_header
-#endif
+#ifndef _X_FILTER_DEFS_
+#define _X_FILTER_DEFS_
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-#include "ntddk.h"
-
 
 #define ETH_LENGTH_OF_ADDRESS             6
 
@@ -236,4 +229,4 @@ typedef ULONG TR_GROUP_ADDRESS;
 }
 #endif
 
-#endif /* __XFILTER_H */
+#endif /* _X_FILTER_DEFS_ */

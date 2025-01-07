@@ -26,7 +26,11 @@
 #pragma GCC system_header
 #endif
 
+#if defined(_ARM_)
+#define WINGDIPAPI
+#else
 #define WINGDIPAPI __stdcall
+#endif
 #define GDIPCONST const
 
 typedef enum GpStatus {
@@ -404,7 +408,7 @@ typedef struct RectF {
    binary compatible with MSVC++ code (especially GDIPLUS.DLL of course)? */
 #ifdef __cplusplus
 struct GdiplusAbort {
-	virtual HRESULT __stdcall Abort(void) { return NO_ERROR; }
+	virtual HRESULT __stdcall Abort(void) {}
 };
 #else
 typedef struct GdiplusAbort GdiplusAbort;  /* incomplete type */
@@ -446,9 +450,8 @@ private:
 } PathData;
 
 /* Callback function types */
-/* FIXME: need a correct definition for these function pointer types */
 typedef void *DebugEventProc;
-typedef BOOL CALLBACK (*EnumerateMetafileProc)(EmfPlusRecordType,UINT,UINT,const BYTE*,VOID*);
+typedef BOOL (CALLBACK *EnumerateMetafileProc)(EmfPlusRecordType,UINT,UINT,const BYTE*,VOID*);
 typedef void *DrawImageAbort;
 typedef void *GetThumbnailImageAbort;
 

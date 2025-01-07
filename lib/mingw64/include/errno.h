@@ -1,135 +1,241 @@
-/*
- * errno.h
- *
- * Definition of error codes, and error code retrieval mechanism.
- *
- * $Id: errno.h,v 99ef1a520f95 2016/11/14 17:57:05 keithmarshall $
- *
- * Written by Colin Peters <colin@bird.fu.is.saga-u.ac.jp>
- * Copyright (C) 1997-1999, 2001, 2003-2005, 2007, 2016, MinGW.org Project.
- *
- *
- * Permission is hereby granted, free of charge, to any person obtaining a
- * copy of this software and associated documentation files (the "Software"),
- * to deal in the Software without restriction, including without limitation
- * the rights to use, copy, modify, merge, publish, distribute, sublicense,
- * and/or sell copies of the Software, and to permit persons to whom the
- * Software is furnished to do so, subject to the following conditions:
- *
- * The above copyright notice, this permission notice, and the following
- * disclaimer shall be included in all copies or substantial portions of
- * the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
- * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
- * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OF OR OTHER
- * DEALINGS IN THE SOFTWARE.
- *
+/**
+ * This file has no copyright assigned and is placed in the Public Domain.
+ * This file is part of the mingw-w64 runtime package.
+ * No warranty is given; refer to the file DISCLAIMER.PD within this package.
  */
-#ifndef _ERRNO_H
-#define _ERRNO_H
+#ifndef _INC_ERRNO
+#define _INC_ERRNO
 
-/* All MinGW headers are expected to include <_mingw.h>; however...
- */
-#ifndef __ASSEMBLER__
-/* ...the overhead of doing so is unwarranted, when <errno.h> has been
- * included directly in preprocessed assembly language code.
- */
-#include <_mingw.h>
+#include <crtdefs.h>
+
+#ifdef __cplusplus
+extern "C" {
 #endif
 
-/* Error code numbers.
- *
- * TODO: Can't be sure of some of these assignments, I guessed from the
- * names given by strerror and the defines in the Cygnus errno.h. A lot
- * of the names from the Cygnus errno.h are not represented, and a few
- * of the descriptions returned by strerror do not obviously match
- * their error naming.
- */
-#define EPERM		 1	/* Operation not permitted */
-#define ENOFILE 	 2	/* No such file or directory */
-#define ENOENT		 2
-#define ESRCH		 3	/* No such process */
-#define EINTR		 4	/* Interrupted function call */
-#define EIO		 5	/* Input/output error */
-#define ENXIO		 6	/* No such device or address */
-#define E2BIG		 7	/* Arg list too long */
-#define ENOEXEC 	 8	/* Exec format error */
-#define EBADF		 9	/* Bad file descriptor */
-#define ECHILD		10	/* No child processes */
-#define EAGAIN		11	/* Resource temporarily unavailable */
-#define ENOMEM		12	/* Not enough space */
-#define EACCES		13	/* Permission denied */
-#define EFAULT		14	/* Bad address */
-/* 15 - Unknown Error */
-#define EBUSY		16	/* strerror reports "Resource device" */
-#define EEXIST		17	/* File exists */
-#define EXDEV		18	/* Improper link (cross-device link?) */
-#define ENODEV		19	/* No such device */
-#define ENOTDIR 	20	/* Not a directory */
-#define EISDIR		21	/* Is a directory */
-#define EINVAL		22	/* Invalid argument */
-#define ENFILE		23	/* Too many open files in system */
-#define EMFILE		24	/* Too many open files */
-#define ENOTTY		25	/* Inappropriate I/O control operation */
-/* 26 - Unknown Error */
-#define EFBIG		27	/* File too large */
-#define ENOSPC		28	/* No space left on device */
-#define ESPIPE		29	/* Invalid seek (seek on a pipe?) */
-#define EROFS		30	/* Read-only file system */
-#define EMLINK		31	/* Too many links */
-#define EPIPE		32	/* Broken pipe */
-#define EDOM		33	/* Domain error (math functions) */
-#define ERANGE		34	/* Result too large (possibly too small) */
-/* 35 - Unknown Error */
-#define EDEADLOCK	36	/* Resource deadlock avoided (non-Cyg) */
-#define EDEADLK 	36
-/* 37 - Unknown Error */
-#define ENAMETOOLONG	38	/* Filename too long (91 in Cyg?) */
-#define ENOLCK		39	/* No locks available (46 in Cyg?) */
-#define ENOSYS		40	/* Function not implemented (88 in Cyg?) */
-#define ENOTEMPTY	41	/* Directory not empty (90 in Cyg?) */
-#define EILSEQ		42	/* Illegal byte sequence */
+#ifndef _CRT_ERRNO_DEFINED
+#define _CRT_ERRNO_DEFINED
+_CRTIMP extern int *__cdecl _errno(void);
+#define errno (*_errno())
 
-/* C language function prototype declarations are unnecessary, when
- * compiling resource files, and they actually represent syntactically
- * invalid statements, in preprocessed assembly language code.
- */
-#if ! defined RC_INVOKED && ! defined __ASSEMBLER__
+errno_t __cdecl _set_errno(int _Value);
+errno_t __cdecl _get_errno(int *_Value);
+#endif /* _CRT_ERRNO_DEFINED */
 
-_BEGIN_C_DECLS
+#define EPERM 1
+#define ENOENT 2
+#define ENOFILE ENOENT
+#define ESRCH 3
+#define EINTR 4
+#define EIO 5
+#define ENXIO 6
+#define E2BIG 7
+#define ENOEXEC 8
+#define EBADF 9
+#define ECHILD 10
+#define EAGAIN 11
+#define ENOMEM 12
+#define EACCES 13
+#define EFAULT 14
+#define EBUSY 16
+#define EEXIST 17
+#define EXDEV 18
+#define ENODEV 19
+#define ENOTDIR 20
+#define EISDIR 21
+#define ENFILE 23
+#define EMFILE 24
+#define ENOTTY 25
+#define EFBIG 27
+#define ENOSPC 28
+#define ESPIPE 29
+#define EROFS 30
+#define EMLINK 31
+#define EPIPE 32
+#define EDOM 33
+#define EDEADLK 36
+#define ENAMETOOLONG 38
+#define ENOLCK 39
+#define ENOSYS 40
+#define ENOTEMPTY 41
 
-/* Definitions of errno. For _doserrno, sys_nerr and * sys_errlist, see
- * stdlib.h.
- */
-#ifdef _UWIN
-#undef errno
-extern int errno;
-#else
-_CRTIMP int* __cdecl __MINGW_NOTHROW _errno(void);
-#define	errno		(*_errno())
+#ifndef RC_INVOKED
+#if !defined(_SECURECRT_ERRCODE_VALUES_DEFINED)
+#define _SECURECRT_ERRCODE_VALUES_DEFINED
+#define EINVAL 22
+#define ERANGE 34
+#define EILSEQ 42
+#define STRUNCATE 80
+#endif
 #endif
 
-_END_C_DECLS
+#define EDEADLOCK EDEADLK
 
-#endif	/* ! RC_INVOKED && !__ASSEMBLY__ */
+/* Posix thread extensions.  */
 
-#if defined __PTW32_H && ! defined _PTW32_ERRNO_H
-/* As a courtesy to users of pthreads-win32, ensure that the appropriate
- * additional error codes, as defined by that package, are automatically
- * defined when <errno.h> is included AFTER any pthreads-win32 header; a
- * complementary hook, in <_ptw32.h>, ensures that such additional error
- * codes are defined, if <errno.h> is included BEFORE any pthreads-win32
- * header is subsequently included.
- *
- * NOTE: this assumes pthreads-win32-2.10 or later, with corresponding
- * MinGW.org patches applied; it will favour "ptw32_errno.h" installed
- * in the mingwrt system include directory.
- */
-#include "ptw32_errno.h"
+#ifndef ENOTSUP
+#define ENOTSUP         129
+#endif
 
-#endif	/* __PTW32_H */
-#endif	/* !_ERRNO_H: $RCSfile: errno.h,v $: end of file */
+/* Extension defined as by report VC 10+ defines error-numbers.  */
+
+#ifndef EAFNOSUPPORT
+#define EAFNOSUPPORT 102
+#endif
+
+#ifndef EADDRINUSE
+#define EADDRINUSE 100
+#endif
+
+#ifndef EADDRNOTAVAIL
+#define EADDRNOTAVAIL 101
+#endif
+
+#ifndef EISCONN
+#define EISCONN 113
+#endif
+
+#ifndef ENOBUFS
+#define ENOBUFS 119
+#endif
+
+#ifndef ECONNABORTED
+#define ECONNABORTED 106
+#endif
+
+#ifndef EALREADY
+#define EALREADY 103
+#endif
+
+#ifndef ECONNREFUSED
+#define ECONNREFUSED 107
+#endif
+
+#ifndef ECONNRESET
+#define ECONNRESET 108
+#endif
+
+#ifndef EDESTADDRREQ
+#define EDESTADDRREQ 109
+#endif
+
+#ifndef EHOSTUNREACH
+#define EHOSTUNREACH 110
+#endif
+
+#ifndef EMSGSIZE
+#define EMSGSIZE 115
+#endif
+
+#ifndef ENETDOWN
+#define ENETDOWN 116
+#endif
+
+#ifndef ENETRESET
+#define ENETRESET 117
+#endif
+
+#ifndef ENETUNREACH
+#define ENETUNREACH 118
+#endif
+
+#ifndef ENOPROTOOPT
+#define ENOPROTOOPT 123
+#endif
+
+#ifndef ENOTSOCK
+#define ENOTSOCK 128
+#endif
+
+#ifndef ENOTCONN
+#define ENOTCONN 126
+#endif
+
+#ifndef ECANCELED
+#define ECANCELED 105
+#endif
+
+#ifndef EINPROGRESS
+#define EINPROGRESS 112
+#endif
+
+#ifndef EOPNOTSUPP
+#define EOPNOTSUPP 130
+#endif
+
+#ifndef EWOULDBLOCK
+#define EWOULDBLOCK 140
+#endif
+
+#ifndef EOWNERDEAD
+#define EOWNERDEAD 133
+#endif
+
+#ifndef EPROTO
+#define EPROTO 134
+#endif
+
+#ifndef EPROTONOSUPPORT
+#define EPROTONOSUPPORT 135
+#endif
+
+#ifndef EBADMSG
+#define EBADMSG 104
+#endif
+
+#ifndef EIDRM
+#define EIDRM 111
+#endif
+
+#ifndef ENODATA
+#define ENODATA 120
+#endif
+
+#ifndef ENOLINK
+#define ENOLINK 121
+#endif
+
+#ifndef ENOMSG
+#define ENOMSG 122
+#endif
+
+#ifndef ENOSR
+#define ENOSR 124
+#endif
+
+#ifndef ENOSTR
+#define ENOSTR 125
+#endif
+
+#ifndef ENOTRECOVERABLE
+#define ENOTRECOVERABLE 127
+#endif
+
+#ifndef ETIME
+#define ETIME 137
+#endif
+
+#ifndef ETXTBSY
+#define ETXTBSY 139
+#endif
+
+/* Defined as WSAETIMEDOUT.  */
+#ifndef ETIMEDOUT
+#define ETIMEDOUT 138
+#endif
+
+#ifndef ELOOP
+#define ELOOP 114
+#endif
+
+#ifndef EPROTOTYPE
+#define EPROTOTYPE 136
+#endif
+
+#ifndef EOVERFLOW
+#define EOVERFLOW 132
+#endif
+
+#ifdef __cplusplus
+}
+#endif
+#endif

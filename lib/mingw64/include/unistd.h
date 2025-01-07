@@ -1,140 +1,111 @@
-/*
- * unistd.h
- *
- * Standard header file declaring MinGW's POSIX compatibility features.
- *
- * $Id: unistd.h,v 7fd51383513c 2017/02/11 12:35:12 keithmarshall $
- *
- * Written by Rob Savoye <rob@cygnus.com>
- * Modified by Earnie Boyd <earnie@users.sourceforge.net>
- *   Danny Smith <dannysmith@users.sourceforge.net>
- *   Ramiro Polla <ramiro@lisha.ufsc.br>
- *   Gregory McGarry  <gregorymcgarry@users.sourceforge.net>
- *   Keith Marshall  <keithmarshall@users.sourceforge.net>
- * Copyright (C) 1997, 1999, 2002-2004, 2007-2009, 2014-2017,
- *   MinGW.org Project.
- *
- *
- * Permission is hereby granted, free of charge, to any person obtaining a
- * copy of this software and associated documentation files (the "Software"),
- * to deal in the Software without restriction, including without limitation
- * the rights to use, copy, modify, merge, publish, distribute, sublicense,
- * and/or sell copies of the Software, and to permit persons to whom the
- * Software is furnished to do so, subject to the following conditions:
- *
- * The above copyright notice, this permission notice, and the following
- * disclaimer shall be included in all copies or substantial portions of
- * the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
- * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
- * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OF OR OTHER
- * DEALINGS IN THE SOFTWARE.
- *
+/**
+ * This file has no copyright assigned and is placed in the Public Domain.
+ * This file is part of the mingw-w64 runtime package.
+ * No warranty is given; refer to the file DISCLAIMER.PD within this package.
  */
 #ifndef _UNISTD_H
-#define _UNISTD_H  1
-#pragma GCC system_header
-
-/* All MinGW headers MUST include _mingw.h before anything else,
- * to ensure proper initialization of feature test macros.
- */
-#include <_mingw.h>
-
-/* unistd.h maps (roughly) to Microsoft's <io.h>
- * Other headers included by <unistd.h> may be selectively processed;
- * __UNISTD_H_SOURCED__ enables such selective processing.
- */
+#define _UNISTD_H
 #define __UNISTD_H_SOURCED__ 1
 
-/* Use "..." inclusion here, to ensure that we get our own headers, which
- * are designed to interoperate with the __UNISTD_H_SOURCED__ filter.
- */
-#include "io.h"
-#include "process.h"
-#include "getopt.h"
+#include <io.h>
+#include <process.h>
+#include <getopt.h>
 
-/* These are defined in stdio.h.  POSIX also requires that they
- * are to be consistently defined here; don't guard against prior
- * definitions, as this might conceal inconsistencies.
- */
-#define SEEK_SET   0
-#define SEEK_CUR   1
-#define SEEK_END   2
-
-#if _POSIX_C_SOURCE
-/* POSIX process/thread suspension functions; all are supported by a
- * common MinGW API in libmingwex.a, providing for suspension periods
- * ranging from mean values of ~7.5 milliseconds, (see the comments in
- * <time.h>), extending up to a maximum of ~136 years.
- *
- * Note that, whereas POSIX supports early wake-up of any suspended
- * process/thread, in response to a signal, this implementation makes
- * no attempt to emulate this signalling behaviour, (since signals are
- * not well supported by Windows); thus, unless impeded by an invalid
- * argument, this implementation always returns an indication as if
- * the sleeping period ran to completion.
- */
-_BEGIN_C_DECLS
-
-__cdecl __MINGW_NOTHROW
-int __mingw_sleep( unsigned long, unsigned long );
-
-/* The nanosleep() function provides the most general purpose API for
- * process/thread suspension; it is declared in <time.h>, (where it is
- * accompanied by an in-line implementation), rather than here, and it
- * provides for specification of suspension periods in the range from
- * ~7.5 ms mean, (on WinNT derivatives; ~27.5 ms on Win9x), extending
- * up to ~136 years, (effectively eternity).
- *
- * The usleep() function, and its associated useconds_t type specifier
- * were made obsolete in POSIX.1-2008; declared here, only for backward
- * compatibility, its continued use is not recommended.  (It is limited
- * to specification of suspension periods ranging from ~7.5 ms mean up
- * to a maximum of 999,999 microseconds only).
- */
-typedef unsigned long useconds_t __MINGW_ATTRIB_DEPRECATED;
-int __cdecl __MINGW_NOTHROW usleep( useconds_t )__MINGW_ATTRIB_DEPRECATED;
-
-#ifndef __NO_INLINE__
-__CRT_INLINE __LIBIMPL__(( FUNCTION = usleep ))
-int usleep( useconds_t period ){ return __mingw_sleep( 0, 1000 * period ); }
+/* These are also defined in stdio.h. */
+#ifndef SEEK_SET
+#define SEEK_SET 0
+#define SEEK_CUR 1
+#define SEEK_END 2
 #endif
 
-/* The sleep() function is, perhaps, the most commonly used of all the
- * process/thread suspension APIs; it provides support for specification
- * of suspension periods ranging from 1 second to ~136 years.  (However,
- * POSIX recommends limiting the maximum period to 65535 seconds, to
- * maintain portability to platforms with only 16-bit ints).
- */
-unsigned __cdecl __MINGW_NOTHROW sleep( unsigned );
-
-#ifndef __NO_INLINE__
-__CRT_INLINE __LIBIMPL__(( FUNCTION = sleep ))
-unsigned sleep( unsigned period ){ return __mingw_sleep( period, 0 ); }
+/* These are also defined in stdio.h. */
+#ifndef STDIN_FILENO
+#define STDIN_FILENO  0
+#define STDOUT_FILENO 1
+#define STDERR_FILENO 2
 #endif
 
+/* Used by shutdown(2). */
+#ifdef _POSIX_SOURCE
 
-/* POSIX ftruncate() function.
- *
- * Microsoft's _chsize() function is incorrectly described, on MSDN,
- * as a preferred replacement for the POSIX chsize() function.  There
- * never was any such POSIX function; the actual POSIX equivalent is
- * the ftruncate() function.
- */
-int __cdecl ftruncate( int, off_t );
-
-#ifndef __NO_INLINE__
-__CRT_INLINE __JMPSTUB__(( FUNCTION = ftruncate, DLLENTRY = _chsize ))
-int ftruncate( int __fd, off_t __length ){ return _chsize( __fd, __length ); }
+/* MySql connector already defined SHUT_RDWR. */
+#ifndef SHUT_RDWR
+#define SHUT_RD   0x00
+#define SHUT_WR   0x01
+#define SHUT_RDWR 0x02
 #endif
 
-_END_C_DECLS
+#endif
 
-#endif /* _POSIX_C_SOURCE */
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#pragma push_macro("sleep")
+#undef sleep
+unsigned int __cdecl sleep (unsigned int);
+#pragma pop_macro("sleep")
+
+#if !defined __NO_ISOCEXT
+#include <sys/types.h> /* For useconds_t. */
+
+int __cdecl __MINGW_NOTHROW usleep(useconds_t);
+#endif  /* Not __NO_ISOCEXT */
+
+#ifndef FTRUNCATE_DEFINED
+#define FTRUNCATE_DEFINED
+/* This is defined as a real library function to allow autoconf
+   to verify its existence. */
+#if !defined(NO_OLDNAMES) || defined(_POSIX)
+int ftruncate(int, off32_t);
+int ftruncate64(int, off64_t);
+int truncate(const char *, off32_t);
+int truncate64(const char *, off64_t);
+#ifndef __CRT__NO_INLINE
+__CRT_INLINE int ftruncate(int __fd, off32_t __length)
+{
+  return _chsize (__fd, __length);
+}
+#endif /* !__CRT__NO_INLINE */
+#else
+int ftruncate(int, _off_t);
+int ftruncate64(int, _off64_t);
+int truncate(const char *, _off_t);
+int truncate64(const char *, _off64_t);
+#ifndef __CRT__NO_INLINE
+__CRT_INLINE int ftruncate(int __fd, _off_t __length)
+{
+  return _chsize (__fd, __length);
+}
+#endif /* !__CRT__NO_INLINE */
+#endif
+#endif /* FTRUNCATE_DEFINED */
+
+#ifndef _FILE_OFFSET_BITS_SET_FTRUNCATE
+#define _FILE_OFFSET_BITS_SET_FTRUNCATE
+#if (defined(_FILE_OFFSET_BITS) && (_FILE_OFFSET_BITS == 64))
+#define ftruncate ftruncate64
+#endif /* _FILE_OFFSET_BITS_SET_FTRUNCATE */
+#endif /* _FILE_OFFSET_BITS_SET_FTRUNCATE */
+
+#ifndef _CRT_SWAB_DEFINED
+#define _CRT_SWAB_DEFINED /* Also in stdlib.h */
+  void __cdecl swab(char *_Buf1,char *_Buf2,int _SizeInBytes) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+#endif
+
+#if defined(_CRT_USE_WINAPI_FAMILY_DESKTOP_APP) || defined(WINSTORECOMPAT)
+#ifndef _CRT_GETPID_DEFINED
+#define _CRT_GETPID_DEFINED  /* Also in process.h */
+  int __cdecl getpid(void) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+#endif
+#endif /* _CRT_USE_WINAPI_FAMILY_DESKTOP_APP || WINSTORECOMPAT */
+
+#ifdef __cplusplus
+}
+#endif
+
+#include <pthread_unistd.h>
 
 #undef __UNISTD_H_SOURCED__
-#endif /* !_UNISTD_H: $RCSfile: unistd.h,v $: end of file */
+#endif /* _UNISTD_H */
+

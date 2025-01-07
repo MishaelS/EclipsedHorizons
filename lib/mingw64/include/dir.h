@@ -1,50 +1,31 @@
-/*
+/**
+ * This file has no copyright assigned and is placed in the Public Domain.
+ * This file is part of the mingw-w64 runtime package.
+ * No warranty is given; refer to the file DISCLAIMER.PD within this package.
+ */
+/* 
  * dir.h
  *
- * Obsolete header replaced by <io.h>; this stub is retained for
- * backward compatibility only.
+ * This file OBSOLESCENT and only provided for backward compatibility.
+ * Please use io.h instead.
  *
- * $Id: dir.h,v 466a876b8525 2016/09/13 20:14:13 keithmarshall $
+ * This file is part of the Mingw32 package.
  *
- * Written by Colin Peters <colin@bird.fu.is.saga-u.ac.jp>
- * Copyright (C) 1997-1999, 2001, 2016, MinGW.org Project
+ * Contributors:
+ *  Created by Colin Peters <colin@bird.fu.is.saga-u.ac.jp>
+ *             Mumit Khan <khan@xraylith.wisc.edu>
  *
+ *  THIS SOFTWARE IS NOT COPYRIGHTED
  *
- * Permission is hereby granted, free of charge, to any person obtaining a
- * copy of this software and associated documentation files (the "Software"),
- * to deal in the Software without restriction, including without limitation
- * the rights to use, copy, modify, merge, publish, distribute, sublicense,
- * and/or sell copies of the Software, and to permit persons to whom the
- * Software is furnished to do so, subject to the following conditions:
+ *  This source code is offered for use in the public domain. You may
+ *  use, modify or distribute it freely.
  *
- * The above copyright notice, this permission notice, and the following
- * disclaimer shall be included in all copies or substantial portions of
- * the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
- * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
- * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OF OR OTHER
- * DEALINGS IN THE SOFTWARE.
+ *  This code is distributed in the hope that it will be useful but
+ *  WITHOUT ANY WARRANTY. ALL WARRANTIES, EXPRESS OR IMPLIED ARE HEREBY
+ *  DISCLAIMED. This includes but is not limited to warranties of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  */
-#ifndef _DIR_H
-#pragma GCC system_header
-#define _DIR_H
 
-/* Header <dir.h> is obsolete, and we would like to advise the user to
- * use <io.h> instead; however...
- */
-#ifndef __IN_MINGWRT_TESTSUITE__
-/* ...this warning will interfere with the testsuite result, so display
- * it only in normal use, (i.e. suppress it when running the testsuite)...
- */
-#warning "<dir.h> is obsolete; please use <io.h> instead."
-#endif
-/* ...always including the appropriate replacement header, regardless.
- */
-#include "io.h"
+#include <io.h>
 
-#endif	/* !_DIR_H: $RCSfile: dir.h,v $: end of file */

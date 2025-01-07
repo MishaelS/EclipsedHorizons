@@ -23,15 +23,9 @@
 #ifndef __SCSISCAN_H
 #define __SCSISCAN_H
 
-#if __GNUC__ >=3
-#pragma GCC system_header
-#endif
-
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-#include "ntddk.h"
 
 #define IOCTL_SCSISCAN_CMD \
   CTL_CODE(FILE_DEVICE_SCANNER, SCSISCAN_CMD_CODE, METHOD_OUT_DIRECT, FILE_ANY_ACCESS)

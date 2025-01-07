@@ -23,19 +23,13 @@
 #ifndef __SCSIWMI_H
 #define __SCSIWMI_H
 
-#if __GNUC__ >=3
-#pragma GCC system_header
-#endif
+#include "srb.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 #pragma pack(push,4)
-
-#include "ntddk.h"
-#include "srb.h"
-
 
 typedef struct _SCSIWMI_REQUEST_CONTEXT {
   PVOID  UserContext;
@@ -53,16 +47,11 @@ typedef struct _SCSIWMI_REQUEST_CONTEXT {
 #if ! (defined _GUID_DEFINED || defined GUID_DEFINED)
 #define GUID_DEFINED
 typedef struct _GUID {
-    unsigned long  Data1;
+    ULONG          Data1;
     unsigned short Data2;
     unsigned short Data3;
     unsigned char  Data4[ 8 ];
 } GUID;
-#endif
-
-#ifndef _LPCGUID_DEFINED
-#define _LPCGUID_DEFINED
-typedef const GUID *LPCGUID;
 #endif
 
 typedef struct _SCSIWMIGUIDREGINFO {
@@ -71,65 +60,65 @@ typedef struct _SCSIWMIGUIDREGINFO {
   ULONG  Flags;
 } SCSIWMIGUIDREGINFO, *PSCSIWMIGUIDREGINFO;
 
-typedef UCHAR DDKAPI
-(*PSCSIWMI_QUERY_REGINFO)(
-  /*IN*/ PVOID  DeviceContext,
-  /*IN*/ PSCSIWMI_REQUEST_CONTEXT  RequestContext,
-  /*OUT*/ PWCHAR  *MofResourceName);
+typedef UCHAR
+(NTAPI *PSCSIWMI_QUERY_REGINFO)(
+	IN PVOID  DeviceContext,
+	IN PSCSIWMI_REQUEST_CONTEXT  RequestContext,
+	OUT PWCHAR  *MofResourceName);
 
-typedef BOOLEAN DDKAPI
-(*PSCSIWMI_QUERY_DATABLOCK)(
-  /*IN*/ PVOID  Context,
-  /*IN*/ PSCSIWMI_REQUEST_CONTEXT  DispatchContext,
-  /*IN*/ ULONG  GuidIndex,
-  /*IN*/ ULONG  InstanceIndex,
-  /*IN*/ ULONG  InstanceCount,
-  /*IN OUT*/ PULONG  InstanceLengthArray,
-  /*IN*/ ULONG  BufferAvail,
-  /*OUT*/ PUCHAR  Buffer);
+typedef BOOLEAN
+(NTAPI *PSCSIWMI_QUERY_DATABLOCK)(
+  IN PVOID  Context,
+  IN PSCSIWMI_REQUEST_CONTEXT  DispatchContext,
+  IN ULONG  GuidIndex,
+  IN ULONG  InstanceIndex,
+  IN ULONG  InstanceCount,
+  IN OUT PULONG  InstanceLengthArray,
+  IN ULONG  BufferAvail,
+  OUT PUCHAR  Buffer);
 
-typedef BOOLEAN DDKAPI
-(*PSCSIWMI_SET_DATABLOCK)(
-  /*IN*/ PVOID  DeviceContext,
-  /*IN*/ PSCSIWMI_REQUEST_CONTEXT  RequestContext,
-  /*IN*/ ULONG  GuidIndex,
-  /*IN*/ ULONG  InstanceIndex,
-  /*IN*/ ULONG  BufferSize,
-  /*IN*/ PUCHAR  Buffer);
+typedef BOOLEAN
+(NTAPI *PSCSIWMI_SET_DATABLOCK)(
+  IN PVOID  DeviceContext,
+  IN PSCSIWMI_REQUEST_CONTEXT  RequestContext,
+  IN ULONG  GuidIndex,
+  IN ULONG  InstanceIndex,
+  IN ULONG  BufferSize,
+  IN PUCHAR  Buffer);
 
-typedef BOOLEAN DDKAPI
-(*PSCSIWMI_SET_DATAITEM)(
-  /*IN*/ PVOID  DeviceContext,
-  /*IN*/ PSCSIWMI_REQUEST_CONTEXT  RequestContext,
-  /*IN*/ ULONG  GuidIndex,
-  /*IN*/ ULONG  InstanceIndex,
-  /*IN*/ ULONG  DataItemId,
-  /*IN*/ ULONG  BufferSize,
-  /*IN*/ PUCHAR  Buffer);
+typedef BOOLEAN
+(NTAPI *PSCSIWMI_SET_DATAITEM)(
+  IN PVOID  DeviceContext,
+  IN PSCSIWMI_REQUEST_CONTEXT  RequestContext,
+  IN ULONG  GuidIndex,
+  IN ULONG  InstanceIndex,
+  IN ULONG  DataItemId,
+  IN ULONG  BufferSize,
+  IN PUCHAR  Buffer);
 
-typedef BOOLEAN DDKAPI
-(*PSCSIWMI_EXECUTE_METHOD)(
-  /*IN*/ PVOID  DeviceContext,
-  /*IN*/ PSCSIWMI_REQUEST_CONTEXT  RequestContext,
-  /*IN*/ ULONG  GuidIndex,
-  /*IN*/ ULONG  InstanceIndex,
-  /*IN*/ ULONG  MethodId,
-  /*IN*/ ULONG  InBufferSize,
-  /*IN*/ ULONG  OutBufferSize,
-  /*IN OUT*/ PUCHAR  Buffer);
+typedef BOOLEAN
+(NTAPI *PSCSIWMI_EXECUTE_METHOD)(
+  IN PVOID  DeviceContext,
+  IN PSCSIWMI_REQUEST_CONTEXT  RequestContext,
+  IN ULONG  GuidIndex,
+  IN ULONG  InstanceIndex,
+  IN ULONG  MethodId,
+  IN ULONG  InBufferSize,
+  IN ULONG  OutBufferSize,
+  IN OUT PUCHAR  Buffer);
 
 typedef enum _SCSIWMI_ENABLE_DISABLE_CONTROL {
 	ScsiWmiEventControl,
 	ScsiWmiDataBlockControl
 } SCSIWMI_ENABLE_DISABLE_CONTROL;
 
-typedef BOOLEAN DDKAPI
-(*PSCSIWMI_FUNCTION_CONTROL)(
-  /*IN*/ PVOID  DeviceContext,
-  /*IN*/ PSCSIWMI_REQUEST_CONTEXT  RequestContext,
-  /*IN*/ ULONG  GuidIndex,
-  /*IN*/ SCSIWMI_ENABLE_DISABLE_CONTROL  Function,
-  /*IN*/ BOOLEAN  Enable);
+typedef BOOLEAN
+(NTAPI *PSCSIWMI_FUNCTION_CONTROL)(
+  IN PVOID  DeviceContext,
+  IN PSCSIWMI_REQUEST_CONTEXT  RequestContext,
+  IN ULONG  GuidIndex,
+  IN SCSIWMI_ENABLE_DISABLE_CONTROL  Function,
+  IN BOOLEAN  Enable);
 
 typedef struct _SCSIWMILIB_CONTEXT {
   ULONG  GuidCount;
@@ -144,15 +133,15 @@ typedef struct _SCSIWMILIB_CONTEXT {
 
 SCSIPORTAPI
 BOOLEAN
-DDKAPI
+NTAPI
 ScsiPortWmiDispatchFunction(
-  /*IN*/ PSCSI_WMILIB_CONTEXT  WmiLibInfo,
-  /*IN*/ UCHAR  MinorFunction,
-  /*IN*/ PVOID  DeviceContext,
-  /*IN*/ PSCSIWMI_REQUEST_CONTEXT  RequestContext,
-  /*IN*/ PVOID  DataPath,
-  /*IN*/ ULONG  BufferSize,
-  /*IN*/ PVOID  Buffer);
+  IN PSCSI_WMILIB_CONTEXT  WmiLibInfo,
+  IN UCHAR  MinorFunction,
+  IN PVOID  DeviceContext,
+  IN PSCSIWMI_REQUEST_CONTEXT  RequestContext,
+  IN PVOID  DataPath,
+  IN ULONG  BufferSize,
+  IN PVOID  Buffer);
 
 #define ScsiPortWmiFireAdapterEvent(  \
   HwDeviceExtension,                  \
@@ -187,24 +176,24 @@ ScsiPortWmiDispatchFunction(
 
 SCSIPORTAPI
 VOID
-DDKAPI
+NTAPI
 ScsiPortWmiPostProcess(
-  /*IN*/ PSCSIWMI_REQUEST_CONTEXT  RequestContext,
-  /*IN*/ UCHAR  SrbStatus,
-  /*IN*/ ULONG  BufferUsed);
+  IN PSCSIWMI_REQUEST_CONTEXT  RequestContext,
+  IN UCHAR  SrbStatus,
+  IN ULONG  BufferUsed);
 
 SCSIPORTAPI
 VOID
-DDKAPI
+NTAPI
 ScsiPortWmiFireLogicalUnitEvent(
-  /*IN*/ PVOID  HwDeviceExtension,
-  /*IN*/ UCHAR  PathId,
-  /*IN*/ UCHAR  TargetId,
-  /*IN*/ UCHAR  Lun,
-  /*IN*/ LPGUID  Guid,
-  /*IN*/ ULONG  InstanceIndex,
-  /*IN*/ ULONG  EventDataSize,
-  /*IN*/ PVOID  EventData);
+  IN PVOID  HwDeviceExtension,
+  IN UCHAR  PathId,
+  IN UCHAR  TargetId,
+  IN UCHAR  Lun,
+  IN LPGUID  Guid,
+  IN ULONG  InstanceIndex,
+  IN ULONG  EventDataSize,
+  IN PVOID  EventData);
 
 #pragma pack(pop)
 

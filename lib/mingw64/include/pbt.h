@@ -1,50 +1,28 @@
-/*
- * pbt.h
- *
- * Obsolete header replaced by <winuser.h>; this stub is retained for
- * backward compatibility only.
- *
- * $Id: obsolete.h.in,v 756f7efeba83 2016/11/26 22:35:10 keithmarshall $
- *
- * Written by Keith Marshall <keithmarshall@users.sourceforge.net>
- * Copyright (C) 2016, MinGW.org Project
- *
- *
- * Permission is hereby granted, free of charge, to any person obtaining a
- * copy of this software and associated documentation files (the "Software"),
- * to deal in the Software without restriction, including without limitation
- * the rights to use, copy, modify, merge, publish, distribute, sublicense,
- * and/or sell copies of the Software, and to permit persons to whom the
- * Software is furnished to do so, subject to the following conditions:
- *
- * The above copyright notice, this permission notice, and the following
- * disclaimer shall be included in all copies or substantial portions of
- * the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
- * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
- * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OF OR OTHER
- * DEALINGS IN THE SOFTWARE.
- *
+/**
+ * This file has no copyright assigned and is placed in the Public Domain.
+ * This file is part of the mingw-w64 runtime package.
+ * No warranty is given; refer to the file DISCLAIMER.PD within this package.
  */
-#ifndef _PBT_H
-#pragma GCC system_header
-#define _PBT_H
+#ifndef _INC_PBT
+#define _INC_PBT
 
-/* Header <pbt.h> is obsolete, and we would like to advise the user to
- * use <winuser.h> instead; however...
- */
-#ifndef __IN_W32API_TESTSUITE__
-/* ...this warning may interfere with any testsuite results, so display it
- * only in normal use, (i.e. suppress it when running the testsuite)...
- */
-#warning "<pbt.h> is obsolete; please use <winuser.h> instead."
+#define WM_POWERBROADCAST 0x0218
+
+#ifndef _WIN32_WCE
+#define PBT_APMQUERYSUSPEND 0x0000
+#define PBT_APMQUERYSTANDBY 0x0001
+#define PBT_APMQUERYSUSPENDFAILED 0x0002
+#define PBT_APMQUERYSTANDBYFAILED 0x0003
+#define PBT_APMSUSPEND 0x0004
+#define PBT_APMSTANDBY 0x0005
+#define PBT_APMRESUMECRITICAL 0x0006
+#define PBT_APMRESUMESUSPEND 0x0007
+#define PBT_APMRESUMESTANDBY 0x0008
+#define PBTF_APMRESUMEFROMFAILURE 0x00000001
+#define PBT_APMBATTERYLOW 0x0009
+#define PBT_APMPOWERSTATUSCHANGE 0x000A
+#define PBT_APMOEMEVENT 0x000B
+#define PBT_APMRESUMEAUTOMATIC 0x0012
 #endif
-/* ...always including the appropriate replacement header, regardless.
- */
-#include "winuser.h"
 
-#endif	/* !_PBT_H: $RCSfile: obsolete.h.in,v $: end of file */
+#endif

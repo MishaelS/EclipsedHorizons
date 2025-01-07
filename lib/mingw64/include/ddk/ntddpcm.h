@@ -20,18 +20,12 @@
  *
  */
 
-#ifndef __NTDDPCM_H
-#define __NTDDPCM_H
-
-#if __GNUC__ >=3
-#pragma GCC system_header
-#endif
+#ifndef _NTDDPCMH_
+#define _NTDDPCMH_
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-#include "ntddk.h"
 
 #define IOCTL_PCMCIA_BASE                 FILE_DEVICE_CONTROLLER
 
@@ -96,13 +90,13 @@ DEFINE_GUID(GUID_PCMCIA_INTERFACE_STANDARD, \
 
 typedef ULONG MEMORY_SPACE;
 
-typedef ULONG STDCALL
-(*PPCMCIA_READ_WRITE_CONFIG)(
-  /*IN*/ PVOID  Context,
-  /*IN*/ ULONG  WhichSpace,
-  /*IN*/ PUCHAR  Buffer,
-  /*IN*/ ULONG  Offset,
-  /*IN*/ ULONG  Length);
+typedef ULONG
+(NTAPI *PPCMCIA_READ_WRITE_CONFIG)(
+  IN PVOID  Context,
+  IN ULONG  WhichSpace,
+  IN PUCHAR  Buffer,
+  IN ULONG  Offset,
+  IN ULONG  Length);
 
 #define PCCARD_PCI_CONFIGURATION_SPACE    0
 #define PCCARD_ATTRIBUTE_MEMORY           1
@@ -123,29 +117,29 @@ typedef struct _PCMCIA_BUS_INTERFACE_STANDARD {
 #define PCMCIA_MEMORY_8BIT_ACCESS         0
 #define PCMCIA_MEMORY_16BIT_ACCESS        1
 
-typedef BOOLEAN STDCALL
-(*PPCMCIA_MODIFY_MEMORY_WINDOW)(
-  /*IN*/ PVOID  Context,
-  /*IN*/ ULONGLONG  HostBase,
-  /*IN*/ ULONGLONG  CardBase,
-  /*IN*/ BOOLEAN  Enable,
-  /*IN*/ ULONG  WindowSize  /*OPTIONAL*/,
-  /*IN*/ UCHAR  AccessSpeed  /*OPTIONAL*/,
-  /*IN*/ UCHAR  BusWidth  /*OPTIONAL*/,
-  /*IN*/ BOOLEAN  IsAttributeMemory  /*OPTIONAL*/);
+typedef BOOLEAN
+(NTAPI *PPCMCIA_MODIFY_MEMORY_WINDOW)(
+  IN PVOID  Context,
+  IN ULONGLONG  HostBase,
+  IN ULONGLONG  CardBase,
+  IN BOOLEAN  Enable,
+  IN ULONG  WindowSize  OPTIONAL,
+  IN UCHAR  AccessSpeed  OPTIONAL,
+  IN UCHAR  BusWidth  OPTIONAL,
+  IN BOOLEAN  IsAttributeMemory  OPTIONAL);
 
 #define PCMCIA_VPP_0V                     0
 #define PCMCIA_VPP_12V                    1
 #define PCMCIA_VPP_IS_VCC                 2
 
-typedef BOOLEAN STDCALL
-(*PPCMCIA_SET_VPP)(
-  /*IN*/ PVOID  Context,
-  /*IN*/ UCHAR  VppLevel);
+typedef BOOLEAN
+(NTAPI *PPCMCIA_SET_VPP)(
+  IN PVOID  Context,
+  IN UCHAR  VppLevel);
 
-typedef BOOLEAN STDCALL
-(*PPCMCIA_IS_WRITE_PROTECTED)(
-  /*IN*/ PVOID  Context);
+typedef BOOLEAN
+(NTAPI *PPCMCIA_IS_WRITE_PROTECTED)(
+  IN PVOID  Context);
 
 typedef struct _PCMCIA_INTERFACE_STANDARD {
 	USHORT  Size;
@@ -162,4 +156,4 @@ typedef struct _PCMCIA_INTERFACE_STANDARD {
 }
 #endif
 
-#endif /* __NTDDPCM_H */
+#endif /* _NTDDPCMH_ */

@@ -23,18 +23,14 @@
 #ifndef __SMBUS_H
 #define __SMBUS_H
 
-#if __GNUC__ >=3
-#pragma GCC system_header
-#endif
-
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 #if !defined(SMBCLASS)
-  #define SMBCLASSAPI DECLSPEC_IMPORT
+#define SMBCLASSAPI DECLSPEC_IMPORT
 #else
-  #define SMBCLASSAPI DECLSPEC_EXPORT
+#define SMBCLASSAPI
 #endif
 
 #define SMB_BUS_REQUEST \
@@ -86,8 +82,8 @@ typedef struct _SMB_REQUEST {
   UCHAR  Data[SMB_MAX_DATA_SIZE];
 } SMB_REQUEST, *PSMB_REQUEST;
 
-typedef VOID STDCALL
-(*SMB_ALARM_NOTIFY)(
+typedef VOID
+(NTAPI *SMB_ALARM_NOTIFY)(
   PVOID  Context,
   UCHAR  Address,
   USHORT  Data);
@@ -103,20 +99,20 @@ typedef struct _SMB_REGISTER_ALARM {
 #define SMB_CLASS_MAJOR_VERSION           0x0001
 #define SMB_CLASS_MINOR_VERSION           0x0000
 
-typedef NTSTATUS DDKAPI
-(*SMB_RESET_DEVICE)(
-  /*IN*/ struct _SMB_CLASS  *SmbClass,
-  /*IN*/ PVOID  SmbMiniport);
+typedef NTSTATUS
+(NTAPI *SMB_RESET_DEVICE)(
+  IN struct _SMB_CLASS  *SmbClass,
+  IN PVOID  SmbMiniport);
 
-typedef VOID DDKAPI
-(*SMB_START_IO)(
-  /*IN*/ struct _SMB_CLASS  *SmbClass,
-  /*IN*/ PVOID  SmbMiniport);
+typedef VOID
+(NTAPI *SMB_START_IO)(
+  IN struct _SMB_CLASS  *SmbClass,
+  IN PVOID  SmbMiniport);
 
-typedef NTSTATUS DDKAPI
-(*SMB_STOP_DEVICE)(
-  /*IN*/ struct _SMB_CLASS  *SmbClass,
-  /*IN*/ PVOID  SmbMiniport);
+typedef NTSTATUS
+(NTAPI *SMB_STOP_DEVICE)(
+  IN struct _SMB_CLASS  *SmbClass,
+  IN PVOID  SmbMiniport);
 
 typedef struct _SMB_CLASS {
   USHORT  MajorVersion;
@@ -134,57 +130,58 @@ typedef struct _SMB_CLASS {
 
 SMBCLASSAPI
 VOID
-DDKAPI
+NTAPI
 SmbClassAlarm(
-  /*IN*/ PSMB_CLASS  SmbClass,
-  /*IN*/ UCHAR  Address,
-  /*IN*/ USHORT  Data);
+  IN PSMB_CLASS  SmbClass,
+  IN UCHAR  Address,
+  IN USHORT  Data);
 
 SMBCLASSAPI
 VOID
-DDKAPI
+NTAPI
 SmbClassCompleteRequest(
-  /*IN*/ PSMB_CLASS  SmbClass);
+  IN PSMB_CLASS  SmbClass);
 
-typedef NTSTATUS DDKAPI
-(*PSMB_INITIALIZE_MINIPORT)(
-  /*IN*/ PSMB_CLASS  SmbClass,
-  /*IN*/ PVOID  MiniportExtension,
-  /*IN*/ PVOID  MiniportContext);
+typedef NTSTATUS
+(NTAPI *PSMB_INITIALIZE_MINIPORT)(
+  IN PSMB_CLASS  SmbClass,
+  IN PVOID  MiniportExtension,
+  IN PVOID  MiniportContext);
 
 SMBCLASSAPI
 NTSTATUS
-DDKAPI
+NTAPI
 SmbClassCreateFdo(
-  /*IN*/ PDRIVER_OBJECT  DriverObject,
-  /*IN*/ PDEVICE_OBJECT  PDO,
-  /*IN*/ ULONG  MiniportExtensionSize,
-  /*IN*/ PSMB_INITIALIZE_MINIPORT  MiniportInitialize,
-  /*IN*/ PVOID  MiniportContext,
-  /*OUT*/ PDEVICE_OBJECT  *FDO);
+  IN PDRIVER_OBJECT  DriverObject,
+  IN PDEVICE_OBJECT  PDO,
+  IN ULONG  MiniportExtensionSize,
+  IN PSMB_INITIALIZE_MINIPORT  MiniportInitialize,
+  IN PVOID  MiniportContext,
+  OUT PDEVICE_OBJECT  *FDO);
 
 SMBCLASSAPI
 NTSTATUS
-DDKAPI
+NTAPI
 SmbClassInitializeDevice(
-  /*IN*/ ULONG  MajorVersion,
-  /*IN*/ ULONG  MinorVersion,
-  /*IN*/ PDRIVER_OBJECT  DriverObject);
+  IN ULONG  MajorVersion,
+  IN ULONG  MinorVersion,
+  IN PDRIVER_OBJECT  DriverObject);
 
 SMBCLASSAPI
 VOID
-DDKAPI
+NTAPI
 SmbClassLockDevice(
-  /*IN*/ PSMB_CLASS  SmbClass);
+  IN PSMB_CLASS  SmbClass);
 
 SMBCLASSAPI
 VOID
-DDKAPI
+NTAPI
 SmbClassUnlockDevice(
-  /*IN*/ PSMB_CLASS  SmbClass);
+  IN PSMB_CLASS  SmbClass);
 
 #ifdef __cplusplus
 }
 #endif
 
 #endif /* __SMBUS_H */
+

@@ -23,20 +23,14 @@
 #ifndef __UPSSVC_H
 #define __UPSSVC_H
 
-#if __GNUC__ >= 3
-#pragma GCC system_header
-#endif
-
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#include "ntddk.h"
-
 #if defined(_APCUPS_)
-  #define UPSAPI DECLSPEC_EXPORT
+#define UPSAPI
 #else
-  #define UPSAPI DECLSPEC_IMPORT
+#define UPSAPI DECLSPEC_IMPORT
 #endif
 
 
@@ -48,12 +42,12 @@ extern "C" {
 
 UPSAPI
 VOID
-DDKAPI
+NTAPI
 UPSCancelWait(VOID);
 
 UPSAPI
 DWORD
-DDKAPI
+NTAPI
 UPSGetState(VOID);
 
 #define UPS_INITUNKNOWNERROR              0
@@ -66,26 +60,26 @@ UPSGetState(VOID);
 
 UPSAPI
 DWORD
-DDKAPI
+NTAPI
 UPSInit(VOID);
 
 UPSAPI
 VOID
-DDKAPI
+NTAPI
 UPSStop(VOID);
 
 UPSAPI
 VOID
-DDKAPI
+NTAPI
 UPSTurnOff(
-  /*IN*/ DWORD  aTurnOffDelay);
+  IN DWORD  aTurnOffDelay);
 
 UPSAPI
 VOID
-DDKAPI
+NTAPI
 UPSWaitForStateChange(
-  /*IN*/ DWORD  aCurrentState,
-  /*IN*/ DWORD  anInterval);
+  IN DWORD  aCurrentState,
+  IN DWORD  anInterval);
 
 #ifdef __cplusplus
 }

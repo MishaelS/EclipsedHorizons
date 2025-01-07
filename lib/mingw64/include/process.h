@@ -1,293 +1,207 @@
-/*
- * process.h
- *
- * Declarations of functions for spawning child processes.
- *
- * $Id: process.h,v 0e4f78dbc1ba 2016/06/17 14:16:01 keithmarshall $
- *
- * Written by Colin Peters <colin@bird.fu.is.saga-u.ac.jp>
- * Copyright (C) 1997-2001, 2003-2004, 2007-2008, 2016, MinGW.org Project.
- *
- *
- * Permission is hereby granted, free of charge, to any person obtaining a
- * copy of this software and associated documentation files (the "Software"),
- * to deal in the Software without restriction, including without limitation
- * the rights to use, copy, modify, merge, publish, distribute, sublicense,
- * and/or sell copies of the Software, and to permit persons to whom the
- * Software is furnished to do so, subject to the following conditions:
- *
- * The above copyright notice, this permission notice, and the following
- * disclaimer shall be included in all copies or substantial portions of
- * the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
- * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
- * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OF OR OTHER
- * DEALINGS IN THE SOFTWARE.
- *
+/**
+ * This file has no copyright assigned and is placed in the Public Domain.
+ * This file is part of the mingw-w64 runtime package.
+ * No warranty is given; refer to the file DISCLAIMER.PD within this package.
  */
-#ifndef _PROCESS_H
-#pragma GCC system_header
+#ifndef _INC_PROCESS
+#define _INC_PROCESS
 
-/* Defer defining the normal _PROCESS_H multiple inclusion guard macro,
- * to facilitate selective inclusion by <wchar.h>, (in which case we do
- * not wish to define it).
- */
-#ifndef __WCHAR_H_SOURCED__
-#define _PROCESS_H
+#include <crtdefs.h>
+#include <corecrt_startup.h>
 
-/* All MinGW headers must include <_mingw.h>; do so here, assuming
- * that <wchar.h> will have already taken care of it, for the case
- * of selective inclusion.
- */
-#include <_mingw.h>
-
-/* This gives us more than we really need, but it gets us _pid_t
- * (and its pid_t equivalent), which we do need.
- */
+/* Includes a definition of _pid_t and pid_t */
 #include <sys/types.h>
 
-/* Constants for cwait actions; obsolete for Win32.
- */
-#define _WAIT_CHILD		0
-#define _WAIT_GRANDCHILD	1
-
-#ifndef _NO_OLDNAMES
-#define WAIT_CHILD		_WAIT_CHILD
-#define WAIT_GRANDCHILD 	_WAIT_GRANDCHILD
-#endif	/* !_NO_OLDNAMES */
-#endif	/* !__WCHAR_H_SOURCED__ */
-
-/* Mode constants for spawn() functions.
- */
-#define _P_WAIT 		0
-#define _P_NOWAIT		1
-#define _P_OVERLAY		2
-#define _OLD_P_OVERLAY		_P_OVERLAY
-#define _P_NOWAITO		3
-#define _P_DETACH		4
-
-#ifndef _NO_OLDNAMES
-#define P_WAIT			_P_WAIT
-#define P_NOWAIT		_P_NOWAIT
-#define P_OVERLAY		_P_OVERLAY
-#define OLD_P_OVERLAY		_OLD_P_OVERLAY
-#define P_NOWAITO		_P_NOWAITO
-#define P_DETACH		_P_DETACH
-#endif	/* !_NO_OLDNAMES */
-
-#ifndef RC_INVOKED
-
-/* All Microsoft implementations of the exec() and spawn() functions
- * are declared with intptr_t as their return type; get its definition
- * by selective inclusion from "stdint.h"; (note: use #include "..."
- * here, to avoid side effects from any alternative <stdint.h>, which
- * is not in the same directory as this <process.h>).
- */
-#define __need_intptr_t
-#include "stdint.h"
-
-_BEGIN_C_DECLS
-
-#ifdef _PROCESS_H
-_CRTIMP __cdecl __MINGW_NOTHROW  void _cexit (void);
-_CRTIMP __cdecl __MINGW_NOTHROW  void _c_exit (void);
-
-_CRTIMP __cdecl __MINGW_NOTHROW  int _cwait (int *, _pid_t, int);
-
-_CRTIMP __cdecl __MINGW_NOTHROW  _pid_t _getpid (void);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _execl (const char *, const char *, ...);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _execle (const char *, const char *, ...);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _execlp (const char *, const char *, ...);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _execlpe (const char *, const char *, ...);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _execv (const char *, const char * const *);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _execve (const char *, const char * const *, const char * const *);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _execvp (const char *, const char * const *);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _execvpe (const char *, const char * const *, const char * const *);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _spawnl (int, const char *, const char *, ...);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _spawnle (int, const char *, const char *, ...);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _spawnlp (int, const char *, const char *, ...);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _spawnlpe (int, const char *, const char *, ...);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _spawnv (int, const char *, const char * const *);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _spawnve (int, const char *, const char * const *, const char * const *);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _spawnvp (int, const char *, const char * const *);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _spawnvpe (int, const char *, const char * const *, const char * const *);
-
-/* Thread initiation and termination functions.
- *
- * NOTE: Apparently _endthread() calls CloseHandle() on the handle of the
- * thread, creating a potential for race conditions, if you are not careful.
- * Basically, you MUST ensure that NOTHING attempts to do ANYTHING with the
- * thread handle after the thread calls _endthread(), or returns from the
- * thread function.
- *
- * NOTE: No old names for these functions.  Use the underscore.
- */
-_CRTIMP __cdecl __MINGW_NOTHROW
-unsigned long _beginthread (void (*)(void *), unsigned, void *);
-
-_CRTIMP __cdecl __MINGW_NOTHROW  void _endthread (void);
-
-#ifdef __MSVCRT__
-_CRTIMP __cdecl __MINGW_NOTHROW  unsigned long _beginthreadex
-(void *, unsigned, unsigned (__stdcall *) (void *), void *, unsigned, unsigned *);
-
-_CRTIMP __cdecl __MINGW_NOTHROW  void _endthreadex (unsigned);
+#ifndef _POSIX_
+#ifdef __cplusplus
+extern "C" {
 #endif
 
-#ifndef _NO_OLDNAMES
-/* Functions named without the leading underscore, for portability.
- * These functions live in liboldnames.a.
- */
-_CRTIMP __cdecl __MINGW_NOTHROW  int cwait (int *, pid_t, int);
-_CRTIMP __cdecl __MINGW_NOTHROW  pid_t getpid (void);
+#ifndef _P_WAIT
+#define _P_WAIT 0
+#define _P_NOWAIT 1
+#define _OLD_P_OVERLAY 2
+#define _P_NOWAITO 3
+#define _P_DETACH 4
+#define _P_OVERLAY 2
 
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t execl (const char *, const char *, ...);
+#define _WAIT_CHILD 0
+#define _WAIT_GRANDCHILD 1
+#endif
 
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t execle (const char *, const char *, ...);
+  typedef void (__cdecl *_beginthread_proc_type)(void *);
+  typedef unsigned (__stdcall *_beginthreadex_proc_type)(void *);
 
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t execlp (const char *, const char *, ...);
+  _CRTIMP uintptr_t __cdecl _beginthread(_beginthread_proc_type _StartAddress,unsigned _StackSize,void *_ArgList);
+  _CRTIMP void __cdecl _endthread(void) __MINGW_ATTRIB_NORETURN;
+  _CRTIMP uintptr_t __cdecl _beginthreadex(void *_Security,unsigned _StackSize,_beginthreadex_proc_type _StartAddress,void *_ArgList,unsigned _InitFlag,unsigned *_ThrdAddr);
+  _CRTIMP void __cdecl _endthreadex(unsigned _Retval) __MINGW_ATTRIB_NORETURN;
 
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t execlpe (const char *, const char *,...);
+#ifndef _CRT_TERMINATE_DEFINED
+#define _CRT_TERMINATE_DEFINED
+  void __cdecl __MINGW_NOTHROW exit(int _Code) __MINGW_ATTRIB_NORETURN;
+  void __cdecl __MINGW_NOTHROW _exit(int _Code) __MINGW_ATTRIB_NORETURN;
+#ifdef _UCRT
+  void __cdecl __MINGW_NOTHROW quick_exit(int _Code) __MINGW_ATTRIB_NORETURN;
+#endif
 
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t execv (const char *, const char * const *);
+#if !defined __NO_ISOCEXT /* extern stub in static libmingwex.a */
+  /* C99 function name */
+  void __cdecl _Exit(int) __MINGW_ATTRIB_NORETURN;
+#ifndef __CRT__NO_INLINE
+  __CRT_INLINE __MINGW_ATTRIB_NORETURN void  __cdecl _Exit(int status)
+  {  _exit(status); }
+#endif /* !__CRT__NO_INLINE */
+#endif /* Not  __NO_ISOCEXT */
 
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t execve (const char *, const char * const *, const char * const *);
+#pragma push_macro("abort")
+#undef abort
+  void __cdecl __MINGW_ATTRIB_NORETURN abort(void);
+#pragma pop_macro("abort")
 
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t execvp (const char *, const char * const *);
+#endif /* _CRT_TERMINATE_DEFINED */
 
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t execvpe (const char *, const char * const *, const char * const *);
+  typedef void (__stdcall *_tls_callback_type)(void*,unsigned long,void*);
+  _CRTIMP void __cdecl _register_thread_local_exe_atexit_callback(_tls_callback_type callback);
 
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t spawnl (int, const char *, const char *, ...);
+  void __cdecl __MINGW_NOTHROW _cexit(void);
+  void __cdecl __MINGW_NOTHROW _c_exit(void);
+#ifdef _CRT_USE_WINAPI_FAMILY_DESKTOP_APP
+  _CRTIMP int __cdecl _getpid(void);
+  _CRTIMP intptr_t __cdecl _cwait(int *_TermStat,intptr_t _ProcHandle,int _Action);
+  _CRTIMP intptr_t __cdecl _execl(const char *_Filename,const char *_ArgList,...);
+  _CRTIMP intptr_t __cdecl _execle(const char *_Filename,const char *_ArgList,...);
+  _CRTIMP intptr_t __cdecl _execlp(const char *_Filename,const char *_ArgList,...);
+  _CRTIMP intptr_t __cdecl _execlpe(const char *_Filename,const char *_ArgList,...);
+  _CRTIMP intptr_t __cdecl _execv(const char *_Filename,const char *const *_ArgList);
+  _CRTIMP intptr_t __cdecl _execve(const char *_Filename,const char *const *_ArgList,const char *const *_Env);
+  _CRTIMP intptr_t __cdecl _execvp(const char *_Filename,const char *const *_ArgList);
+  _CRTIMP intptr_t __cdecl _execvpe(const char *_Filename,const char *const *_ArgList,const char *const *_Env);
+  _CRTIMP intptr_t __cdecl _spawnl(int _Mode,const char *_Filename,const char *_ArgList,...);
+  _CRTIMP intptr_t __cdecl _spawnle(int _Mode,const char *_Filename,const char *_ArgList,...);
+  _CRTIMP intptr_t __cdecl _spawnlp(int _Mode,const char *_Filename,const char *_ArgList,...);
+  _CRTIMP intptr_t __cdecl _spawnlpe(int _Mode,const char *_Filename,const char *_ArgList,...);
 
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t spawnle (int, const char *, const char *, ...);
+#ifndef _SPAWNV_DEFINED
+#define _SPAWNV_DEFINED
+  _CRTIMP intptr_t __cdecl _spawnv(int _Mode,const char *_Filename,const char *const *_ArgList);
+  _CRTIMP intptr_t __cdecl _spawnve(int _Mode,const char *_Filename,const char *const *_ArgList,const char *const *_Env);
+  _CRTIMP intptr_t __cdecl _spawnvp(int _Mode,const char *_Filename,const char *const *_ArgList);
+  _CRTIMP intptr_t __cdecl _spawnvpe(int _Mode,const char *_Filename,const char *const *_ArgList,const char *const *_Env);
+#endif
 
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t spawnlp (int, const char *, const char *, ...);
+#ifndef _CRT_SYSTEM_DEFINED
+#define _CRT_SYSTEM_DEFINED
+  int __cdecl system(const char *_Command);
+#endif
 
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t spawnlpe (int, const char *, const char *, ...);
+#ifndef _WEXEC_DEFINED
+#define _WEXEC_DEFINED
+  _CRTIMP intptr_t __cdecl _wexecl(const wchar_t *_Filename,const wchar_t *_ArgList,...);
+  _CRTIMP intptr_t __cdecl _wexecle(const wchar_t *_Filename,const wchar_t *_ArgList,...);
+  _CRTIMP intptr_t __cdecl _wexeclp(const wchar_t *_Filename,const wchar_t *_ArgList,...);
+  _CRTIMP intptr_t __cdecl _wexeclpe(const wchar_t *_Filename,const wchar_t *_ArgList,...);
+  _CRTIMP intptr_t __cdecl _wexecv(const wchar_t *_Filename,const wchar_t *const *_ArgList);
+  _CRTIMP intptr_t __cdecl _wexecve(const wchar_t *_Filename,const wchar_t *const *_ArgList,const wchar_t *const *_Env);
+  _CRTIMP intptr_t __cdecl _wexecvp(const wchar_t *_Filename,const wchar_t *const *_ArgList);
+  _CRTIMP intptr_t __cdecl _wexecvpe(const wchar_t *_Filename,const wchar_t *const *_ArgList,const wchar_t *const *_Env);
+#endif
 
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t spawnv (int, const char *, const char * const *);
+#ifndef _WSPAWN_DEFINED
+#define _WSPAWN_DEFINED
+  _CRTIMP intptr_t __cdecl _wspawnl(int _Mode,const wchar_t *_Filename,const wchar_t *_ArgList,...);
+  _CRTIMP intptr_t __cdecl _wspawnle(int _Mode,const wchar_t *_Filename,const wchar_t *_ArgList,...);
+  _CRTIMP intptr_t __cdecl _wspawnlp(int _Mode,const wchar_t *_Filename,const wchar_t *_ArgList,...);
+  _CRTIMP intptr_t __cdecl _wspawnlpe(int _Mode,const wchar_t *_Filename,const wchar_t *_ArgList,...);
+  _CRTIMP intptr_t __cdecl _wspawnv(int _Mode,const wchar_t *_Filename,const wchar_t *const *_ArgList);
+  _CRTIMP intptr_t __cdecl _wspawnve(int _Mode,const wchar_t *_Filename,const wchar_t *const *_ArgList,const wchar_t *const *_Env);
+  _CRTIMP intptr_t __cdecl _wspawnvp(int _Mode,const wchar_t *_Filename,const wchar_t *const *_ArgList);
+  _CRTIMP intptr_t __cdecl _wspawnvpe(int _Mode,const wchar_t *_Filename,const wchar_t *const *_ArgList,const wchar_t *const *_Env);
+#endif
 
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t spawnve (int, const char *, const char * const *, const char * const *);
+#ifndef _CRT_WSYSTEM_DEFINED
+#define _CRT_WSYSTEM_DEFINED
+  _CRTIMP int __cdecl _wsystem(const wchar_t *_Command);
+#endif
+#endif /* _CRT_USE_WINAPI_FAMILY_DESKTOP_APP */
 
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t spawnvp (int, const char *, const char * const *);
+#ifdef _CRT_USE_WINAPI_FAMILY_DESKTOP_APP
+  intptr_t __cdecl _loaddll(char *_Filename);
+  int __cdecl _unloaddll(intptr_t _Handle);
+  int (__cdecl *__cdecl _getdllprocaddr(intptr_t _Handle,char *_ProcedureName,intptr_t _Ordinal))(void);
+#endif /* _CRT_USE_WINAPI_FAMILY_DESKTOP_APP */
 
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t spawnvpe (int, const char *, const char * const *, const char * const *);
+#ifdef _DECL_DLLMAIN
+#ifdef _WINDOWS_
+  WINBOOL WINAPI DllMain(HANDLE _HDllHandle,DWORD _Reason,LPVOID _Reserved);
+  WINBOOL WINAPI _CRT_INIT(HANDLE _HDllHandle,DWORD _Reason,LPVOID _Reserved);
+  WINBOOL WINAPI _wCRT_INIT(HANDLE _HDllHandle,DWORD _Reason,LPVOID _Reserved);
+  extern WINBOOL (WINAPI *const _pRawDllMain)(HANDLE,DWORD,LPVOID);
+#else
+  int __stdcall DllMain(void *_HDllHandle,unsigned long _Reason,void *_Reserved);
+  int __stdcall _CRT_INIT(void *_HDllHandle,unsigned long _Reason,void *_Reserved);
+  int __stdcall _wCRT_INIT(void *_HDllHandle,unsigned long _Reason,void *_Reserved);
+  extern int (__stdcall *const _pRawDllMain)(void *,unsigned long,void *);
+#endif
+#endif
 
-#endif	/* !_NO_OLDNAMES */
-#endif	/* _PROCESS_H */
+#ifndef	NO_OLDNAMES
+#define P_WAIT _P_WAIT
+#define P_NOWAIT _P_NOWAIT
+#define P_OVERLAY _P_OVERLAY
+#define OLD_P_OVERLAY _OLD_P_OVERLAY
+#define P_NOWAITO _P_NOWAITO
+#define P_DETACH _P_DETACH
+#define WAIT_CHILD _WAIT_CHILD
+#define WAIT_GRANDCHILD _WAIT_GRANDCHILD
 
-#if ! (defined _PROCESS_H && defined _WCHAR_H)
-/* Wide character variations of the exec() and spawn() functions are
- * declared both when <process.h> is included directly, and when it is
- * selectively included by <wchar.h>; however, if both _PROCESS_H and
- * _WCHAR_H are defined, by the time we get to here, then this must be
- * the direct inclusion case, and these have already been declared as
- * a result of selective inclusion; there is no need to declare them
- * a second time.
- */
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _wexecl (const wchar_t *, const wchar_t *, ...);
+#if defined(_CRT_USE_WINAPI_FAMILY_DESKTOP_APP) || defined(WINSTORECOMPAT)
+#ifndef _CRT_GETPID_DEFINED
+#define _CRT_GETPID_DEFINED  /* Also in unistd.h */
+  int __cdecl getpid(void) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+#endif
+#endif /* _CRT_USE_WINAPI_FAMILY_DESKTOP_APP || WINSTORECOMPAT */
+#ifdef _CRT_USE_WINAPI_FAMILY_DESKTOP_APP
+  intptr_t __cdecl cwait(int *_TermStat,intptr_t _ProcHandle,int _Action) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+#ifdef __GNUC__
+  int __cdecl execl(const char *_Filename,const char *_ArgList,...) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+  int __cdecl execle(const char *_Filename,const char *_ArgList,...) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+  int __cdecl execlp(const char *_Filename,const char *_ArgList,...) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+  int __cdecl execlpe(const char *_Filename,const char *_ArgList,...) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+#else
+  intptr_t __cdecl execl(const char *_Filename,const char *_ArgList,...) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+  intptr_t __cdecl execle(const char *_Filename,const char *_ArgList,...) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+  intptr_t __cdecl execlp(const char *_Filename,const char *_ArgList,...) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+  intptr_t __cdecl execlpe(const char *_Filename,const char *_ArgList,...) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+#endif
+  intptr_t __cdecl spawnl(int,const char *_Filename,const char *_ArgList,...) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+  intptr_t __cdecl spawnle(int,const char *_Filename,const char *_ArgList,...) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+  intptr_t __cdecl spawnlp(int,const char *_Filename,const char *_ArgList,...) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+  intptr_t __cdecl spawnlpe(int,const char *_Filename,const char *_ArgList,...) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+#ifdef __GNUC__
+  /* Those methods are predefined by gcc builtins to return int. So to prevent
+     stupid warnings, define them in POSIX way.  This is save, because those
+     methods do not return in success case, so that the return value is not
+     really dependent to its scalar width.  */
+  _CRTIMP int __cdecl execv(const char *_Filename,char *const _ArgList[]) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+  _CRTIMP int __cdecl execve(const char *_Filename,char *const _ArgList[],char *const _Env[]) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+  _CRTIMP int __cdecl execvp(const char *_Filename,char *const _ArgList[]) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+  _CRTIMP int __cdecl execvpe(const char *_Filename,char *const _ArgList[],char *const _Env[]) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+#else
+  _CRTIMP intptr_t __cdecl execv(const char *_Filename,char *const _ArgList[]) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+  _CRTIMP intptr_t __cdecl execve(const char *_Filename,char *const _ArgList[],char *const _Env[]) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+  _CRTIMP intptr_t __cdecl execvp(const char *_Filename,char *const _ArgList[]) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+  _CRTIMP intptr_t __cdecl execvpe(const char *_Filename,char *const _ArgList[],char *const _Env[]) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+#endif
+  _CRTIMP intptr_t __cdecl spawnv(int,const char *_Filename,char *const _ArgList[]) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+  _CRTIMP intptr_t __cdecl spawnve(int,const char *_Filename,char *const _ArgList[],char *const _Env[]) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+  _CRTIMP intptr_t __cdecl spawnvp(int,const char *_Filename,char *const _ArgList[]) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+  _CRTIMP intptr_t __cdecl spawnvpe(int,const char *_Filename,char *const _ArgList[],char *const _Env[]) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+#endif
+#endif /* _CRT_USE_WINAPI_FAMILY_DESKTOP_APP */
 
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _wexecle (const wchar_t *, const wchar_t *, ...);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _wexeclp (const wchar_t *, const wchar_t *, ...);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _wexeclpe (const wchar_t *, const wchar_t *, ...);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _wexecv (const wchar_t *, const wchar_t * const *);
-
-_CRTIMP __cdecl __MINGW_NOTHROW  intptr_t _wexecve
-(const wchar_t *, const wchar_t * const *, const wchar_t * const *);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _wexecvp (const wchar_t *, const wchar_t * const *);
-
-_CRTIMP __cdecl __MINGW_NOTHROW  intptr_t _wexecvpe
-(const wchar_t *, const wchar_t * const *, const wchar_t * const *);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _wspawnl (int, const wchar_t *, const wchar_t *, ...);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _wspawnle (int, const wchar_t *, const wchar_t *, ...);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _wspawnlp (int, const wchar_t *, const wchar_t *, ...);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _wspawnlpe (int, const wchar_t *, const wchar_t *, ...);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _wspawnv (int, const wchar_t *, const wchar_t * const *);
-
-_CRTIMP __cdecl __MINGW_NOTHROW  intptr_t _wspawnve
-(int, const wchar_t *, const wchar_t * const *, const wchar_t * const *);
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-intptr_t _wspawnvp (int, const wchar_t *, const wchar_t * const *);
-
-_CRTIMP __cdecl __MINGW_NOTHROW intptr_t _wspawnvpe
-(int, const wchar_t *, const wchar_t * const *, const wchar_t * const *);
-
-#endif	/* ! (_PROCESS_H && _WCHAR_H) */
-
-_END_C_DECLS
-
-#endif	/* ! RC_INVOKED */
-#endif	/* !_PROCESS_H: $RCSfile: process.h,v $: end of file */
+#ifdef __cplusplus
+}
+#endif
+#endif
+#endif

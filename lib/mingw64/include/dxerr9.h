@@ -1,53 +1,53 @@
+#include <_mingw_unicode.h>
 /*
+ * Copyright (C) 2004 Robert Reif
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
+ */
 
-	dxerr9.h - Header file for the DirectX 9 Error API
-
-	Written by Filip Navara <xnavara@volny.cz>
-
-	This library is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-*/
-
-#ifndef _DXERR9_H
-#define _DXERR9_H
-#if __GNUC__ >=3
-#pragma GCC system_header
-#endif
+#ifndef __WINE_DXERR9_H
+#define __WINE_DXERR9_H
 
 #ifdef __cplusplus
 extern "C" {
-#endif
+#endif /* defined(__cplusplus) */
 
-const char *WINAPI DXGetErrorString9A(HRESULT);
-const WCHAR *WINAPI DXGetErrorString9W(HRESULT);
-const char* WINAPI DXGetErrorDescription9A(HRESULT);
-const WCHAR* WINAPI DXGetErrorDescription9W(HRESULT);
-HRESULT WINAPI DXTraceA(const char*,DWORD,HRESULT,const char*,BOOL);
-HRESULT WINAPI DXTraceW(const char*,DWORD,HRESULT,const WCHAR*,BOOL);
+const char*     WINAPI DXGetErrorString9A(HRESULT hr);
+const WCHAR*    WINAPI DXGetErrorString9W(HRESULT hr);
+#define DXGetErrorString9 __MINGW_NAME_AW(DXGetErrorString9)
 
-#ifdef UNICODE
-#define DXGetErrorString9 DXGetErrorString9W
-#define DXGetErrorDescription9 DXGetErrorDescription9W
-#define DXTrace DXTraceW
-#else
-#define DXGetErrorString9 DXGetErrorString9A
-#define DXGetErrorDescription9 DXGetErrorDescription9A
-#define DXTrace DXTraceA
-#endif
+const char*     WINAPI DXGetErrorDescription9A(HRESULT hr);
+const WCHAR*    WINAPI DXGetErrorDescription9W(HRESULT hr);
+#define DXGetErrorDescription9 __MINGW_NAME_AW(DXGetErrorDescription9)
+
+HRESULT WINAPI DXTraceA(const char* strFile, DWORD dwLine, HRESULT hr, const char*  strMsg, WINBOOL bPopMsgBox);
+HRESULT WINAPI DXTraceW(const char* strFile, DWORD dwLine, HRESULT hr, const WCHAR* strMsg, WINBOOL bPopMsgBox);
+#define DXTrace __MINGW_NAME_AW(DXTrace)
 
 #if defined(DEBUG) || defined(_DEBUG)
-#define DXTRACE_MSG(str)	DXTrace(__FILE__,(DWORD)__LINE__,0,str,FALSE)
-#define DXTRACE_ERR(str,hr)	DXTrace(__FILE__,(DWORD)__LINE__,hr,str,FALSE)
-#define DXTRACE_ERR_MSGBOX(str,hr)	DXTrace(__FILE__,(DWORD)__LINE__,hr,str,TRUE)
+#define DXTRACE_MSG(str)                DXTrace(__FILE__, (DWORD)__LINE__, 0,  str, FALSE)
+#define DXTRACE_ERR(str,hr)             DXTrace(__FILE__, (DWORD)__LINE__, hr, str, TRUE)
+#define DXTRACE_ERR_NOMSGBOX(str,hr)    DXTrace(__FILE__, (DWORD)__LINE__, hr, str, FALSE)
 #else
-#define DXTRACE_MSG(str)	(0L)
-#define DXTRACE_ERR(str,hr)	(hr)
-#define DXTRACE_ERR_MSGBOX(str,hr)	(hr)
+#define DXTRACE_MSG(str)                __MSABI_LONG(0)
+#define DXTRACE_ERR(str,hr)             (hr)
+#define DXTRACE_ERR_NOMSGBOX(str,hr)    (hr)
 #endif
 
 #ifdef __cplusplus
-}
-#endif
-#endif
+} /* extern "C" */
+#endif /* defined(__cplusplus) */
+
+#endif /* __WINE_DXERR9_H */

@@ -1,229 +1,372 @@
-/*
- * nspapi.h
- *
- * Windows Sockets Namespace Service Provider API definitions.
- *
- *
- * $Id: nspapi.h,v 7258c92e2a48 2017/11/14 20:07:02 keith $
- *
- * Written by Anders Norlander <anorland@hem2.passagen.se>
- * Copyright (C) 1998, 1999, 2002, 2004, 2017, MinGW.org Project
- *
- *
- * Permission is hereby granted, free of charge, to any person obtaining a
- * copy of this software and associated documentation files (the "Software"),
- * to deal in the Software without restriction, including without limitation
- * the rights to use, copy, modify, merge, publish, distribute, sublicense,
- * and/or sell copies of the Software, and to permit persons to whom the
- * Software is furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice (including the next
- * paragraph) shall be included in all copies or substantial portions of the
- * Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
- * DEALINGS IN THE SOFTWARE.
- *
+/**
+ * This file has no copyright assigned and is placed in the Public Domain.
+ * This file is part of the mingw-w64 runtime package.
+ * No warranty is given; refer to the file DISCLAIMER.PD within this package.
  */
-#ifndef _NSPAPI_H
-#pragma GCC system_header
+#ifndef _NSPAPI_INCLUDED
+#define _NSPAPI_INCLUDED
 
-/* <winsock2.h> will include <nspapi.i> selectively, to resolve circular
- * definition references; thus...
- */
-#ifndef __WINSOCK2_H_SOURCED__
-/* ...only when NOT engaged in such selective inclusion, do we process
- * the entire content of <nspapi.h>; furthermore, before we DO process
- * the full content, we must process the WinSock API declarations from
- * <winsock.h> or <winsock2.h>, BEFORE we define the <nspapi.h> repeat
- * inclusion guard, so that <winsock2.h> may, if necessary, recurse to
- * access the selectively exposed content.  Inclusion of the following
- * private header will declare the necessary WinSock API, choosing to
- * include either <winsock.h> or <winsock2.h> by default, on the same
- * basis as the similar choice made in <windows.h>
- */
-#include "_winsock.h"
+#include <_mingw_unicode.h>
 
-/* We can now be confident that the WinSock API has been appropriately
- * declared; we may now define the <nspapi.h> repeat inclusion guard.
- */
-#define _NSPAPI_H
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-#define NS_ALL					 0
+#ifndef _tagBLOB_DEFINED
+#define _tagBLOB_DEFINED
+#define _BLOB_DEFINED
+#define _LPBLOB_DEFINED
+  typedef struct _BLOB {
+    ULONG cbSize;
+    BYTE *pBlobData;
+  } BLOB,*LPBLOB;
+#endif
 
-#define NS_SAP					 1
-#define NS_NDS					 2
-#define NS_PEER_BROWSE				 3
+#ifndef GUID_DEFINED
+#define GUID_DEFINED
+  typedef struct _GUID {
+    unsigned __LONG32 Data1;
+    unsigned short Data2;
+    unsigned short Data3;
+    unsigned char Data4[8];
+  } GUID;
+#endif
 
-#define NS_TCPIP_LOCAL				10
-#define NS_TCPIP_HOSTS				11
-#define NS_DNS					12
-#define NS_NETBT				13
-#define NS_WINS 				14
+#ifndef __LPGUID_DEFINED__
+#define __LPGUID_DEFINED__
+  typedef GUID *LPGUID;
+#endif
 
-#define NS_NBP					20
+#define SERVICE_RESOURCE (0x00000001)
+#define SERVICE_SERVICE (0x00000002)
+#define SERVICE_LOCAL (0x00000004)
 
-#define NS_MS					30
-#define NS_STDA 				31
-#define NS_NTDS 				32
+#define SERVICE_REGISTER (0x00000001)
+#define SERVICE_DEREGISTER (0x00000002)
+#define SERVICE_FLUSH (0x00000003)
+#define SERVICE_ADD_TYPE (0x00000004)
+#define SERVICE_DELETE_TYPE (0x00000005)
 
-#define NS_X500 				40
-#define NS_NIS					41
-#define NS_NISPLUS				42
+#define SERVICE_FLAG_DEFER (0x00000001)
+#define SERVICE_FLAG_HARD (0x00000002)
 
-#define NS_WRQ					50
+#define PROP_COMMENT (0x00000001)
+#define PROP_LOCALE (0x00000002)
+#define PROP_DISPLAY_HINT (0x00000004)
+#define PROP_VERSION (0x00000008)
+#define PROP_START_TIME (0x00000010)
+#define PROP_MACHINE (0x00000020)
+#define PROP_ADDRESSES (0x00000100)
+#define PROP_SD (0x00000200)
+#define PROP_ALL (0x80000000)
 
-#define SERVICE_REGISTER			 1
-#define SERVICE_DEREGISTER			 2
-#define SERVICE_FLUSH				 3
-#define SERVICE_FLAG_HARD		0x00000002
+#define SERVICE_ADDRESS_FLAG_RPC_CN (0x00000001)
+#define SERVICE_ADDRESS_FLAG_RPC_DG (0x00000002)
+#define SERVICE_ADDRESS_FLAG_RPC_NB (0x00000004)
 
-#endif	/* !__WINSOCK2_H_SOURCED__ */
+#define NS_DEFAULT (0)
 
-#ifndef RC_INVOKED
-#if ! (defined _NSPAPI_H && defined _WINSOCK2_H)
-/* The following definitions are exposed either when <nspapi.h> is included
- * directly, or when selectively included by <winsock2.h>, but we must take
- * care to define them only on the first time of reading.
- *
- * We need a complete definition for the BLOB data type, which is provided
- * in "wtypes.h", (and possibly exposed due to prior selective inclusion by
- * <winsock2.h>); if neither of these have been included previously, we may
- * acquire the requisite definition by selective inclusion now.
- */
-#define __NSPAPI_H_SOURCED__  1
-#include "wtypes.h"
+#define NS_SAP (1)
+#define NS_NDS (2)
+#define NS_PEER_BROWSE (3)
 
-_BEGIN_C_DECLS
+#define NS_TCPIP_LOCAL (10)
+#define NS_TCPIP_HOSTS (11)
+#define NS_DNS (12)
+#define NS_NETBT (13)
+#define NS_WINS (14)
+#define NS_NLA (15)
+#if (_WIN32_WINNT >= 0x0600)
+#define NS_BTH (16)
+#endif
 
-/* Technically, according to MSDN, the SOCKET_ADDRESS structure should be
- * defined in <winsock2.h>, which has not necessarily been included by the
- * time we get to here, yet the CSADDR_INFO structure, (which is correctly
- * defined in this file), requires its full definition.  Furthermore, the
- * CSADDR_INFO structure is representative of the data which is returned
- * by the GetAddressByName() function, (also declared in this file), which
- * is declared as deprecated in WinSock v2, (and thus, we would not expect
- * any such dependency on this WinSock v2 specific <winsock2.h> data type).
- * This Microsoft API design is critically flawed, but we can mitigate the
- * fault by defining the SOCKET_ADDRESS structure here, whence we make it
- * available to <winsock2.h> via selective inclusion.
- */
-typedef
-struct _SOCKET_ADDRESS
-{ LPSOCKADDR		 lpSockaddr;
-  INT			 iSockaddrLength;
-} SOCKET_ADDRESS, *PSOCKET_ADDRESS, *LPSOCKET_ADDRESS;
+#define NS_NBP (20)
 
-/* Notwithstanding that, according to MSDN,  the CSADDR_INFO structure is
- * correctly defined below, (it should not be defined in <winsock2.h>, and
- * user code should include <nspapi.h> to obtain the complete definition),
- * <winsock2.h> DOES define the WSAQUERYSET data type, which requires at
- * least an incomplete type definition for the LPCSADDR_INFO pointer type;
- * thus, it is convenient to expose this incomplete definition when this
- * file, <nspapi.h>, is selectively included by <winsock2.h>, whereas the
- * complete definition of the CSADDR_INFO data type may be deferred until
- * the user includes <nspapi.h> directly.
- */
-typedef struct _CSADDR_INFO  CSADDR_INFO, *PCSADDR_INFO, *LPCSADDR_INFO;
+#define NS_MS (30)
+#define NS_STDA (31)
+#define NS_NTDS (32)
 
-_END_C_DECLS
+#if (_WIN32_WINNT >= 0x0600)
+#define NS_EMAIL (37)
+#define NS_PNRPNAME (38)
+#define NS_PNRPCLOUD (39)
+#endif
 
-#undef __NSPAPI_H_SOURCED__
-#endif	/* ! (_NSPAPI_H && _WINSOCK2_H) */
+#define NS_X500 (40)
+#define NS_NIS (41)
 
-#ifdef _NSPAPI_H
-/* This indicates that <nspapi.h> has been included directly...
- */
-_BEGIN_C_DECLS
+#define NS_VNS (50)
 
-/* ...thus it is now appropriate to provide the complete type definition
- * for the CSADDR_INFO structure...
- */
-struct _CSADDR_INFO
-{ SOCKET_ADDRESS	 LocalAddr;
-  SOCKET_ADDRESS	 RemoteAddr;
-  INT			 iSocketType;
-  INT			 iProtocol;
-};
+#define NSTYPE_HIERARCHICAL (0x00000001)
+#define NSTYPE_DYNAMIC (0x00000002)
+#define NSTYPE_ENUMERABLE (0x00000004)
+#define NSTYPE_WORKGROUP (0x00000008)
 
-/* ...in addition to other data types, and function prototypes, which are
- * specific to this header file.
- */
-typedef
-struct _SERVICE_ADDRESS
-{ DWORD 		 dwAddressType;
-  DWORD 		 dwAddressFlags;
-  DWORD 		 dwAddressLength;
-  DWORD 		 dwPrincipalLength;
-  BYTE			*lpAddress;
-  BYTE			*lpPrincipal;
-} SERVICE_ADDRESS;
+#define XP_CONNECTIONLESS (0x00000001)
+#define XP_GUARANTEED_DELIVERY (0x00000002)
+#define XP_GUARANTEED_ORDER (0x00000004)
+#define XP_MESSAGE_ORIENTED (0x00000008)
+#define XP_PSEUDO_STREAM (0x00000010)
+#define XP_GRACEFUL_CLOSE (0x00000020)
+#define XP_EXPEDITED_DATA (0x00000040)
+#define XP_CONNECT_DATA (0x00000080)
+#define XP_DISCONNECT_DATA (0x00000100)
+#define XP_SUPPORTS_BROADCAST (0x00000200)
+#define XP_SUPPORTS_MULTICAST (0x00000400)
+#define XP_BANDWIDTH_ALLOCATION (0x00000800)
+#define XP_FRAGMENTATION (0x00001000)
+#define XP_ENCRYPTS (0x00002000)
 
-typedef
-struct _SERVICE_ADDRESSES
-{ DWORD 		 dwAddressCount;
-  SERVICE_ADDRESS	 Addresses[1];
-} SERVICE_ADDRESSES, *PSERVICE_ADDRESSES, *LPSERVICE_ADDRESSES;
+#define RES_SOFT_SEARCH (0x00000001)
+#define RES_FIND_MULTIPLE (0x00000002)
+#define RES_SERVICE (0x00000004)
 
-typedef
-struct _SERVICE_INFOA
-{ LPGUID		 lpServiceType;
-  LPSTR 		 lpServiceName;
-  LPSTR 		 lpComment;
-  LPSTR 		 lpLocale;
-  DWORD 		 dwDisplayHint;
-  DWORD 		 dwVersion;
-  DWORD 		 dwTime;
-  LPSTR 		 lpMachineName;
-  LPSERVICE_ADDRESSES	 lpServiceAddress;
-  BLOB			 ServiceSpecificInfo;
-} SERVICE_INFOA, *LPSERVICE_INFOA;
+#define SERVICE_TYPE_VALUE_SAPIDA "SapId"
+#define SERVICE_TYPE_VALUE_SAPIDW L"SapId"
 
-typedef
-struct _SERVICE_INFOW
-{ LPGUID		 lpServiceType;
-  LPWSTR		 lpServiceName;
-  LPWSTR		 lpComment;
-  LPWSTR		 lpLocale;
-  DWORD 		 dwDisplayHint;
-  DWORD 		 dwVersion;
-  DWORD 		 dwTime;
-  LPWSTR		 lpMachineName;
-  LPSERVICE_ADDRESSES	 lpServiceAddress;
-  BLOB			 ServiceSpecificInfo;
-} SERVICE_INFOW, *LPSERVICE_INFOW;
+#define SERVICE_TYPE_VALUE_CONNA "ConnectionOriented"
+#define SERVICE_TYPE_VALUE_CONNW L"ConnectionOriented"
 
-typedef __AW_ALIAS__(SERVICE_INFO), *LPSERVICE_INFO;
-typedef void *LPSERVICE_ASYNC_INFO;
+#define SERVICE_TYPE_VALUE_TCPPORTA "TcpPort"
+#define SERVICE_TYPE_VALUE_TCPPORTW L"TcpPort"
 
-#define SetService __AW_SUFFIXED__(SetService)
-INT WINAPI SetServiceA
-  ( DWORD, DWORD, DWORD, LPSERVICE_INFOA, LPSERVICE_ASYNC_INFO, LPDWORD
-  );
-INT WINAPI SetServiceW
-  ( DWORD, DWORD, DWORD, LPSERVICE_INFOW, LPSERVICE_ASYNC_INFO, LPDWORD
-  );
+#define SERVICE_TYPE_VALUE_UDPPORTA "UdpPort"
+#define SERVICE_TYPE_VALUE_UDPPORTW L"UdpPort"
 
-#define GetAddressByName __AW_SUFFIXED__(GetAddressByName)
-INT WINAPI GetAddressByNameA
-  ( DWORD, LPGUID, LPSTR, LPINT, DWORD, LPSERVICE_ASYNC_INFO, LPVOID,
-    LPDWORD, LPSTR, LPDWORD
-  );
-INT WINAPI GetAddressByNameW
-  ( DWORD, LPGUID, LPWSTR, LPINT, DWORD, LPSERVICE_ASYNC_INFO, LPVOID,
-    LPDWORD, LPWSTR, LPDWORD
-  );
+#define SERVICE_TYPE_VALUE_SAPID __MINGW_NAME_AW(SERVICE_TYPE_VALUE_SAPID)
+#define SERVICE_TYPE_VALUE_CONN __MINGW_NAME_AW(SERVICE_TYPE_VALUE_CONN)
+#define SERVICE_TYPE_VALUE_TCPPORT __MINGW_NAME_AW(SERVICE_TYPE_VALUE_TCPPORT)
+#define SERVICE_TYPE_VALUE_UDPPORT __MINGW_NAME_AW(SERVICE_TYPE_VALUE_UDPPORT)
 
-#define _SERVICE_INFO __AW_SUFFIXED__(SERVICE_INFO)
+#define SET_SERVICE_PARTIAL_SUCCESS (0x00000001)
 
-_END_C_DECLS
+  typedef struct _NS_INFOA {
+    DWORD dwNameSpace;
+    DWORD dwNameSpaceFlags;
+    LPSTR lpNameSpace;
+  } NS_INFOA,*PNS_INFOA,*LPNS_INFOA;
 
-#endif	/* _NSPAPI_H */
-#endif	/* ! RC_INVOKED */
+  typedef struct _NS_INFOW {
+    DWORD dwNameSpace;
+    DWORD dwNameSpaceFlags;
+    LPWSTR lpNameSpace;
+  } NS_INFOW,*PNS_INFOW,*LPNS_INFOW;
 
-#endif	/* _NSPAPI_H: $RCSfile: nspapi.h,v $: end of file */
+  __MINGW_TYPEDEF_AW(NS_INFO)
+  __MINGW_TYPEDEF_AW(PNS_INFO)
+  __MINGW_TYPEDEF_AW(LPNS_INFO)
+
+  typedef struct _SERVICE_TYPE_VALUE {
+    DWORD dwNameSpace;
+    DWORD dwValueType;
+    DWORD dwValueSize;
+    DWORD dwValueNameOffset;
+    DWORD dwValueOffset;
+  } SERVICE_TYPE_VALUE,*PSERVICE_TYPE_VALUE,*LPSERVICE_TYPE_VALUE;
+
+  typedef struct _SERVICE_TYPE_VALUE_ABSA {
+    DWORD dwNameSpace;
+    DWORD dwValueType;
+    DWORD dwValueSize;
+    LPSTR lpValueName;
+    PVOID lpValue;
+  } SERVICE_TYPE_VALUE_ABSA,*PSERVICE_TYPE_VALUE_ABSA,*LPSERVICE_TYPE_VALUE_ABSA;
+
+  typedef struct _SERVICE_TYPE_VALUE_ABSW {
+    DWORD dwNameSpace;
+    DWORD dwValueType;
+    DWORD dwValueSize;
+    LPWSTR lpValueName;
+    PVOID lpValue;
+  } SERVICE_TYPE_VALUE_ABSW,*PSERVICE_TYPE_VALUE_ABSW,*LPSERVICE_TYPE_VALUE_ABSW;
+
+  __MINGW_TYPEDEF_AW(SERVICE_TYPE_VALUE_ABS)
+  __MINGW_TYPEDEF_AW(PSERVICE_TYPE_VALUE_ABS)
+  __MINGW_TYPEDEF_AW(LPSERVICE_TYPE_VALUE_ABS)
+
+  typedef struct _SERVICE_TYPE_INFO {
+    DWORD dwTypeNameOffset;
+    DWORD dwValueCount;
+    SERVICE_TYPE_VALUE Values[1];
+  } SERVICE_TYPE_INFO,*PSERVICE_TYPE_INFO,*LPSERVICE_TYPE_INFO;
+
+  typedef struct _SERVICE_TYPE_INFO_ABSA {
+    LPSTR lpTypeName;
+    DWORD dwValueCount;
+    SERVICE_TYPE_VALUE_ABSA Values[1];
+  } SERVICE_TYPE_INFO_ABSA,*PSERVICE_TYPE_INFO_ABSA,*LPSERVICE_TYPE_INFO_ABSA;
+  typedef struct _SERVICE_TYPE_INFO_ABSW {
+    LPWSTR lpTypeName;
+    DWORD dwValueCount;
+    SERVICE_TYPE_VALUE_ABSW Values[1];
+  } SERVICE_TYPE_INFO_ABSW,*PSERVICE_TYPE_INFO_ABSW,*LPSERVICE_TYPE_INFO_ABSW;
+
+  __MINGW_TYPEDEF_AW(SERVICE_TYPE_INFO_ABS)
+  __MINGW_TYPEDEF_AW(PSERVICE_TYPE_INFO_ABS)
+  __MINGW_TYPEDEF_AW(LPSERVICE_TYPE_INFO_ABS)
+
+  typedef struct _SERVICE_ADDRESS {
+    DWORD dwAddressType;
+    DWORD dwAddressFlags;
+    DWORD dwAddressLength;
+    DWORD dwPrincipalLength;
+    BYTE *lpAddress;
+    BYTE *lpPrincipal;
+  } SERVICE_ADDRESS,*PSERVICE_ADDRESS,*LPSERVICE_ADDRESS;
+
+  typedef struct _SERVICE_ADDRESSES {
+    DWORD dwAddressCount;
+    SERVICE_ADDRESS Addresses[1];
+  } SERVICE_ADDRESSES,*PSERVICE_ADDRESSES,*LPSERVICE_ADDRESSES;
+
+  typedef struct _SERVICE_INFOA {
+    LPGUID lpServiceType;
+    LPSTR lpServiceName;
+    LPSTR lpComment;
+    LPSTR lpLocale;
+    DWORD dwDisplayHint;
+    DWORD dwVersion;
+    DWORD dwTime;
+    LPSTR lpMachineName;
+    LPSERVICE_ADDRESSES lpServiceAddress;
+    BLOB ServiceSpecificInfo;
+  } SERVICE_INFOA,*PSERVICE_INFOA,*LPSERVICE_INFOA;
+
+  typedef struct _SERVICE_INFOW {
+    LPGUID lpServiceType;
+    LPWSTR lpServiceName;
+    LPWSTR lpComment;
+    LPWSTR lpLocale;
+    DWORD dwDisplayHint;
+    DWORD dwVersion;
+    DWORD dwTime;
+    LPWSTR lpMachineName;
+    LPSERVICE_ADDRESSES lpServiceAddress;
+    BLOB ServiceSpecificInfo;
+  } SERVICE_INFOW,*PSERVICE_INFOW,*LPSERVICE_INFOW;
+
+  __MINGW_TYPEDEF_AW(SERVICE_INFO)
+  __MINGW_TYPEDEF_AW(PSERVICE_INFO)
+  __MINGW_TYPEDEF_AW(LPSERVICE_INFO)
+
+  typedef struct _NS_SERVICE_INFOA {
+    DWORD dwNameSpace;
+    SERVICE_INFOA ServiceInfo;
+  } NS_SERVICE_INFOA,*PNS_SERVICE_INFOA,*LPNS_SERVICE_INFOA;
+
+  typedef struct _NS_SERVICE_INFOW {
+    DWORD dwNameSpace;
+    SERVICE_INFOW ServiceInfo;
+  } NS_SERVICE_INFOW,*PNS_SERVICE_INFOW,*LPNS_SERVICE_INFOW;
+
+  __MINGW_TYPEDEF_AW(NS_SERVICE_INFO)
+  __MINGW_TYPEDEF_AW(PNS_SERVICE_INFO)
+  __MINGW_TYPEDEF_AW(LPNS_SERVICE_INFO)
+
+#ifndef __CSADDR_DEFINED__
+#define __CSADDR_DEFINED__
+
+  typedef struct _SOCKET_ADDRESS {
+    LPSOCKADDR lpSockaddr;
+    INT iSockaddrLength;
+  } SOCKET_ADDRESS,*PSOCKET_ADDRESS,*LPSOCKET_ADDRESS;
+
+  typedef struct _CSADDR_INFO {
+    SOCKET_ADDRESS LocalAddr;
+    SOCKET_ADDRESS RemoteAddr;
+    INT iSocketType;
+    INT iProtocol;
+  } CSADDR_INFO,*PCSADDR_INFO,*LPCSADDR_INFO;
+#endif
+
+  typedef struct _PROTOCOL_INFOA {
+    DWORD dwServiceFlags;
+    INT iAddressFamily;
+    INT iMaxSockAddr;
+    INT iMinSockAddr;
+    INT iSocketType;
+    INT iProtocol;
+    DWORD dwMessageSize;
+    LPSTR lpProtocol;
+  } PROTOCOL_INFOA,*PPROTOCOL_INFOA,*LPPROTOCOL_INFOA;
+
+  typedef struct _PROTOCOL_INFOW {
+    DWORD dwServiceFlags;
+    INT iAddressFamily;
+    INT iMaxSockAddr;
+    INT iMinSockAddr;
+    INT iSocketType;
+    INT iProtocol;
+    DWORD dwMessageSize;
+    LPWSTR lpProtocol;
+  } PROTOCOL_INFOW,*PPROTOCOL_INFOW,*LPPROTOCOL_INFOW;
+
+  __MINGW_TYPEDEF_AW(PROTOCOL_INFO)
+  __MINGW_TYPEDEF_AW(PPROTOCOL_INFO)
+  __MINGW_TYPEDEF_AW(LPPROTOCOL_INFO)
+
+  typedef struct _NETRESOURCE2A {
+    DWORD dwScope;
+    DWORD dwType;
+    DWORD dwUsage;
+    DWORD dwDisplayType;
+    LPSTR lpLocalName;
+    LPSTR lpRemoteName;
+    LPSTR lpComment;
+    NS_INFO ns_info;
+    GUID ServiceType;
+    DWORD dwProtocols;
+    LPINT lpiProtocols;
+  } NETRESOURCE2A,*PNETRESOURCE2A,*LPNETRESOURCE2A;
+
+  typedef struct _NETRESOURCE2W {
+    DWORD dwScope;
+    DWORD dwType;
+    DWORD dwUsage;
+    DWORD dwDisplayType;
+    LPWSTR lpLocalName;
+    LPWSTR lpRemoteName;
+    LPWSTR lpComment;
+    NS_INFO ns_info;
+    GUID ServiceType;
+    DWORD dwProtocols;
+    LPINT lpiProtocols;
+  } NETRESOURCE2W,*PNETRESOURCE2W,*LPNETRESOURCE2W;
+
+  __MINGW_TYPEDEF_AW(NETRESOURCE2)
+  __MINGW_TYPEDEF_AW(PNETRESOURCE2)
+  __MINGW_TYPEDEF_AW(LPNETRESOURCE2)
+
+  typedef DWORD (*LPFN_NSPAPI)(VOID);
+
+  typedef VOID (*LPSERVICE_CALLBACK_PROC)(LPARAM lParam,HANDLE hAsyncTaskHandle);
+  typedef struct _SERVICE_ASYNC_INFO {
+    LPSERVICE_CALLBACK_PROC lpServiceCallbackProc;
+    LPARAM lParam;
+    HANDLE hAsyncTaskHandle;
+  } SERVICE_ASYNC_INFO,*PSERVICE_ASYNC_INFO,*LPSERVICE_ASYNC_INFO;
+
+#define EnumProtocols __MINGW_NAME_AW(EnumProtocols)
+#define GetAddressByName __MINGW_NAME_AW(GetAddressByName)
+#define GetTypeByName __MINGW_NAME_AW(GetTypeByName)
+#define GetNameByType __MINGW_NAME_AW(GetNameByType)
+#define SetService __MINGW_NAME_AW(SetService)
+#define GetService __MINGW_NAME_AW(GetService)
+
+  INT WINAPI EnumProtocolsA(LPINT lpiProtocols,LPVOID lpProtocolBuffer,LPDWORD lpdwBufferLength);
+  INT WINAPI EnumProtocolsW(LPINT lpiProtocols,LPVOID lpProtocolBuffer,LPDWORD lpdwBufferLength);
+  INT WINAPI GetAddressByNameA(DWORD dwNameSpace,LPGUID lpServiceType,LPSTR lpServiceName,LPINT lpiProtocols,DWORD dwResolution,LPSERVICE_ASYNC_INFO lpServiceAsyncInfo,LPVOID lpCsaddrBuffer,LPDWORD lpdwBufferLength,LPSTR lpAliasBuffer,LPDWORD lpdwAliasBufferLength);
+  INT WINAPI GetAddressByNameW(DWORD dwNameSpace,LPGUID lpServiceType,LPWSTR lpServiceName,LPINT lpiProtocols,DWORD dwResolution,LPSERVICE_ASYNC_INFO lpServiceAsyncInfo,LPVOID lpCsaddrBuffer,LPDWORD lpdwBufferLength,LPWSTR lpAliasBuffer,LPDWORD lpdwAliasBufferLength);
+  INT WINAPI GetTypeByNameA(LPSTR lpServiceName,LPGUID lpServiceType);
+  INT WINAPI GetTypeByNameW(LPWSTR lpServiceName,LPGUID lpServiceType);
+  INT WINAPI GetNameByTypeA(LPGUID lpServiceType,LPSTR lpServiceName,DWORD dwNameLength);
+  INT WINAPI GetNameByTypeW(LPGUID lpServiceType,LPWSTR lpServiceName,DWORD dwNameLength);
+  INT WINAPI SetServiceA(DWORD dwNameSpace,DWORD dwOperation,DWORD dwFlags,LPSERVICE_INFOA lpServiceInfo,LPSERVICE_ASYNC_INFO lpServiceAsyncInfo,LPDWORD lpdwStatusFlags);
+  INT WINAPI SetServiceW(DWORD dwNameSpace,DWORD dwOperation,DWORD dwFlags,LPSERVICE_INFOW lpServiceInfo,LPSERVICE_ASYNC_INFO lpServiceAsyncInfo,LPDWORD lpdwStatusFlags);
+  INT WINAPI GetServiceA(DWORD dwNameSpace,LPGUID lpGuid,LPSTR lpServiceName,DWORD dwProperties,LPVOID lpBuffer,LPDWORD lpdwBufferSize,LPSERVICE_ASYNC_INFO lpServiceAsyncInfo);
+  INT WINAPI GetServiceW(DWORD dwNameSpace,LPGUID lpGuid,LPWSTR lpServiceName,DWORD dwProperties,LPVOID lpBuffer,LPDWORD lpdwBufferSize,LPSERVICE_ASYNC_INFO lpServiceAsyncInfo);
+
+#ifdef __cplusplus
+}
+#endif
+#endif

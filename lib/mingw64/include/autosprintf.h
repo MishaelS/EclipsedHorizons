@@ -1,5 +1,5 @@
 /* Class autosprintf - formatted output to an ostream.
-   Copyright (C) 2002, 2012, 2013 Free Software Foundation, Inc.
+   Copyright (C) 2002, 2012-2016 Free Software Foundation, Inc.
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU Lesser General Public License as published by
@@ -12,7 +12,7 @@
    GNU Lesser General Public License for more details.
 
    You should have received a copy of the GNU Lesser General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+   along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
 
 #ifndef _AUTOSPRINTF_H
 #define _AUTOSPRINTF_H
@@ -47,7 +47,8 @@ namespace gnu
                 _AUTOSPRINTF_ATTRIBUTE_FORMAT();
     /* Copy constructor.  */
     autosprintf (const autosprintf& src);
-    autosprintf& operator = (autosprintf copy);
+    /* Assignment operator.  */
+    autosprintf& operator = (autosprintf temporary);
     /* Destructor: frees the temporarily allocated string.  */
     ~autosprintf ();
     /* Conversion to string.  */

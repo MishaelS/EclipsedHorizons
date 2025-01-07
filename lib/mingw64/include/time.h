@@ -1,510 +1,327 @@
-/*
- * time.h
- *
- * Type definitions and function declarations relating to date and time.
- *
- * $Id: time.h,v bfab21e13fbe 2016/08/24 23:01:17 keithmarshall $
- *
- * Written by Colin Peters <colin@bird.fu.is.saga-u.ac.jp>
- * Copyright (C) 1997-2007, 2011, 2015, 2016, MinGW.org Project.
- *
- *
- * Permission is hereby granted, free of charge, to any person obtaining a
- * copy of this software and associated documentation files (the "Software"),
- * to deal in the Software without restriction, including without limitation
- * the rights to use, copy, modify, merge, publish, distribute, sublicense,
- * and/or sell copies of the Software, and to permit persons to whom the
- * Software is furnished to do so, subject to the following conditions:
- *
- * The above copyright notice, this permission notice, and the following
- * disclaimer shall be included in all copies or substantial portions of
- * the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
- * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
- * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OF OR OTHER
- * DEALINGS IN THE SOFTWARE.
- *
+/**
+ * This file has no copyright assigned and is placed in the Public Domain.
+ * This file is part of the mingw-w64 runtime package.
+ * No warranty is given; refer to the file DISCLAIMER.PD within this package.
  */
-#if ! defined _TIME_H || defined __need_time_t
-#pragma GCC system_header
+#ifndef _TIME_H_
+#define _TIME_H_
 
-/* Irrespective of whether this is normal or selective inclusion of
- * <time.h>, we ALWAYS require the definition for time_t; get it by
- * selective inclusion from its primary source, in <sys/types.h>;
- * note that we must ALWAYS delegate this, when __need_time_t is
- * defined, even when _TIME_H had been defined previously, to ensure
- * that __need_time_t is properly reset, and thus cannot compromise
- * a later inclusion of <sys/types.h>
- */
-#undef __need_time_h
-#define __need_time_t  1
-#include <sys/types.h>
+#include <crtdefs.h>
 
-#ifndef _TIME_H
-/* To support selective partial inclusion, we do not immediately define
- * the normal _TIME_H guard macro; initially, we also clear all of those
- * declaraction subset selection macros which are applicable herein.
- */
-#undef __need_struct_timespec
-#undef __need_wchar_decls
+#ifndef _WIN32
+#error Only Win32 target is supported!
+#endif
 
-#if defined __SCHED_H_SOURCED__
-/* This is selective inclusion by <sched.h>; although not a standard
- * MinGW.org header, we provide this hook to grant access from third
- * party implementations, (e.g. pthreads-win32), to get a definition
- * for struct timespec, which POSIX requires it to provide.
- *
- * Note that, in common with all selective inclusion strategies, we
- * do not define the _TIME_H guard macro in this case, and we select
- * only the minimally required subset of declarations to be exposed
- * from within <time.h>, as required by <sched.h>
- */
-# define __need_struct_timespec  1
-
-#elif defined __WCHAR_H_SOURCED__
-/* This is selective inclusion by <wchar.h>; thus, we do not define the
- * _TIME_H guard macro, and we select only the minimally required subset
- * of declarations to be exposed from within <time.h>
- */
-# define __need_wchar_decls  1
-
-/* Both ISO-C and POSIX stipulate that <wchar.h> shall declare "struct tm"
- * as an incomplete structure, with its complete declaration to be provided
- * by <time.h>; provide an incomplete forward declaration, to satisfy this
- * minimal requirement for selective inclusion by <wchar.h>
- */
-struct tm;
-
+#if defined(__LIBMSVCRT__)
+/* When building mingw-w64, this should be blank.  */
+#define _SECIMP
 #else
-#define _TIME_H
-/* This is normal inclusion of <time.h>, in its own right.  All our system
- * headers are required to include <_mingw.h>, but in the case of selective
- * inclusion, we delegate that responsibility to the including header; when
- * including <time.h> directly, we must fulfil this requirement now.
- */
-#include <_mingw.h>
+#ifndef _SECIMP
+#define _SECIMP __declspec(dllimport)
+#endif /* _SECIMP */
+#endif /* defined(__LIBMSVCRT__) */
 
-/* Number of clock ticks per second. A clock tick is the unit by which
- * processor time is measured and is returned by 'clock'.
- */
-#define CLOCKS_PER_SEC	((clock_t)(1000))
-#define CLK_TCK 	CLOCKS_PER_SEC
+/* Adding timespec definition.  */
+#include <sys/timeb.h>
 
-#define __need_struct_timespec  1
-#define __need_wchar_decls  1
+#pragma pack(push,_CRT_PACKING)
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifndef _CRTIMP
+#define _CRTIMP __declspec(dllimport)
+#endif
+
+#ifndef _WCHAR_T_DEFINED
+#define _WCHAR_T_DEFINED
+  typedef unsigned short wchar_t;
+#endif
+
+#ifndef _TIME32_T_DEFINED
+#define _TIME32_T_DEFINED
+  typedef long __time32_t;
+#endif
+
+#ifndef _TIME64_T_DEFINED
+#define _TIME64_T_DEFINED
+  __MINGW_EXTENSION typedef __int64 __time64_t;
+#endif
+
+#ifndef _TIME_T_DEFINED
+#define _TIME_T_DEFINED
+#ifdef _USE_32BIT_TIME_T
+  typedef __time32_t time_t;
+#else
+  typedef __time64_t time_t;
+#endif
+#endif
+
+#ifndef _CLOCK_T_DEFINED
+#define _CLOCK_T_DEFINED
+  typedef long clock_t;
+#endif
+
+#ifndef _SIZE_T_DEFINED
+#define _SIZE_T_DEFINED
+#undef size_t
+#ifdef _WIN64
+  __MINGW_EXTENSION typedef unsigned __int64 size_t;
+#else
+  typedef unsigned int size_t;
+#endif
+#endif
+
+#ifndef _SSIZE_T_DEFINED
+#define _SSIZE_T_DEFINED
+#undef ssize_t
+#ifdef _WIN64
+  __MINGW_EXTENSION typedef __int64 ssize_t;
+#else
+  typedef int ssize_t;
+#endif
+#endif
+
+#ifndef NULL
+#ifdef __cplusplus
+#ifndef _WIN64
+#define NULL 0
+#else
+#define NULL 0LL
+#endif  /* W64 */
+#else
+#define NULL ((void *)0)
+#endif
+#endif
+
+#ifndef _TM_DEFINED
+#define _TM_DEFINED
+  struct tm {
+    int tm_sec;
+    int tm_min;
+    int tm_hour;
+    int tm_mday;
+    int tm_mon;
+    int tm_year;
+    int tm_wday;
+    int tm_yday;
+    int tm_isdst;
+  };
+#endif
+
+#define CLOCKS_PER_SEC 1000
+
+#ifdef _UCRT
+#define TIME_UTC 1
+#endif
+
+  _CRTIMP int *__cdecl __daylight(void);
+  _CRTIMP long *__cdecl __dstbias(void);
+  _CRTIMP long *__cdecl __timezone(void);
+  _CRTIMP char **__cdecl __tzname(void);
+#define _daylight (* __daylight())
+#define _dstbias (* __dstbias())
+#define _timezone (* __timezone())
+#define _tzname (__tzname())
+
+#undef __MINGW_STRFTIME_FORMAT
+
+#if defined(__clang__)
+#define __MINGW_STRFTIME_FORMAT strftime
+#elif defined(_UCRT)
+#define __MINGW_STRFTIME_FORMAT gnu_strftime
+#else
+#define __MINGW_STRFTIME_FORMAT ms_strftime
+#endif
+
+  _CRTIMP errno_t __cdecl _get_daylight(int *_Daylight);
+  _CRTIMP errno_t __cdecl _get_dstbias(long *_Daylight_savings_bias);
+  _CRTIMP errno_t __cdecl _get_timezone(long *_Timezone);
+  _CRTIMP errno_t __cdecl _get_tzname(size_t *_ReturnValue,char *_Buffer,size_t _SizeInBytes,int _Index);
+  char *__cdecl asctime(const struct tm *_Tm) __MINGW_ATTRIB_DEPRECATED_SEC_WARN;
+  _SECIMP errno_t __cdecl asctime_s (char *_Buf,size_t _SizeInWords,const struct tm *_Tm);
+  _CRTIMP char *__cdecl _ctime32(const __time32_t *_Time) __MINGW_ATTRIB_DEPRECATED_SEC_WARN;
+  _SECIMP errno_t __cdecl _ctime32_s (char *_Buf,size_t _SizeInBytes,const __time32_t *_Time);
+  clock_t __cdecl clock(void);
+  _CRTIMP double __cdecl _difftime32(__time32_t _Time1,__time32_t _Time2);
+  _CRTIMP struct tm *__cdecl _gmtime32(const __time32_t *_Time) __MINGW_ATTRIB_DEPRECATED_SEC_WARN;
+  _SECIMP errno_t __cdecl _gmtime32_s (struct tm *_Tm,const __time32_t *_Time);
+  _CRTIMP struct tm *__cdecl _localtime32(const __time32_t *_Time) __MINGW_ATTRIB_DEPRECATED_SEC_WARN;
+  _SECIMP errno_t __cdecl _localtime32_s (struct tm *_Tm,const __time32_t *_Time);
+  size_t __cdecl strftime(char * __restrict__ _Buf,size_t _SizeInBytes,const char * __restrict__ _Format,const struct tm * __restrict__ _Tm) __attribute__((__format__ (__MINGW_STRFTIME_FORMAT, 3, 0)));
+  _CRTIMP size_t __cdecl _strftime_l(char * __restrict__ _Buf,size_t _Max_size,const char * __restrict__ _Format,const struct tm * __restrict__ _Tm,_locale_t _Locale);
+  _CRTIMP char *__cdecl _strdate(char *_Buffer) __MINGW_ATTRIB_DEPRECATED_SEC_WARN;
+  _SECIMP errno_t __cdecl _strdate_s (char *_Buf,size_t _SizeInBytes);
+  __DEFINE_CPP_OVERLOAD_SECURE_FUNC_0_0(errno_t, _strdate_s, char, _Str)
+  _CRTIMP char *__cdecl _strtime(char *_Buffer) __MINGW_ATTRIB_DEPRECATED_SEC_WARN;
+  _SECIMP errno_t __cdecl _strtime_s (char *_Buf ,size_t _SizeInBytes);
+  __DEFINE_CPP_OVERLOAD_SECURE_FUNC_0_0(errno_t, _strtime_s, char, _Str)
+  _CRTIMP __time32_t __cdecl _time32(__time32_t *_Time);
+#ifdef _UCRT
+  _CRTIMP int __cdecl _timespec32_get(struct _timespec32 *_Ts, int _Base);
+#endif
+  _CRTIMP __time32_t __cdecl _mktime32(struct tm *_Tm);
+  _CRTIMP __time32_t __cdecl _mkgmtime32(struct tm *_Tm);
+
+#if defined (_POSIX_) || defined(__GNUC__)
+  void __cdecl tzset(void) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+#endif
+#if !defined (_POSIX_)
+#ifndef _UCRT
+  _CRTIMP
+#endif
+  void __cdecl _tzset(void);
+#endif
+
+  _CRTIMP double __cdecl _difftime64(__time64_t _Time1,__time64_t _Time2);
+  _CRTIMP char *__cdecl _ctime64(const __time64_t *_Time) __MINGW_ATTRIB_DEPRECATED_SEC_WARN;
+  _SECIMP errno_t __cdecl _ctime64_s (char *_Buf,size_t _SizeInBytes,const __time64_t *_Time);
+  _CRTIMP struct tm *__cdecl _gmtime64(const __time64_t *_Time) __MINGW_ATTRIB_DEPRECATED_SEC_WARN;
+  _SECIMP errno_t __cdecl _gmtime64_s (struct tm *_Tm,const __time64_t *_Time);
+  _CRTIMP struct tm *__cdecl _localtime64(const __time64_t *_Time) __MINGW_ATTRIB_DEPRECATED_SEC_WARN;
+  _SECIMP errno_t __cdecl _localtime64_s (struct tm *_Tm,const __time64_t *_Time);
+  _CRTIMP __time64_t __cdecl _mktime64(struct tm *_Tm);
+  _CRTIMP __time64_t __cdecl _mkgmtime64(struct tm *_Tm);
+  _CRTIMP __time64_t __cdecl _time64(__time64_t *_Time);
+#ifdef _UCRT
+  _CRTIMP int __cdecl _timespec64_get(struct _timespec64 *_Ts, int _Base);
+#endif
+  unsigned __cdecl _getsystime(struct tm *_Tm);
+  unsigned __cdecl _setsystime(struct tm *_Tm,unsigned _MilliSec);
+
+#ifndef _WTIME_DEFINED
+  _CRTIMP wchar_t *__cdecl _wasctime(const struct tm *_Tm);
+  _SECIMP errno_t __cdecl _wasctime_s (wchar_t *_Buf,size_t _SizeInWords,const struct tm *_Tm);
+  wchar_t *__cdecl _wctime32(const __time32_t *_Time) __MINGW_ATTRIB_DEPRECATED_SEC_WARN;
+  _SECIMP errno_t __cdecl _wctime32_s (wchar_t *_Buf,size_t _SizeInWords,const __time32_t *_Time);
+  size_t __cdecl wcsftime(wchar_t * __restrict__ _Buf,size_t _SizeInWords,const wchar_t * __restrict__ _Format,const struct tm * __restrict__ _Tm);
+  _CRTIMP size_t __cdecl _wcsftime_l(wchar_t * __restrict__ _Buf,size_t _SizeInWords,const wchar_t * __restrict__ _Format,const struct tm * __restrict__ _Tm,_locale_t _Locale);
+  _CRTIMP wchar_t *__cdecl _wstrdate(wchar_t *_Buffer) __MINGW_ATTRIB_DEPRECATED_SEC_WARN;
+  _SECIMP errno_t __cdecl _wstrdate_s (wchar_t *_Buf,size_t _SizeInWords);
+  _CRTIMP wchar_t *__cdecl _wstrtime(wchar_t *_Buffer) __MINGW_ATTRIB_DEPRECATED_SEC_WARN;
+  _SECIMP errno_t __cdecl _wstrtime_s (wchar_t *_Buf,size_t _SizeInWords);
+  _CRTIMP wchar_t *__cdecl _wctime64(const __time64_t *_Time) __MINGW_ATTRIB_DEPRECATED_SEC_WARN;
+  _SECIMP errno_t __cdecl _wctime64_s (wchar_t *_Buf,size_t _SizeInWords,const __time64_t *_Time);
+
+#if !defined (RC_INVOKED) && !defined (_INC_WTIME_INL)
+#define _INC_WTIME_INL
+#ifndef _USE_32BIT_TIME_T
+  wchar_t *__cdecl _wctime(const time_t *_Time) __MINGW_ASM_CALL(_wctime64) __MINGW_ATTRIB_DEPRECATED_SEC_WARN;
+#else
+  wchar_t *__cdecl _wctime(const time_t *_Time) __MINGW_ASM_CALL(_wctime32) __MINGW_ATTRIB_DEPRECATED_SEC_WARN;
+#endif
+#endif
+
+#if !defined (RC_INVOKED) && !defined (_INC_WTIME_S_INL)
+#define _INC_WTIME_S_INL
+#ifndef _USE_32BIT_TIME_T
+  errno_t __cdecl _wctime_s (wchar_t *_Buffer,size_t _SizeInWords,const time_t *_Time) __MINGW_ASM_CALL(_wctime64_s);
+#else
+  errno_t __cdecl _wctime_s (wchar_t *_Buffer,size_t _SizeInWords,const time_t *_Time) __MINGW_ASM_CALL(_wctime32_s);
+#endif
+#endif
+
+#define _WTIME_DEFINED
 #endif
 
 #ifndef RC_INVOKED
-#if defined __need_struct_timespec && ! __struct_timespec_defined
-/* Structure timespec is mandated by POSIX, for specification of
- * intervals with the greatest precision supported by the OS kernel.
- * Although this allows for specification to nanosecond precision, do
- * not be deluded into any false expectation that such short intervals
- * can be realized on Windows; on Win9x derivatives, the metronome used
- * by the process scheduler has a period of ~55 milliseconds, while for
- * WinNT derivatives, the corresponding period is ~15 milliseconds; thus,
- * the shortest intervals which can be realistically timed will range
- * from 0..55 milliseconds on Win9x hosts, and from 0..15 ms on WinNT,
- * with period values normally distributed around means of ~27.5 ms
- * and ~7.5 ms, for the two system types respectively.
- */
-struct timespec
-{ /* Period is sum of tv_sec + tv_nsec; while 32-bits is sufficient
-   * to accommodate tv_nsec, we use 64-bit __time64_t for tv_sec, to
-   * ensure that we have a sufficiently large field to accommodate
-   * Microsoft's ambiguous __time32_t vs. __time64_t representation
-   * of time_t; we may resolve this ambiguity locally, by casting a
-   * pointer to a struct timespec to point to an identically sized
-   * struct __mingw32_timespec, which is defined below.
-   */
-  __time64_t	  tv_sec;	/* seconds; accept 32 or 64 bits */
-  __int32  	  tv_nsec;	/* nanoseconds */
+
+#ifdef _USE_32BIT_TIME_T
+time_t __CRTDECL time(time_t *_Time) __MINGW_ASM_CALL(_time32);
+#ifdef _UCRT
+int __CRTDECL timespec_get(struct timespec* _Ts, int _Base) __MINGW_ASM_CALL(_timespec32_get);
+#endif
+double __CRTDECL difftime(time_t _Time1,time_t _Time2) __MINGW_ASM_CALL(_difftime32);
+struct tm *__CRTDECL localtime(const time_t *_Time) __MINGW_ASM_CALL(_localtime32);
+errno_t __CRTDECL localtime_s(struct tm *_Tm,const time_t *_Time) __MINGW_ASM_CALL(_localtime32_s);
+struct tm *__CRTDECL gmtime(const time_t *_Time) __MINGW_ASM_CALL(_gmtime32);
+errno_t __CRTDECL gmtime_s(struct tm *_Tm, const time_t *_Time) __MINGW_ASM_CALL(_gmtime32_s);
+char *__CRTDECL ctime(const time_t *_Time) __MINGW_ASM_CALL(_ctime32);
+errno_t __CRTDECL ctime_s(char *_Buf,size_t _SizeInBytes,const time_t *_Time) __MINGW_ASM_CALL(_ctime32_s);
+time_t __CRTDECL mktime(struct tm *_Tm) __MINGW_ASM_CALL(_mktime32);
+time_t __CRTDECL _mkgmtime(struct tm *_Tm) __MINGW_ASM_CALL(_mkgmtime32);
+#else
+time_t __CRTDECL time(time_t *_Time) __MINGW_ASM_CALL(_time64);
+#ifdef _UCRT
+int __CRTDECL timespec_get(struct timespec* _Ts, int _Base) __MINGW_ASM_CALL(_timespec64_get);
+#endif
+double __CRTDECL difftime(time_t _Time1,time_t _Time2) __MINGW_ASM_CALL(_difftime64);
+struct tm *__CRTDECL localtime(const time_t *_Time) __MINGW_ASM_CALL(_localtime64);
+errno_t __CRTDECL localtime_s(struct tm *_Tm,const time_t *_Time) __MINGW_ASM_CALL(_localtime64_s);
+struct tm *__CRTDECL gmtime(const time_t *_Time) __MINGW_ASM_CALL(_gmtime64);
+errno_t __CRTDECL gmtime_s(struct tm *_Tm, const time_t *_Time) __MINGW_ASM_CALL(_gmtime64_s);
+char *__CRTDECL ctime(const time_t *_Time) __MINGW_ASM_CALL(_ctime64);
+errno_t __CRTDECL ctime_s(char *_Buf,size_t _SizeInBytes,const time_t *_Time) __MINGW_ASM_CALL(_ctime64_s);
+time_t __CRTDECL mktime(struct tm *_Tm) __MINGW_ASM_CALL(_mktime64);
+time_t __CRTDECL _mkgmtime(struct tm *_Tm) __MINGW_ASM_CALL(_mkgmtime64);
+#endif
+
+#endif /* !RC_INVOKED */
+
+#if !defined(NO_OLDNAMES) || defined(_POSIX)
+#define CLK_TCK CLOCKS_PER_SEC
+
+#ifdef _UCRT
+#define __MINGW_ATTRIB_DEPRECATED_UCRT \
+    __MINGW_ATTRIB_DEPRECATED_MSG( \
+        "Only provided for source compatibility; this variable might " \
+        "not always be accurate when linking to UCRT.")
+#else
+#define __MINGW_ATTRIB_DEPRECATED_UCRT
+#endif
+
+  _CRTIMP extern int daylight __MINGW_ATTRIB_DEPRECATED_UCRT;
+  _CRTIMP extern long timezone __MINGW_ATTRIB_DEPRECATED_UCRT;
+  _CRTIMP extern char *tzname[2] __MINGW_ATTRIB_DEPRECATED_UCRT;
+  void __cdecl tzset(void) __MINGW_ATTRIB_DEPRECATED_MSVC2005;
+#endif
+
+#include <_timeval.h>
+
+#ifndef _TIMEZONE_DEFINED /* also in sys/time.h */
+#define _TIMEZONE_DEFINED
+struct timezone {
+  int tz_minuteswest;
+  int tz_dsttime;
 };
 
-# ifdef _MINGW32_SOURCE_EXTENDED
-struct __mingw32_expanded_timespec
-{
-  /* Equivalent of struct timespec, with disambiguation for the
-   * 32-bit vs. 64-bit tv_sec field declaration.  Period is the
-   * sum of tv_sec + tv_nsec; we use explicitly sized types to
-   * avoid 32-bit vs. 64-bit time_t ambiguity...
-   */
-  union
-  { /* ...within this anonymous union, allowing tv_sec to accommodate
-     * seconds expressed in either of Microsoft's (ambiguously sized)
-     * time_t representations.
-     */
-    __time64_t	__tv64_sec;	/* unambiguously 64 bits */
-    __time32_t	__tv32_sec;	/* unambiguously 32 bits */
-    time_t	  tv_sec;	/* ambiguously 32 or 64 bits */
-  };
-  __int32  	  tv_nsec;	/* nanoseconds */
-};
-# endif /* _MINGW32_SOURCE_EXTENDED */
+  extern int __cdecl mingw_gettimeofday (struct timeval *p, struct timezone *z);
+#endif /* _TIMEZONE_DEFINED */
 
-# define __struct_timespec_defined  1
+#pragma pack(pop)
+
+#if defined(_POSIX_C_SOURCE) && !defined(_POSIX_THREAD_SAFE_FUNCTIONS)
+#define _POSIX_THREAD_SAFE_FUNCTIONS 200112L
 #endif
 
-#ifdef _TIME_H
-#ifdef _MINGW32_SOURCE_EXTENDED
-
-_BEGIN_C_DECLS
-
-__CRT_ALIAS __LIBIMPL__(( FUNCTION = mingw_timespec ))
-/* This non-ANSI convenience function facilitates access to entities
- * defined as struct timespec, while exposing the broken down form of
- * the tv_sec field, as declared within struct __mingw32_timespec.  It
- * is exposed only when _MINGW32_SOURCE_EXTENDED is defined, which is
- * normally implicitly the case, except when in __STRICT_ANSI__ mode
- * unless the user defines it explicitly.
- */
-struct __mingw32_expanded_timespec *mingw_timespec( struct timespec *__tv )
-{ return (struct __mingw32_expanded_timespec *)(__tv); }
-
-_END_C_DECLS
-
-#endif	/* _MINGW32_SOURCE_EXTENDED */
-
-/* <time.h> is also required to duplicate the following type definitions,
- * which are nominally defined in <stddef.h>
- */
-#define __need_NULL
-#define __need_wchar_t
-#define __need_size_t
-#include <stddef.h>
-
-/* A type for measuring processor time in clock ticks; (no need to
- * guard this, since it isn't defined elsewhere).
- */
-typedef long clock_t;
-
-struct tm
-{ /* A structure for storing the attributes of a broken-down time; (once
-   * again, it isn't defined elsewhere, so no guard is necessary).  Note
-   * that we are within the scope of <time.h> itself, so we must provide
-   * the complete structure declaration here.
-   */
-  int  tm_sec;  	/* Seconds: 0-60 (to accommodate leap seconds) */
-  int  tm_min;  	/* Minutes: 0-59 */
-  int  tm_hour; 	/* Hours since midnight: 0-23 */
-  int  tm_mday; 	/* Day of the month: 1-31 */
-  int  tm_mon;  	/* Months *since* January: 0-11 */
-  int  tm_year; 	/* Years since 1900 */
-  int  tm_wday; 	/* Days since Sunday (0-6) */
-  int  tm_yday; 	/* Days since Jan. 1: 0-365 */
-  int  tm_isdst;	/* +1=Daylight Savings Time, 0=No DST, -1=unknown */
-};
-
-_BEGIN_C_DECLS
-
-_CRTIMP __cdecl __MINGW_NOTHROW  clock_t  clock (void);
-
-#if __MSVCRT_VERSION__ < __MSVCR80_DLL
- /* Although specified as ISO-C functions, Microsoft withdrew direct
-  * support for these, with their ISO-C names, from MSVCR80.DLL onwards,
-  * preferring to map them via header file macros, to alternatively named
-  * DLL functions with ambiguous time_t representations; they remain in
-  * MSVCRT.DLL, however, with their original ISO-C names, and time_t
-  * unambiguously represented as a 32-bit data type.
-  */
-_CRTIMP __cdecl __MINGW_NOTHROW  time_t time (time_t *);
-_CRTIMP __cdecl __MINGW_NOTHROW  double difftime (time_t, time_t);
-_CRTIMP __cdecl __MINGW_NOTHROW  time_t mktime (struct tm *);
-#endif
-
-/* These functions write to and return pointers to static buffers that may
- * be overwritten by other function calls. Yikes!
- *
- * NOTE: localtime, and perhaps the others of the four functions grouped
- * below may return NULL if their argument is not 'acceptable'. Also note
- * that calling asctime with a NULL pointer will produce an Invalid Page
- * Fault and crap out your program. Guess how I know. Hint: stat called on
- * a directory gives 'invalid' times in st_atime etc...
- */
-_CRTIMP __cdecl __MINGW_NOTHROW  char *asctime (const struct tm *);
-
-#if __MSVCRT_VERSION__ < __MSVCR80_DLL
- /* Once again, these have been withdrawn from MSVCR80.DLL, (and later),
-  * but remain in MSVCRT.DLL, with unambiguously 32-bit time_t.
-  */
-_CRTIMP __cdecl __MINGW_NOTHROW  char *ctime (const time_t *);
-_CRTIMP __cdecl __MINGW_NOTHROW  struct tm *gmtime (const time_t *);
-_CRTIMP __cdecl __MINGW_NOTHROW  struct tm *localtime (const time_t *);
-#endif
-
-_CRTIMP __cdecl __MINGW_NOTHROW
-size_t strftime (char *, size_t, const char *, const struct tm *);
-
-#ifndef __STRICT_ANSI__
-extern _CRTIMP __cdecl __MINGW_NOTHROW  void _tzset (void);
-
-#ifndef _NO_OLDNAMES
-extern _CRTIMP __cdecl __MINGW_NOTHROW  void tzset (void);
-#endif
-
-_CRTIMP __cdecl __MINGW_NOTHROW  char *_strdate (char *);
-_CRTIMP __cdecl __MINGW_NOTHROW  char *_strtime (char *);
-
-#if __MSVCRT_VERSION__ >= __MSVCR61_DLL || _WIN32_WINNT >= _WIN32_WINNT_WIN2K
-/* These 64-bit time_t variant functions first became available in
- * MSVCR61.DLL, and its descendants; they were subsequently included
- * in MSVCRT.DLL, from its Win2K release onwards.
- */
-_CRTIMP __cdecl __MINGW_NOTHROW  __time64_t _time64( __time64_t *);
-_CRTIMP __cdecl __MINGW_NOTHROW  __time64_t _mktime64 (struct tm *);
-_CRTIMP __cdecl __MINGW_NOTHROW    char *_ctime64 (const __time64_t *);
-_CRTIMP __cdecl __MINGW_NOTHROW    struct tm *_gmtime64 (const __time64_t *);
-_CRTIMP __cdecl __MINGW_NOTHROW    struct tm *_localtime64 (const __time64_t *);
-
-#endif	/* __MSVCR61_DLL, _WIN32_WINNT_WIN2K, and descendants. */
-
-#if __MSVCRT_VERSION__ >= __MSVCR80_DLL || _WIN32_WINNT >= _WIN32_WINNT_VISTA
- /* The following were introduced in MSVCR80.DLL, and they subsequently
-  * appeared in MSVCRT.DLL, from Windows-Vista onwards.
-  */
-_CRTIMP __cdecl __MINGW_NOTHROW    char *_ctime32 (const __time32_t *);
-_CRTIMP __cdecl __MINGW_NOTHROW    double _difftime32 (__time32_t, __time32_t);
-_CRTIMP __cdecl __MINGW_NOTHROW    double _difftime64 (__time64_t, __time64_t);
-_CRTIMP __cdecl __MINGW_NOTHROW    struct tm *_gmtime32 (const __time32_t *);
-_CRTIMP __cdecl __MINGW_NOTHROW    struct tm *_localtime32 (const __time32_t *);
-_CRTIMP __cdecl __MINGW_NOTHROW  __time32_t _mktime32 (struct tm *);
-_CRTIMP __cdecl __MINGW_NOTHROW  __time32_t _mkgmtime32 (struct tm *);
-_CRTIMP __cdecl __MINGW_NOTHROW  __time64_t _mkgmtime64 (struct tm *);
-_CRTIMP __cdecl __MINGW_NOTHROW  __time32_t _time32 (__time32_t *);
-
-# if __MSVCRT_VERSION__ >= __MSVCR80_DLL && defined _USE_32BIT_TIME_T
-  /* Users of MSVCR80.DLL and later, (but not users of MSVCRT.DLL, even
-   * for _WIN32_WINNT_VISTA and later), must contend with the omission of
-   * the following functions from their DLL of choice, thus requiring these
-   * brain damaged mappings, in terms of an ambiguously defined 'time_t';
-   * thus, when 'time_t' is declared to be equivalent to '__time32_t':
-   */
-__CRT_ALIAS __cdecl __MINGW_NOTHROW  time_t time (time_t *__v)
- { return _time32 (__v); }
-
-__CRT_ALIAS __cdecl __MINGW_NOTHROW  double difftime (time_t __v1, time_t __v2)
- { return _difftime32 (__v1, __v2); }
-
-__CRT_ALIAS __cdecl __MINGW_NOTHROW  time_t mktime (struct tm *__v)
- { return _mktime32 (__v); }
-
-__CRT_ALIAS __cdecl __MINGW_NOTHROW  time_t _mkgmtime (struct tm *__v)
- { return _mkgmtime32 (__v); }
-
-__CRT_ALIAS __cdecl __MINGW_NOTHROW  char *ctime (const time_t *__v)
- { return _ctime32 (__v); }
-
-__CRT_ALIAS __cdecl __MINGW_NOTHROW  struct tm *gmtime (const time_t *__v)
- { return _gmtime32 (__v); }
-
-__CRT_ALIAS __cdecl __MINGW_NOTHROW  struct tm *localtime (const time_t *__v)
- { return _localtime32 (__v); }
-
-# elif __MSVCRT_VERSION__ >= __MSVCR80_DLL
-  /* Correspondingly, for users of MSVCR80.DLL and later only, when there
-   * is no explicit declaration to direct the specification of 'time_t', and
-   * thus 'time_t' is assumed to be equivalent to '__time64_t':
-   */
-__CRT_ALIAS __cdecl __MINGW_NOTHROW  time_t time (time_t *__v)
- { return _time64 (__v); }
-
-__CRT_ALIAS __cdecl __MINGW_NOTHROW  double difftime (time_t __v1, time_t __v2)
- { return _difftime64 (__v1, __v2); }
-
-__CRT_ALIAS __cdecl __MINGW_NOTHROW  time_t mktime (struct tm *__v)
- { return _mktime64 (__v); }
-
-__CRT_ALIAS __cdecl __MINGW_NOTHROW  time_t _mkgmtime (struct tm *__v)
- { return _mkgmtime64 (__v); }
-
-__CRT_ALIAS __cdecl __MINGW_NOTHROW  char *ctime (const time_t *__v)
- { return _ctime64 (__v); }
-
-__CRT_ALIAS __cdecl __MINGW_NOTHROW  struct tm *gmtime (const time_t *__v)
- { return _gmtime64 (__v); }
-
-__CRT_ALIAS __cdecl __MINGW_NOTHROW  struct tm *localtime (const time_t *__v)
- { return _localtime64 (__v); }
-
-# endif /* _USE_32BIT_TIME_T brain damage */
-#endif	/* >=__MSVCR80.DLL || >=_WIN32_WINNT_VISTA */
-
-/* _daylight: non zero if daylight savings time is used.
- * _timezone: difference in seconds between GMT and local time.
- * _tzname: standard/daylight savings time zone names (an array with two
- *          elements).
- */
-#ifdef __MSVCRT__
-/* These are for compatibility with pre-VC 5.0 supplied MSVCRT.DLL
- */
-extern _CRTIMP __cdecl __MINGW_NOTHROW  int   *__p__daylight (void);
-extern _CRTIMP __cdecl __MINGW_NOTHROW  long  *__p__timezone (void);
-extern _CRTIMP __cdecl __MINGW_NOTHROW  char **__p__tzname (void);
-
-__MINGW_IMPORT int   _daylight;
-__MINGW_IMPORT long  _timezone;
-__MINGW_IMPORT char *_tzname[2];
-
-#else /* !__MSVCRT__ (i.e. using CRTDLL.DLL) */
-#ifndef __DECLSPEC_SUPPORTED
-
-extern int   *_imp___daylight_dll;
-extern long  *_imp___timezone_dll;
-extern char **_imp___tzname;
-
-#define _daylight  (*_imp___daylight_dll)
-#define _timezone  (*_imp___timezone_dll)
-#define _tzname	   (*_imp___tzname)
-
-#else /* __DECLSPEC_SUPPORTED */
-
-__MINGW_IMPORT int   _daylight_dll;
-__MINGW_IMPORT long  _timezone_dll;
-__MINGW_IMPORT char *_tzname[2];
-
-#define _daylight  _daylight_dll
-#define _timezone  _timezone_dll
-
-#endif /* __DECLSPEC_SUPPORTED */
-#endif /* ! __MSVCRT__ */
-#endif /* ! __STRICT_ANSI__ */
-
-#ifndef _NO_OLDNAMES
-#ifdef __MSVCRT__
-
-/* These go in the oldnames import library for MSVCRT.
- */
-__MINGW_IMPORT int   daylight;
-__MINGW_IMPORT long  timezone;
-__MINGW_IMPORT char *tzname[2];
-
-#else /* ! __MSVCRT__ */
-/* CRTDLL is royally messed up when it comes to these macros.
- * TODO: import and alias these via oldnames import library instead
- * of macros.
- */
-#define daylight  _daylight
-
-/* NOTE: timezone not defined as a macro because it would conflict with
- * struct timezone in sys/time.h.  Also, tzname used to a be macro, but
- * now it's in moldname.
- */
-__MINGW_IMPORT char 	*tzname[2];
-
-#endif	/* ! __MSVCRT__ */
-#endif	/* ! _NO_OLDNAMES */
-
-#if _POSIX_C_SOURCE
-/* The nanosleep() function provides the most general purpose API for
- * process/thread suspension; it provides for specification of periods
- * ranging from ~7.5 ms mean, (on WinNT derivatives; ~27.5 ms on Win9x),
- * extending up to ~136 years, (effectively eternity).
- */
-__cdecl __MINGW_NOTHROW
-int nanosleep( const struct timespec *, struct timespec * );
-
-#ifndef __NO_INLINE__
-/* We may conveniently provide an in-line implementation here,
- * in terms of the __mingw_sleep() helper function.
- */
-__cdecl __MINGW_NOTHROW
-int __mingw_sleep( unsigned long, unsigned long );
-
-__CRT_INLINE __LIBIMPL__(( FUNCTION = nanosleep ))
-int nanosleep( const struct timespec *period, struct timespec *residual )
-{
-  if( residual != (void *)(0) )
-    residual->tv_sec = (__time64_t)(residual->tv_nsec = 0);
-  return __mingw_sleep((unsigned)(period->tv_sec), (period->tv_sec < 0LL)
-    ? (unsigned)(-1) : (unsigned)(period->tv_nsec));
+#ifdef _POSIX_THREAD_SAFE_FUNCTIONS
+__forceinline struct tm *__CRTDECL localtime_r(const time_t *_Time, struct tm *_Tm) {
+  return localtime_s(_Tm, _Time) ? NULL : _Tm;
 }
-#endif	/* !__NO_INLINE__ */
-#endif	/* _POSIX_C_SOURCE */
-
-_END_C_DECLS
-
-#endif	/* _TIME_H included in its own right */
-
-#if __need_wchar_decls && ! (defined _TIME_H && defined _WCHAR_H)
-/* Wide character time function prototypes.  These are nominally declared
- * both here, in <time.h>, and also in <wchar.h>; we declare them here, and
- * make them available for selective inclusion by <wchar.h>, but such that
- * the declarations, and in particular any in-line implementation of the
- * _wctime() function, are visible only on the first time parse, when
- * one of either _TIME_H, or _WCHAR_H, but not both, is defined.
- */
-_BEGIN_C_DECLS
-
-#if defined __MSVCRT__ && ! defined __STRICT_ANSI__
-_CRTIMP __cdecl __MINGW_NOTHROW  wchar_t *_wasctime (const struct tm *);
-_CRTIMP __cdecl __MINGW_NOTHROW  wchar_t *_wstrdate (wchar_t *);
-_CRTIMP __cdecl __MINGW_NOTHROW  wchar_t *_wstrtime (wchar_t *);
-
-#if __MSVCRT_VERSION__ >= __MSVCR61_DLL || _WIN32_WINNT >= _WIN32_WINNT_WIN2K
-/* A __time64_t specific variant of _wctime(), identified as _wctime64(),
- * first appeared in the non-free MSVC specific MSVCR61.DLL, and was added
- * to the freely available platform MSVCRT.DLL from Win2K onwards...
- */
-_CRTIMP __cdecl __MINGW_NOTHROW  wchar_t *_wctime64 (const __time64_t *);
-#endif
-#if __MSVCRT_VERSION__ >= __MSVCR80_DLL || _WIN32_WINNT >= _WIN32_WINNT_VISTA
-/* ...whereas its __time32_t specific counterpart, _wctime32(), did not
- * make an appearance until MSVCR80.DLL, and was not added to MSVCRT.DLL
- * until the release of Vista.
- */
-_CRTIMP __cdecl __MINGW_NOTHROW  wchar_t *_wctime32 (const __time32_t *);
-#endif
-#if __MSVCRT_VERSION__ < __MSVCR80_DLL
-/* Present in all versions of MSVCRT.DLL, but withdrawn from non-free
- * MSVC specific releases from MSVCR80.DLL onwards; in all versions of
- * MSVCRT.DLL, _wctime() accepts a 32-bit time_t argument pointer.
- */
-_CRTIMP __cdecl __MINGW_NOTHROW  wchar_t *_wctime (const time_t *);
-
-#else /* __MSVCRT_VERSION__ >= __MSVCR80_DLL */
-/* For users of the non-free MSVC libraries, we must deal with both the
- * absence of _wctime(), and with Microsoft's attendant _USE_32BIT_TIME_T
- * brain damage, as we map an inline replacement...
- */
-__CRT_ALIAS __cdecl __MINGW_NOTHROW  wchar_t *_wctime (const time_t *__v)
-{
-  /* ...in terms of an appropriately selected time_t size specific
-   * alternative function, which should be available...
-   */
-# ifdef _USE_32BIT_TIME_T
-  /* ...i.e. the __time32_t specific _wctime32(), when the user has
-   * enabled this choice; (the only sane choice, if compatibility with
-   * MSVCRT.DLL is desired)...
-   */
-  return _wctime32 (__v);
-
-# else	/* !_USE_32BIT_TIME_T */
-  /* ...or otherwise, the __time64_t specific _wctime64(), (in which
-   * case, compatibility with MSVCRT.DLL must be sacrificed).
-   */
-  return _wctime64 (__v);
-# endif	/* !_USE_32BIT_TIME_T */
+__forceinline struct tm *__CRTDECL gmtime_r(const time_t *_Time, struct tm *_Tm) {
+  return gmtime_s(_Tm, _Time) ? NULL : _Tm;
 }
-#endif	/* __MSVCRT_VERSION__ >= __MSVCR80_DLL */
-#endif	/* __MSVCRT__ && !__STRICT_ANSI__ */
+__forceinline char *__CRTDECL ctime_r(const time_t *_Time, char *_Str) {
+  return ctime_s(_Str, 0x7fffffff, _Time) ? NULL : _Str;
+}
+__forceinline char *__CRTDECL asctime_r(const struct tm *_Tm, char * _Str) {
+  return asctime_s(_Str, 0x7fffffff, _Tm) ? NULL : _Str;
+}
+#endif
 
-_CRTIMP __cdecl __MINGW_NOTHROW
-size_t wcsftime (wchar_t *, size_t, const wchar_t *, const struct tm *);
+#ifdef __cplusplus
+}
+#endif
 
-_END_C_DECLS
+/* POSIX 2008 says clock_gettime and timespec are defined in time.h header,
+   but other systems - like Linux, Solaris, etc - tend to declare such
+   recent extensions only if the following guards are met.  */
+#if !defined(IN_WINPTHREAD) && \
+	((!defined(_STRICT_STDC) && !defined(__XOPEN_OR_POSIX)) || \
+	 (_POSIX_C_SOURCE > 2) || defined(__EXTENSIONS__))
+#include <pthread_time.h>
+#endif
 
-#endif	/* ! (defined _TIME_H && defined _WCHAR_H) */
+#endif /* End _TIME_H_ */
 
-/* We're done with all <time.h> specific content selectors; clear them.
- */
-#undef __need_time_t
-#undef __need_struct_timespec
-#undef __need_wchar_decls
-
-#endif /* ! RC_INVOKED */
-#endif /* !_TIME_H after __need_time_t processing */
-#endif /* !_TIME_H: $RCSfile: time.h,v $: end of file */

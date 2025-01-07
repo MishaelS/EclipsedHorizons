@@ -23,15 +23,9 @@
 #ifndef __PFHOOK_H
 #define __PFHOOK_H
 
-#if __GNUC__ >=3
-#pragma GCC system_header
-#endif
-
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-#include "ntddk.h"
 
 #define DD_IPFLTRDRVR_DEVICE_NAME         L"\\Device\\IPFILTERDRIVER"
 
@@ -47,15 +41,15 @@ typedef enum _PF_FORWARD_ACTION {
 	PF_ICMP_ON_DROP = 3
 } PF_FORWARD_ACTION;
 
-typedef PF_FORWARD_ACTION STDCALL
-(*PacketFilterExtensionPtr)(
-  /*IN*/ unsigned char  *PacketHeader,
-  /*IN*/ unsigned char  *Packet,
-  /*IN*/ unsigned int  PacketLength,
-  /*IN*/ unsigned int  RecvInterfaceIndex,
-  /*IN*/ unsigned int  SendInterfaceIndex,
-  /*IN*/ IPAddr  RecvLinkNextHop,
-  /*IN*/ IPAddr  SendLinkNextHop);
+typedef PF_FORWARD_ACTION
+(NTAPI *PacketFilterExtensionPtr)(
+  IN unsigned char  *PacketHeader,
+  IN unsigned char  *Packet,
+  IN unsigned int  PacketLength,
+  IN unsigned int  RecvInterfaceIndex,
+  IN unsigned int  SendInterfaceIndex,
+  IN IPAddr  RecvLinkNextHop,
+  IN IPAddr  SendLinkNextHop);
 
 typedef struct _PF_SET_EXTENSION_HOOK_INFO {
   PacketFilterExtensionPtr  ExtensionPointer;

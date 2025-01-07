@@ -1,132 +1,119 @@
+/**
+ * This file has no copyright assigned and is placed in the Public Domain.
+ * This file is part of the mingw-w64 runtime package.
+ * No warranty is given; refer to the file DISCLAIMER.PD within this package.
+ */
+#include <crtdefs.h>
+
+#ifndef _INC_LIMITS
+#define _INC_LIMITS
+
 /*
- * limits.h
+ * File system limits
  *
- * Manifest constants defining the sizes of integral types.
- *
- * $Id: limits.h,v 2499eb7464e6 2017/01/29 14:24:00 keithmarshall $
- *
- * Written by Colin Peters <colin@bird.fu.is.saga-u.ac.jp>
- * Copyright (C) 1997, 1999-2001, 2004, 2005, 2010, 2012, 2017,
- *   MinGW.org Project
- *
- *
- * Permission is hereby granted, free of charge, to any person obtaining a
- * copy of this software and associated documentation files (the "Software"),
- * to deal in the Software without restriction, including without limitation
- * the rights to use, copy, modify, merge, publish, distribute, sublicense,
- * and/or sell copies of the Software, and to permit persons to whom the
- * Software is furnished to do so, subject to the following conditions:
- *
- * The above copyright notice, this permission notice, and the following
- * disclaimer shall be included in all copies or substantial portions of
- * the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
- * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
- * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OF OR OTHER
- * DEALINGS IN THE SOFTWARE.
- *
+ * NOTE: Apparently the actual size of PATH_MAX is 260, but a space is
+ *       required for the NUL. TODO: Test?
+ * NOTE: PATH_MAX is the POSIX equivalent for Microsoft's MAX_PATH; the two
+ *       are semantically identical, with a limit of 259 characters for the
+ *       path name, plus one for a terminating NUL, for a total of 260.
  */
-#ifndef _LIMITS_H
-#pragma GCC system_header
-#define _LIMITS_H
+#define PATH_MAX	260
 
-/* All MinGW headers are required to include <_mingw.h>
- */
-#include <_mingw.h>
+#define CHAR_BIT 8
+#define SCHAR_MIN (-128)
+#define SCHAR_MAX 127
+#define UCHAR_MAX 0xff
 
-/* File system limits
- *
- * TODO (REVIEW): Are NAME_MAX and OPEN_MAX file system limits, or not?
- * Are they the same as FILENAME_MAX and FOPEN_MAX from <stdio.h>?
- *
- * NOTE: PATH_MAX is the POSIX equivalent for Microsoft's MAX_PATH; the
- * two are semantically identical, with a limit of 259 characters for the
- * path name, plus one for a terminating NUL, making a total of 260.
- */
-#ifndef __STRICT_ANSI__
-# define PATH_MAX	260
-#endif
-
-/* Characteristics of the char data type.
- *
- * FIXME: Is MB_LEN_MAX correct?  Probably yes, for Microsoft MBCS, which
- * effectively seem to all be DBCS.
- */
-#define CHAR_BIT	8
-#define MB_LEN_MAX	2
-
-#define SCHAR_MIN	(-128)
-#define SCHAR_MAX	127
-
-#define UCHAR_MAX	255
-
-#if '\x80' < 0
-/* FIXME: is this safe?  I think it might just be testing
- * the preprocessor, not the compiler itself.
- */
-# define CHAR_MIN	SCHAR_MIN
-# define CHAR_MAX	SCHAR_MAX
+#ifdef __CHAR_UNSIGNED__
+#define CHAR_MIN 0
+#define CHAR_MAX UCHAR_MAX
 #else
-# define CHAR_MIN	0
-# define CHAR_MAX	UCHAR_MAX
+#define CHAR_MIN SCHAR_MIN
+#define CHAR_MAX SCHAR_MAX
 #endif
 
-/* Maximum and minimum values for ints.
- */
-#define INT_MAX		2147483647
-#define INT_MIN		(-INT_MAX-1)
+#define MB_LEN_MAX 5
+#define SHRT_MIN (-32768)
+#define SHRT_MAX 32767
+#define USHRT_MAX 0xffffU
+#define INT_MIN (-2147483647 - 1)
+#define INT_MAX 2147483647
+#define UINT_MAX 0xffffffffU
+#define LONG_MIN (-2147483647L - 1)
+#define LONG_MAX 2147483647L
+#define ULONG_MAX 0xffffffffUL
+#define LLONG_MAX 9223372036854775807ll
+#define LLONG_MIN (-9223372036854775807ll - 1)
+#define ULLONG_MAX 0xffffffffffffffffull
 
-#define UINT_MAX	0xFFFFFFFF
+#define _I8_MIN (-127 - 1)
+#define _I8_MAX 127
+#define _UI8_MAX 0xffu
 
-/* Maximum and minimum values for shorts.
- */
-#define SHRT_MAX	32767
-#define SHRT_MIN	(-SHRT_MAX-1)
+#define _I16_MIN (-32767 - 1)
+#define _I16_MAX 32767
+#define _UI16_MAX 0xffffu
 
-#define USHRT_MAX	0xFFFF
+#define _I32_MIN (-2147483647 - 1)
+#define _I32_MAX 2147483647
+#define _UI32_MAX 0xffffffffu
 
-/* Maximum and minimum values for longs and unsigned longs;
- * this isn't correct for Alphas, which have 64 bit longs, but
- * that is probably no longer a concern.
- */
-#define LONG_MAX	2147483647L
-#define LONG_MIN	(-LONG_MAX-1)
-
-#define ULONG_MAX	0xFFFFFFFFUL
-
-#ifndef __STRICT_ANSI__
-/* POSIX wants this.
- */
-#define SSIZE_MAX	LONG_MAX
+#if defined(__GNUC__)
+#undef LONG_LONG_MAX
+#define LONG_LONG_MAX 9223372036854775807ll
+#undef LONG_LONG_MIN
+#define LONG_LONG_MIN (-LONG_LONG_MAX-1)
+#undef ULONG_LONG_MAX
+#define ULONG_LONG_MAX (2ull * LONG_LONG_MAX + 1ull)
 #endif
 
-#if _ISOC99_SOURCE
-/* Implicitly defined in <_mingw.h>, (or explicitly defined by
- * the user), for C99, C++, or POSIX.1-2001; make these ISO-C99
- * macro names available.
- */
-#define LLONG_MAX	9223372036854775807LL
-#define LLONG_MIN	(-LLONG_MAX - 1)
-#define ULLONG_MAX	(2ULL * LLONG_MAX + 1)
+#define _I64_MIN (-9223372036854775807ll - 1)
+#define _I64_MAX 9223372036854775807ll
+#define _UI64_MAX 0xffffffffffffffffull
+
+#ifndef SIZE_MAX
+#ifdef _WIN64
+#define SIZE_MAX _UI64_MAX
+#else
+#define SIZE_MAX UINT_MAX
+#endif
 #endif
 
-#if defined __GNUC__ && ! defined __STRICT_ANSI__
-/* The GNU C compiler also allows 'long long int', but we don't
- * want that capability polluting the strict ANSI namespace.
- */
-#define LONG_LONG_MAX	9223372036854775807LL
-#define LONG_LONG_MIN	(-LONG_LONG_MAX-1)
-#define ULONG_LONG_MAX	(2ULL * LONG_LONG_MAX + 1)
+#ifndef SSIZE_MAX
+#ifdef _WIN64
+#define SSIZE_MAX _I64_MAX
+#else
+#define SSIZE_MAX INT_MAX
+#endif
+#endif
 
-/* MSVC compatibility
- */
-#define _I64_MIN	LONG_LONG_MIN
-#define _I64_MAX	LONG_LONG_MAX
-#define _UI64_MAX	ULONG_LONG_MAX
+#ifdef _POSIX_
+#define _POSIX_ARG_MAX 4096
+#define _POSIX_CHILD_MAX 6
+#define _POSIX_LINK_MAX 8
+#define _POSIX_MAX_CANON 255
+#define _POSIX_MAX_INPUT 255
+#define _POSIX_NAME_MAX 14
+#define _POSIX_NGROUPS_MAX 0
+#define _POSIX_OPEN_MAX 16
+#define _POSIX_PATH_MAX 255
+#define _POSIX_PIPE_BUF 512
+#define _POSIX_SSIZE_MAX 32767
+#define _POSIX_STREAM_MAX 8
+#define _POSIX_TZNAME_MAX 3
+#define ARG_MAX 14500
+#define LINK_MAX 1024
+#define MAX_CANON _POSIX_MAX_CANON
+#define MAX_INPUT _POSIX_MAX_INPUT
+#define NAME_MAX 255
+#define NGROUPS_MAX 16
+#define OPEN_MAX 32
+#undef PATH_MAX
+#define PATH_MAX 512
+#define PIPE_BUF _POSIX_PIPE_BUF
+/*#define SSIZE_MAX _POSIX_SSIZE_MAX*/
+#define STREAM_MAX 20
+#define TZNAME_MAX 10
+#endif
 
-#endif	/* __GNUC__ && !__STRICT_ANSI__ */
-#endif	/* !_LIMITS_H: $RCSfile: limits.h,v $: end of file */
+#endif /* _INC_LIMITS */

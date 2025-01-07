@@ -1,117 +1,141 @@
-/*
- * windows.h
- *
- * Include supplementary headers for core Win32 API definitions.
- *
- * $Id: windows.h,v 7258c92e2a48 2017/11/14 20:07:02 keith $
- *
- * Written by Anders Norlander <anorland@hem2.passagen.se>
- * Copyright (C) 1998-2003, 2006, 2007, 2016, 2017, MinGW.org Project
- *
- *
- * Permission is hereby granted, free of charge, to any person obtaining a
- * copy of this software and associated documentation files (the "Software"),
- * to deal in the Software without restriction, including without limitation
- * the rights to use, copy, modify, merge, publish, distribute, sublicense,
- * and/or sell copies of the Software, and to permit persons to whom the
- * Software is furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice (including the next
- * paragraph) shall be included in all copies or substantial portions of the
- * Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
- * DEALINGS IN THE SOFTWARE.
- *
+/**
+ * This file has no copyright assigned and is placed in the Public Domain.
+ * This file is part of the mingw-w64 runtime package.
+ * No warranty is given; refer to the file DISCLAIMER.PD within this package.
  */
-#ifndef _WINDOWS_H
-#pragma GCC system_header
-#define _WINDOWS_H
+#ifndef _WINDOWS_
+#define _WINDOWS_
 
-#ifdef RC_INVOKED
-/* winresrc.h includes the necessary headers */
+#include <_mingw.h>
+#include <sdkddkver.h>
+
+/* Some kludge for Obj-C.
+   For Obj-C the 'interface' is a keyword, but interface is used
+   in midl-code too.  To resolve this conflict for at least the
+   main windows API header, we define it here temporary.  */
+#ifdef __OBJC__
+#pragma push_macro("interface")
+#undef interface
+#define interface struct
+#endif
+
+#ifndef _INC_WINDOWS
+#define _INC_WINDOWS
+
+#if defined(RC_INVOKED) && !defined(NOWINRES)
+
 #include <winresrc.h>
 #else
 
-#include <stdarg.h>
-#include <windef.h>
-#include <wincon.h>
-#include <winbase.h>
-#if !(defined NOGDI || defined  _WINGDI_H)
-#include <wingdi.h>
+#ifdef RC_INVOKED
+#define NOATOM
+#define NOGDI
+#define NOGDICAPMASKS
+#define NOMETAFILE
+#define NOMINMAX
+#define NOMSG
+#define NOOPENFILE
+#define NORASTEROPS
+#define NOSCROLL
+#define NOSOUND
+#define NOSYSMETRICS
+#define NOTEXTMETRIC
+#define NOWH
+#define NOCOMM
+#define NOKANJI
+#define NOCRYPT
+#define NOMCX
 #endif
+
+#if defined(__x86_64) && \
+  !(defined(_X86_) || defined(__i386__) || defined(_IA64_))
+#if !defined(_AMD64_)
+#define _AMD64_
+#endif
+#endif /* _AMD64_ */
+
+#if defined(__ia64__) && \
+  !(defined(_X86_) || defined(__x86_64) || defined(_AMD64_))
+#if !defined(_IA64_)
+#define _IA64_
+#endif
+#endif /* _IA64_ */
+
+#ifndef RC_INVOKED
+#include <excpt.h>
+#include <stdarg.h>
+#endif
+
+#include <windef.h>
+#include <winbase.h>
+#include <wingdi.h>
 #include <winuser.h>
 #include <winnls.h>
+#include <wincon.h>
 #include <winver.h>
-#include <winnetwk.h>
 #include <winreg.h>
-#include <winsvc.h>
+#include <winnetwk.h>
+#include <virtdisk.h>
 
 #ifndef WIN32_LEAN_AND_MEAN
 #include <cderr.h>
 #include <dde.h>
 #include <ddeml.h>
 #include <dlgs.h>
-#include <imm.h>
 #include <lzexpand.h>
 #include <mmsystem.h>
 #include <nb30.h>
 #include <rpc.h>
 #include <shellapi.h>
 #include <winperf.h>
+#if defined(__USE_W32_SOCKETS) || !defined(__CYGWIN__)
+#include <winsock.h>
+#endif
+#ifndef NOCRYPT
+#include <wincrypt.h>
+#include <winefs.h>
+#include <winscard.h>
+#endif
+
+#ifndef NOUSER
 #ifndef NOGDI
-#include <commdlg.h>
 #include <winspool.h>
-#endif
-#if defined Win32_Winsock
-#warning "The Win32_Winsock macro is deprecated; use __USE_W32_SOCKETS instead."
-# ifndef __USE_W32_SOCKETS
-#  define __USE_W32_SOCKETS
-# endif
-#endif
-#if defined __USE_W32_SOCKETS \
- || ! (defined __CYGWIN__ || defined __MSYS__ || defined _UWIN)
- /* The WinSock API should be declared; including the following
-  * private header file will make an informed choice between the
-  * WinSock v1.1 API, as declared in <winsock.h>, and WinSock v2,
-  * as declared in <winsock2.h>, as the preferred default level
-  * of WinSock API support to be offered.
-  */
-# include "_winsock.h"
- /*
-  * FIXME: strict Microsoft compatibility may require inclusion
-  * of <mswsock.h> here as well; however, this has been observed
-  * to produce undefined symbol errors, if <winsock2.h> has been
-  * included before <windows.h>, so we omit this.
-  */
-# /* include <mswsock.h> */
-#endif
-#ifndef NOGDI
-/* In older versions we disallowed COM declarations in __OBJC__
-   because of conflicts with @interface directive.  Define _OBJC_NO_COM
-   to keep this behaviour.  */
-#if !defined (_OBJC_NO_COM)
-#if (__GNUC__ >= 3) || defined (__WATCOMC__)
+#ifdef INC_OLE1
+#include <ole.h>
+#else
 #include <ole2.h>
 #endif
-#endif /* _OBJC_NO_COM */
+#include <commdlg.h>
+#endif
+#endif
 #endif
 
-#endif /* WIN32_LEAN_AND_MEAN */
+#ifndef __CYGWIN__
+#include <stralign.h>
+#endif
 
-#endif /* RC_INVOKED */
+#ifdef INC_OLE2
+#include <ole2.h>
+#endif
 
+#ifndef NOSERVICE
+#include <winsvc.h>
+#endif
+
+#ifndef NOMCX
+#include <mcx.h>
+#endif
+
+#ifndef NOIME
+#include <imm.h>
+#endif
+
+#endif
+#endif
+
+/* Restore old value of interface for Obj-C.  See above.  */
 #ifdef __OBJC__
-/* FIXME: Not undefining BOOL here causes all BOOLs to be WINBOOL (int),
-   but undefining it causes trouble as well if a file is included after
-   windows.h
-*/
-#undef BOOL
+#pragma pop_macro("interface")
 #endif
 
-#endif	/* _WINDOWS_H: $RCSfile: windows.h,v $: end of file */
+#endif

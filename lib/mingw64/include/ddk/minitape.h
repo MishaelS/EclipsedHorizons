@@ -22,17 +22,11 @@
 #ifndef __MINITAPE_H
 #define __MINITAPE_H
 
-#if __GNUC__ >=3
-#pragma GCC system_header
-#endif
-
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 #pragma pack(push,4)
-
-#include "ntddk.h"
 
 #define MEDIA_ERASEABLE                   0x00000001
 #define MEDIA_WRITE_ONCE                  0x00000002
@@ -83,9 +77,9 @@ typedef struct _INQUIRYDATA {
 	UCHAR  DeviceTypeQualifier : 3;
 	UCHAR  DeviceTypeModifier : 7;
 	UCHAR  RemovableMedia : 1;
-	union {
+	__GNU_EXTENSION union {
 		UCHAR  Versions;
-		struct {
+		__GNU_EXTENSION struct {
 			UCHAR  ANSIVersion : 3;
 			UCHAR  ECMAVersion : 3;
 			UCHAR  ISOVersion : 2;
@@ -156,32 +150,32 @@ typedef struct _MODE_CAPABILITIES_PAGE {
 	UCHAR Reserved11[2];
 } MODE_CAPABILITIES_PAGE, *PMODE_CAPABILITIES_PAGE;
 
-typedef BOOLEAN DDKAPI
+typedef BOOLEAN NTAPI
 (*TAPE_VERIFY_INQUIRY_ROUTINE)(
-  /*IN*/ PINQUIRYDATA  InquiryData,
-  /*IN*/ PMODE_CAPABILITIES_PAGE ModeCapabilitiesPage);
+	IN PINQUIRYDATA  InquiryData,
+	IN PMODE_CAPABILITIES_PAGE ModeCapabilitiesPage);
 
-typedef VOID DDKAPI
+typedef VOID NTAPI
 (*TAPE_EXTENSION_INIT_ROUTINE)(
-  /*IN*/ PVOID  MinitapeExtension,
-  /*IN*/ PINQUIRYDATA  InquiryData,
-  /*IN*/ PMODE_CAPABILITIES_PAGE  ModeCapabilitiesPage);
+  IN PVOID  MinitapeExtension,
+  IN PINQUIRYDATA  InquiryData,
+  IN PMODE_CAPABILITIES_PAGE  ModeCapabilitiesPage);
 
-typedef VOID DDKAPI
+typedef VOID NTAPI
 (*TAPE_ERROR_ROUTINE)(
-  /*IN*/ PVOID  MinitapeExtension,
-  /*IN*/ PSCSI_REQUEST_BLOCK  Srb,
-  /*IN OUT*/ PTAPE_STATUS  TapeStatus);
+    IN PVOID  MinitapeExtension,
+    IN PSCSI_REQUEST_BLOCK  Srb,
+    IN OUT PTAPE_STATUS  TapeStatus);
 
-typedef TAPE_STATUS DDKAPI
+typedef TAPE_STATUS NTAPI
 (*TAPE_PROCESS_COMMAND_ROUTINE)(
-  /*IN OUT*/ PVOID  MinitapeExtension,
-  /*IN OUT*/ PVOID  CommandExtension,
-  /*IN OUT*/ PVOID  CommandParameters,
-  /*IN OUT*/ PSCSI_REQUEST_BLOCK  Srb,
-  /*IN*/ ULONG  CallNumber,
-  /*IN*/ TAPE_STATUS  StatusOfLastCommand,
-  /*IN OUT*/ PULONG  RetryFlags);
+  IN OUT PVOID  MinitapeExtension,
+  IN OUT PVOID  CommandExtension,
+  IN OUT PVOID  CommandParameters,
+  IN OUT PSCSI_REQUEST_BLOCK  Srb,
+  IN ULONG  CallNumber,
+  IN TAPE_STATUS  StatusOfLastCommand,
+  IN OUT PULONG  RetryFlags);
 
 #define TAPE_RETRY_MASK                   0x0000FFFF
 #define IGNORE_ERRORS                     0x00010000
@@ -206,7 +200,7 @@ typedef struct _TAPE_INIT_DATA {
   TAPE_PROCESS_COMMAND_ROUTINE  SetMediaParameters;
   TAPE_PROCESS_COMMAND_ROUTINE  SetPosition;
   TAPE_PROCESS_COMMAND_ROUTINE  WriteMarks;
-  TAPE_PROCESS_COMMAND_ROUTINE  PreProcessReadWrite /* OPTIONAL */;
+  TAPE_PROCESS_COMMAND_ROUTINE  PreProcessReadWrite; /* optional */
 } TAPE_INIT_DATA, *PTAPE_INIT_DATA;
 
 typedef struct _TAPE_PHYS_POSITION {

@@ -20,11 +20,12 @@
  *
  */
 
-#ifndef __KBDMOU_H
-#define __KBDMOU_H
+#pragma once
 
-#include <ddk/ntddkbd.h>
-#include <ddk/ntddmou.h>
+#define _KBDMOU_
+
+#include <ntddkbd.h>
+#include <ntddmou.h>
 
 #define DD_KEYBOARD_PORT_DEVICE_NAME      "\\Device\\KeyboardPort"
 #define DD_KEYBOARD_PORT_DEVICE_NAME_U    L"\\Device\\KeyboardPort"
@@ -77,15 +78,15 @@
   CTL_CODE(FILE_DEVICE_MOUSE, 0x0400, METHOD_NEITHER, FILE_ANY_ACCESS)
 
 typedef struct _CONNECT_DATA {
-	PDEVICE_OBJECT  ClassDeviceObject;
-	PVOID  ClassService;
+  PDEVICE_OBJECT ClassDeviceObject;
+  PVOID ClassService;
 } CONNECT_DATA, *PCONNECT_DATA;
 
 typedef VOID
 (STDAPICALLTYPE *PSERVICE_CALLBACK_ROUTINE)(
-  /*IN*/ PVOID NormalContext,
-  /*IN*/ PVOID SystemArgument1,
-  /*IN*/ PVOID SystemArgument2,
-  /*IN OUT*/ PVOID SystemArgument3);
+  IN PVOID NormalContext,
+  IN PVOID SystemArgument1,
+  IN PVOID SystemArgument2,
+  IN OUT PVOID SystemArgument3);
 
-#endif /* __KBDMOU_H */
+#include <wmidata.h>
