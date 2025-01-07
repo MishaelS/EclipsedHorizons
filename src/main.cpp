@@ -1,14 +1,11 @@
-#include "raylib.h"
+#include "../include/utils/includes.hpp"
+#include "../include/core/game_engine.hpp"
 
 int main() {
-    // Ваш код
-    InitWindow(800, 600, "Raylib Example");
-    while (!WindowShouldClose()) {
-        BeginDrawing();
-        ClearBackground(RAYWHITE);
-        DrawText("Hello, Raylib!", 10, 10, 20, DARKGRAY);
-        EndDrawing();
-    }
-    CloseWindow();
+    
+	GameEngine game;
+	game.initialize();
+	game.run();
+
     return 0;
 }

@@ -71,11 +71,41 @@ include CMakeFiles/EclipsedHorizons.dir/flags.make
 CMakeFiles/EclipsedHorizons.dir/codegen:
 .PHONY : CMakeFiles/EclipsedHorizons.dir/codegen
 
+CMakeFiles/EclipsedHorizons.dir/src/core/camera_controller.cpp.obj: CMakeFiles/EclipsedHorizons.dir/flags.make
+CMakeFiles/EclipsedHorizons.dir/src/core/camera_controller.cpp.obj: CMakeFiles/EclipsedHorizons.dir/includes_CXX.rsp
+CMakeFiles/EclipsedHorizons.dir/src/core/camera_controller.cpp.obj: C:/Dev/projectsCpp/EclipsedHorizons/src/core/camera_controller.cpp
+CMakeFiles/EclipsedHorizons.dir/src/core/camera_controller.cpp.obj: CMakeFiles/EclipsedHorizons.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Dev\projectsCpp\EclipsedHorizons\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/EclipsedHorizons.dir/src/core/camera_controller.cpp.obj"
+	C:\Dev\projectsCpp\EclipsedHorizons\lib\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EclipsedHorizons.dir/src/core/camera_controller.cpp.obj -MF CMakeFiles\EclipsedHorizons.dir\src\core\camera_controller.cpp.obj.d -o CMakeFiles\EclipsedHorizons.dir\src\core\camera_controller.cpp.obj -c C:\Dev\projectsCpp\EclipsedHorizons\src\core\camera_controller.cpp
+
+CMakeFiles/EclipsedHorizons.dir/src/core/camera_controller.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/EclipsedHorizons.dir/src/core/camera_controller.cpp.i"
+	C:\Dev\projectsCpp\EclipsedHorizons\lib\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Dev\projectsCpp\EclipsedHorizons\src\core\camera_controller.cpp > CMakeFiles\EclipsedHorizons.dir\src\core\camera_controller.cpp.i
+
+CMakeFiles/EclipsedHorizons.dir/src/core/camera_controller.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/EclipsedHorizons.dir/src/core/camera_controller.cpp.s"
+	C:\Dev\projectsCpp\EclipsedHorizons\lib\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\projectsCpp\EclipsedHorizons\src\core\camera_controller.cpp -o CMakeFiles\EclipsedHorizons.dir\src\core\camera_controller.cpp.s
+
+CMakeFiles/EclipsedHorizons.dir/src/core/game_engine.cpp.obj: CMakeFiles/EclipsedHorizons.dir/flags.make
+CMakeFiles/EclipsedHorizons.dir/src/core/game_engine.cpp.obj: CMakeFiles/EclipsedHorizons.dir/includes_CXX.rsp
+CMakeFiles/EclipsedHorizons.dir/src/core/game_engine.cpp.obj: C:/Dev/projectsCpp/EclipsedHorizons/src/core/game_engine.cpp
+CMakeFiles/EclipsedHorizons.dir/src/core/game_engine.cpp.obj: CMakeFiles/EclipsedHorizons.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Dev\projectsCpp\EclipsedHorizons\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/EclipsedHorizons.dir/src/core/game_engine.cpp.obj"
+	C:\Dev\projectsCpp\EclipsedHorizons\lib\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EclipsedHorizons.dir/src/core/game_engine.cpp.obj -MF CMakeFiles\EclipsedHorizons.dir\src\core\game_engine.cpp.obj.d -o CMakeFiles\EclipsedHorizons.dir\src\core\game_engine.cpp.obj -c C:\Dev\projectsCpp\EclipsedHorizons\src\core\game_engine.cpp
+
+CMakeFiles/EclipsedHorizons.dir/src/core/game_engine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/EclipsedHorizons.dir/src/core/game_engine.cpp.i"
+	C:\Dev\projectsCpp\EclipsedHorizons\lib\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Dev\projectsCpp\EclipsedHorizons\src\core\game_engine.cpp > CMakeFiles\EclipsedHorizons.dir\src\core\game_engine.cpp.i
+
+CMakeFiles/EclipsedHorizons.dir/src/core/game_engine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/EclipsedHorizons.dir/src/core/game_engine.cpp.s"
+	C:\Dev\projectsCpp\EclipsedHorizons\lib\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\projectsCpp\EclipsedHorizons\src\core\game_engine.cpp -o CMakeFiles\EclipsedHorizons.dir\src\core\game_engine.cpp.s
+
 CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj: CMakeFiles/EclipsedHorizons.dir/flags.make
 CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj: CMakeFiles/EclipsedHorizons.dir/includes_CXX.rsp
 CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj: C:/Dev/projectsCpp/EclipsedHorizons/src/main.cpp
 CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj: CMakeFiles/EclipsedHorizons.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Dev\projectsCpp\EclipsedHorizons\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Dev\projectsCpp\EclipsedHorizons\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj"
 	C:\Dev\projectsCpp\EclipsedHorizons\lib\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj -MF CMakeFiles\EclipsedHorizons.dir\src\main.cpp.obj.d -o CMakeFiles\EclipsedHorizons.dir\src\main.cpp.obj -c C:\Dev\projectsCpp\EclipsedHorizons\src\main.cpp
 
 CMakeFiles/EclipsedHorizons.dir/src/main.cpp.i: cmake_force
@@ -86,23 +116,44 @@ CMakeFiles/EclipsedHorizons.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/EclipsedHorizons.dir/src/main.cpp.s"
 	C:\Dev\projectsCpp\EclipsedHorizons\lib\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\projectsCpp\EclipsedHorizons\src\main.cpp -o CMakeFiles\EclipsedHorizons.dir\src\main.cpp.s
 
+CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.obj: CMakeFiles/EclipsedHorizons.dir/flags.make
+CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.obj: CMakeFiles/EclipsedHorizons.dir/includes_CXX.rsp
+CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.obj: C:/Dev/projectsCpp/EclipsedHorizons/src/utils/globals.cpp
+CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.obj: CMakeFiles/EclipsedHorizons.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Dev\projectsCpp\EclipsedHorizons\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.obj"
+	C:\Dev\projectsCpp\EclipsedHorizons\lib\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.obj -MF CMakeFiles\EclipsedHorizons.dir\src\utils\globals.cpp.obj.d -o CMakeFiles\EclipsedHorizons.dir\src\utils\globals.cpp.obj -c C:\Dev\projectsCpp\EclipsedHorizons\src\utils\globals.cpp
+
+CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.i"
+	C:\Dev\projectsCpp\EclipsedHorizons\lib\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Dev\projectsCpp\EclipsedHorizons\src\utils\globals.cpp > CMakeFiles\EclipsedHorizons.dir\src\utils\globals.cpp.i
+
+CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.s"
+	C:\Dev\projectsCpp\EclipsedHorizons\lib\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\projectsCpp\EclipsedHorizons\src\utils\globals.cpp -o CMakeFiles\EclipsedHorizons.dir\src\utils\globals.cpp.s
+
 # Object files for target EclipsedHorizons
 EclipsedHorizons_OBJECTS = \
-"CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj"
+"CMakeFiles/EclipsedHorizons.dir/src/core/camera_controller.cpp.obj" \
+"CMakeFiles/EclipsedHorizons.dir/src/core/game_engine.cpp.obj" \
+"CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj" \
+"CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.obj"
 
 # External object files for target EclipsedHorizons
 EclipsedHorizons_EXTERNAL_OBJECTS =
 
-EclipsedHorizons.exe: CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj
-EclipsedHorizons.exe: CMakeFiles/EclipsedHorizons.dir/build.make
-EclipsedHorizons.exe: CMakeFiles/EclipsedHorizons.dir/linkLibs.rsp
-EclipsedHorizons.exe: CMakeFiles/EclipsedHorizons.dir/objects1.rsp
-EclipsedHorizons.exe: CMakeFiles/EclipsedHorizons.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Dev\projectsCpp\EclipsedHorizons\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable EclipsedHorizons.exe"
+bin/EclipsedHorizons.exe: CMakeFiles/EclipsedHorizons.dir/src/core/camera_controller.cpp.obj
+bin/EclipsedHorizons.exe: CMakeFiles/EclipsedHorizons.dir/src/core/game_engine.cpp.obj
+bin/EclipsedHorizons.exe: CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj
+bin/EclipsedHorizons.exe: CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.obj
+bin/EclipsedHorizons.exe: CMakeFiles/EclipsedHorizons.dir/build.make
+bin/EclipsedHorizons.exe: CMakeFiles/EclipsedHorizons.dir/linkLibs.rsp
+bin/EclipsedHorizons.exe: CMakeFiles/EclipsedHorizons.dir/objects1.rsp
+bin/EclipsedHorizons.exe: CMakeFiles/EclipsedHorizons.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Dev\projectsCpp\EclipsedHorizons\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable bin\EclipsedHorizons.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\EclipsedHorizons.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/EclipsedHorizons.dir/build: EclipsedHorizons.exe
+CMakeFiles/EclipsedHorizons.dir/build: bin/EclipsedHorizons.exe
 .PHONY : CMakeFiles/EclipsedHorizons.dir/build
 
 CMakeFiles/EclipsedHorizons.dir/clean:

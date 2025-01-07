@@ -84,12 +84,12 @@ clean: CMakeFiles/EclipsedHorizons.dir/clean
 CMakeFiles/EclipsedHorizons.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Dev\projectsCpp\EclipsedHorizons\build\CMakeFiles --progress-num=1,2 "Built target EclipsedHorizons"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Dev\projectsCpp\EclipsedHorizons\build\CMakeFiles --progress-num=1,2,3,4,5 "Built target EclipsedHorizons"
 .PHONY : CMakeFiles/EclipsedHorizons.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/EclipsedHorizons.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Dev\projectsCpp\EclipsedHorizons\build\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Dev\projectsCpp\EclipsedHorizons\build\CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/EclipsedHorizons.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Dev\projectsCpp\EclipsedHorizons\build\CMakeFiles 0
 .PHONY : CMakeFiles/EclipsedHorizons.dir/rule
@@ -101,7 +101,7 @@ EclipsedHorizons: CMakeFiles/EclipsedHorizons.dir/rule
 # codegen rule for target.
 CMakeFiles/EclipsedHorizons.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Dev\projectsCpp\EclipsedHorizons\build\CMakeFiles --progress-num=1,2 "Finished codegen for target EclipsedHorizons"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Dev\projectsCpp\EclipsedHorizons\build\CMakeFiles --progress-num=1,2,3,4,5 "Finished codegen for target EclipsedHorizons"
 .PHONY : CMakeFiles/EclipsedHorizons.dir/codegen
 
 # clean rule for target.

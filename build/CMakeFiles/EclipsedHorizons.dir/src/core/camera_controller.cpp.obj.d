@@ -1,5 +1,6 @@
-CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj: \
- C:\Dev\projectsCpp\EclipsedHorizons\src\main.cpp \
+CMakeFiles/EclipsedHorizons.dir/src/core/camera_controller.cpp.obj: \
+ C:\Dev\projectsCpp\EclipsedHorizons\src\core\camera_controller.cpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/include/core/camera_controller.hpp \
  C:/Dev/projectsCpp/EclipsedHorizons/include/utils/includes.hpp \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/raylib-5.5_win64_mingw-w64/include/raylib.h \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
@@ -185,5 +186,4 @@ CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj: \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/enable_special_members.h \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/node_handle.h \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/erase_if.h \
- C:/Dev/projectsCpp/EclipsedHorizons/include/core/game_engine.hpp \
  C:/Dev/projectsCpp/EclipsedHorizons/include/utils/globals.hpp

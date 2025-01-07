@@ -1,1 +1,1 @@
--IC:/Dev/projectsCpp/EclipsedHorizons/include -I"C:/Dev/projectsCpp/EclipsedHorizons/lib/raylib-5.5_win64_mingw-w64/include"
+-IC:/Dev/projectsCpp/EclipsedHorizons/include -IC:/Dev/projectsCpp/EclipsedHorizons/src -I"C:/Dev/projectsCpp/EclipsedHorizons/lib/raylib-5.5_win64_mingw-w64/include"
