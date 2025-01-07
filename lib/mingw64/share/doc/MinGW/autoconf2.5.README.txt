@@ -1,0 +1,125 @@
+mingw autoconf2.5
+===============================================================================
+Current version of the autoconf automatic configure script builder.  It is
+packaged to work alongside the "autoconf2.1" and "autoconf" packages (the
+latter component is an intelligent wrapper system developed by the Gentoo
+distribution; see its RELEASE NOTES for further information).  This release
+is configured to operate as part of a toolchain for developing mingw libraries
+and applications (that is, native win32 binaries, as opposed to msys-dependent
+ones). Note that "autoconf-2.68" is considered part of the autoconf-2.5x
+release sequence.
+
+Proper operation of this autoconf2.5 distribution requires a working MSYS
+installation, as well as certain other elements available from the MinGW team
+(http://www.mingw.org/) as listed below.  However, this autoconf2.5
+distribution was configured as part of the "mingw32" subsystem, and should be
+installed into the /mingw directory (which is usually, but not always,
+C:\MinGW).  Thus, autoconf2.5 is a hybrid: it is configured for the "mingw32"
+subsystem, but unlike most mingw32 elements, requires MSYS.  This rather odd
+situation is necessary for a number of reasons (see the References section
+below).
+
+Runtime requirements
+  msys-core-bin                   1.0.17-1
+  msys-coreutils-bin              5.97-3
+  msys-bash-bin                   3.1.17-4
+  msys-sed-bin                    4.2.1-2
+  msys-file-bin                   5.0.4-1
+  msys-m4-bin                     1.4.14-1
+  msys-texinfo-bin                4.13a-2
+  msys-perl-bin                   5.8.8-1
+  msys-libcrypt-dll-0             1.1_1-3
+  msys-libgdbm-dll-3              1.8.3-3
+  msys-zlib-dll                   1.2.3-2
+  msys-libintl-dll-8              0.17-2
+  msys-libiconv-dll-2             1.13.1-2
+  msys-grep-bin                   2.5.4-2
+
+Build requirements (these, or newer)
+  Same as above, plus
+  msys-patch-bin                  2.6.1-1
+  msys-bzip2-bin                  1.0.5-2
+  msys-xz-bin                     4.999.9beta_20100401-1
+  msys-tar-bin                    1.23-1
+  msys-make-bin                   3.81-3
+  msys-wget-bin                   1.12-1
+  mingw32-mgwport-bin             0.10.5-1
+
+Canonical homepage:
+  http://www.gnu.org/software/autoconf/
+
+Canonical download:
+  ftp://ftp.gnu.org/pub/gnu/autoconf/
+
+License:
+  GPL
+
+Language:
+  perl, m4
+
+===============================================================================
+
+Build instructions:
+  unpack autoconf2.5-2.68-1-mingw32-src.tar.lzma
+  mgwport autoconf2.5-2.68-1.mgwport all
+
+This will create:
+  autoconf2.5-2.68-1-mingw32-src.tar.lzma
+  autoconf2.5-2.68-1-mingw32-bin.tar.lzza
+  autoconf2.5-2.68-1-mingw32-lic.tar.lzma
+  autoconf2.5-2.68-1-mingw32-doc.tar.lzma
+
+See `mgwport --help' for other options.
+
+===============================================================================
+
+Test suite results
+This section of this document is updated with each new release.
+No history is maintained here.
+
+444 tests behaved as expected.
+42 tests were skipped.
+
+===============================================================================
+References:
+
+For a discussion of the packaging standards used by the MinGW project for pre-
+built components -- especially as related to the autotools such as autoconf,
+automake, and libtool, see:
+
+  here:     http://www.mingw.org/PackageIdentificationHOWTO
+  here:     http://article.gmane.org/gmane.comp.gnu.mingw.devel/3330
+  and here: http://article.gmane.org/gmane.comp.gnu.mingw.devel/3305
+
+If you're REALLY curious, the following threads are quite informative, if
+extremely long, and detail the discussion and reasoning behind the current
+packaging schema. Presented in reverse chronological order:
+  
+  "New Packages"
+  2009-06-21 22:38:19 GMT
+  http://thread.gmane.org/gmane.comp.gnu.mingw.devel/3297
+
+  "GCC 4.4.0: Naming conventions"
+  2009-04-18 06:35:28 GMT
+  http://thread.gmane.org/gmane.comp.gnu.mingw.devel/3225
+
+  "Standards for Building MinGW Release Packages"
+  2008-03-27 12:36:25 GMT
+  http://thread.gmane.org/gmane.comp.gnu.mingw.devel/2739
+
+===============================================================================
+
+Port Notes:
+----------  autoconf2.5-2.68-1 -- 2011 Sep 04 -----------
+* Update to latest upstream release
+* Switch to using mgwport build framework
+
+----------  autoconf2.5-2.67-1 -- 2010 Sep 04 -----------
+* Update to latest upstream release
+
+----------  autoconf2.5-2.64-1 -- 2009 Oct 28 -----------
+* Update to latest upstream release
+
+----------  autoconf2.5-2.63-1 -- 2009 Jul 23 -----------
+* First release of autoconf2.5 under the new packaging standard.
+

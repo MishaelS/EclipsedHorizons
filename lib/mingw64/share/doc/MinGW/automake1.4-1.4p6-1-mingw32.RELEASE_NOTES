@@ -1,0 +1,100 @@
+mingw automake (1.4 series)
+========================================================================
+The latest version in the 1.4.x series of automake, the GNU automatic
+makefile generator. These scripts are packaged to work alongside other
+"automakeX.Y" packages and the "automake" wrapper package (the latter
+component is an intelligent wrapper system developed by the Gentoo
+distribution; see its RELEASE NOTES for further information). This
+release is configured to operate as part of a toolchain for developing
+mingw libraries and applications (that is, native win32 binaries, as
+opposed to msys-dependent ones).
+
+Proper operation of this automake1.4 distribution requires a working
+MSYS installation, as well as certain other elements available from the
+MinGW team (http://www.mingw.org/) as listed below.  However, this
+automake1.4 distribution was configured as part of the "mingw32"
+subsystem, and should be installed into the /mingw directory (which is
+usually, but not always, C:\MinGW).  Thus, automake1.4 is a hybrid:
+it is configured for the "mingw32" subsystem, but unlike most mingw32
+elements, requires MSYS.  This rather odd situation is necessary for a
+number of reasons (see the References section below).
+
+<<<< FIXME: fill this in after rebuild cycle >>>>
+Runtime requirements
+  MSYS Environment
+    msysCORE-1.0.11-bin.tar.gz (e.g. stock MSYS 1.0.11 installation)
+    perl-5.6.1-MSYS-1.0.11-1.tar.bz2
+    crypt-1.1-1-MSYS-1.0.11-1.tar.bz2
+    coreutils-5.97-MSYS-1.0.11-snapshot.tar.bz2
+
+Build requirements (these, or newer)
+  Same as above
+<<<< END FIXME >>>>
+
+Canonical homepage:
+  http://www.gnu.org/software/automake/
+
+Canonical download:
+  ftp://ftp.gnu.org/pub/gnu/automake/
+
+License:
+  GPL
+
+Language:
+  perl, m4
+
+===========================================================
+
+Build instructions:
+  unpack automake1.4-1.4p6-1-mingw32-src.tar.gz
+  cd automake-1.4/mingwPORT
+  ./mingwPORT.sh [--no-cleanup] [--check]
+
+This will create:
+  automake1.4-1.4p6-1-mingw32-src.tar.gz
+  automake1.4-1.4p6-1-mingw32-bin.tar.gz
+  automake1.4-1.4p6-1-mingw32-lic.tar.gz
+  automake1.4-1.4p6-1-mingw32-doc.tar.gz
+
+===========================================================
+
+Test suite results
+1 of 194 tests failed
+
+FAIL: symlink.test (expected: can't create symlinks on MSYS)
+
+===========================================================
+References:
+
+For a discussion of the packaging standards used by the MinGW
+project for pre-built components -- especially as related to
+the autotools such as autoconf, automake, and libtool, see:
+
+  here:     http://www.mingw.org/PackageIdentificationHOWTO
+  here:     http://article.gmane.org/gmane.comp.gnu.mingw.devel/3330
+  and here: http://article.gmane.org/gmane.comp.gnu.mingw.devel/3305
+
+If you're REALLY curious, the following threads are quite
+informative, if extremely long, and detail the discussion and
+reasoning behind the current packaging schema. Presented in
+reverse chronological order:
+  
+  "New Packages"
+  2009-06-21 22:38:19 GMT
+  http://thread.gmane.org/gmane.comp.gnu.mingw.devel/3297
+
+  "GCC 4.4.0: Naming conventions"
+  2009-04-18 06:35:28 GMT
+  http://thread.gmane.org/gmane.comp.gnu.mingw.devel/3225
+
+  "Standards for Building MinGW Release Packages"
+  2008-03-27 12:36:25 GMT
+  http://thread.gmane.org/gmane.comp.gnu.mingw.devel/2739
+
+===========================================================
+
+Port Notes:
+
+----------  automake1.4-1.4p6-1 -- 2009 Jul 24 -----------
+* First release of automake1.4 under the new packaging standard.
+
