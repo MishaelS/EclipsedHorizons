@@ -3,19 +3,16 @@
 #include "../include/utils/includes.hpp"
 #include "../include/utils/globals.hpp"
 
+#include "../include/core/scene.hpp"
+
 class GameEngine {
 public:
-	GameEngine();
+	GameEngine(unsigned int width, unsigned int height, unsigned int fps);
 	~GameEngine();
 
-	// Инициализация движка
-	bool initialize();
-
-	// Закрытие игры
-	void shutdown();
-
-	// Запуск игры
-	void run();
+	bool initialize();	// Инициализация движка
+	void shutdown();	// Закрытие игры
+	void run();			// Запуск игры
 
 private:
 	// Основные этапы игрового цикла
@@ -27,8 +24,10 @@ private:
     bool isRunning;
 
     // Параметры экрана
-    unsigned int screenWidth;
-    unsigned int screenHeight;
-	unsigned int frameRate;
+    const unsigned int screenWidth;
+    const unsigned int screenHeight;
+	const unsigned int frameRate;
+
+	Scene* scene;
 
 };

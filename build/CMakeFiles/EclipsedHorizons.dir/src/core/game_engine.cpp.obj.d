@@ -68,6 +68,7 @@ CMakeFiles/EclipsedHorizons.dir/src/core/game_engine.cpp.obj: \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/poly_hermite.tcc \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/poly_laguerre.tcc \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/riemann_zeta.tcc \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/FastNoiseLite/Cpp/FastNoiseLite.h \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/string \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stringfwd.h \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/memoryfwd.h \
@@ -186,4 +187,90 @@ CMakeFiles/EclipsedHorizons.dir/src/core/game_engine.cpp.obj: \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/enable_special_members.h \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/node_handle.h \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/erase_if.h \
- C:/Dev/projectsCpp/EclipsedHorizons/include/utils/globals.hpp
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/nlohmann/json.hpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/algorithm \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algo.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_heap.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/functional \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/std_function.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/array \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/compare \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iterator \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stream_iterator.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/memory \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_raw_storage_iter.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/align.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdint.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/unique_ptr.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/shared_ptr.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/shared_ptr_base.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/allocated_ptr.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/concurrence.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/shared_ptr_atomic.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/atomic_base.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/atomic_lockfree_defines.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/backward/auto_ptr.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_memory_defs.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/utility \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_relops.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/forward_list \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/forward_list.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/forward_list.tcc \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/map \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tree.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_map.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_multimap.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/valarray \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_array.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_array.tcc \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_before.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/slice_array.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_after.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/gslice.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/gslice_array.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/mask_array.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/indirect_array.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstdint \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/version \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cassert \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/assert.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstring \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/string.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/string_s.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/filesystem \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_fwd.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/chrono.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ratio \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ctime \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/parse_numbers.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_path.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/locale \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/time_members.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/messages_members.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_conv.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iomanip \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/quoted_string.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/sstream \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/sstream.tcc \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/codecvt \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_dir.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_ops.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/optional \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/numeric \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_numeric.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/any \
+ C:/Dev/projectsCpp/EclipsedHorizons/include/utils/globals.hpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/include/core/scene.hpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/include/core/camera_controller.hpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/include/graphics/level.hpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/include/entities/entity.hpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/include/entities/player.hpp

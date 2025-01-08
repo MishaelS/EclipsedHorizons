@@ -21,6 +21,12 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)  # Динамиче�
 include_directories(${PROJECT_SOURCE_DIR}/include)  # Папка include
 include_directories(${PROJECT_SOURCE_DIR}/src)      # Включаем src для доступа к src/core
 
+# Указываем путь к заголовочным файлам FastNoiseLite
+include_directories(${PROJECT_SOURCE_DIR}/lib/FastNoiseLite/Cpp)
+
+# Указываем путь к заголовочным файлам nlohmann/json
+include_directories(${PROJECT_SOURCE_DIR}/lib)
+
 # Указываем путь к Raylib
 set(RAYLIB_PATH "C:/Dev/projectsCpp/EclipsedHorizons/lib/raylib-5.5_win64_mingw-w64")
 include_directories(${RAYLIB_PATH}/include)
