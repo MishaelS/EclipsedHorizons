@@ -4,9 +4,10 @@ cmake_minimum_required(VERSION 3.10)
 # Название проекта
 project(EclipsedHorizons)
 
-# Указываем путь к компилятору Mingw64
-set(CMAKE_C_COMPILER "C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/bin/gcc.exe")
-set(CMAKE_CXX_COMPILER "C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/bin/g++.exe")
+if(MSYS)
+    set(CMAKE_C_COMPILER "C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/bin/gcc.exe")
+    set(CMAKE_CXX_COMPILER "C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/bin/g++.exe")
+endif()
 
 # Указываем стандарт языка C++ (например, C++17)
 set(CMAKE_CXX_STANDARD 17)
@@ -33,4 +34,8 @@ file(GLOB_RECURSE SOURCES "${PROJECT_SOURCE_DIR}/src/*.cpp")
 add_executable(EclipsedHorizons ${SOURCES})
 
 # Подключаем Raylib и её зависимости
-target_link_libraries(EclipsedHorizons raylib opengl32 gdi32 winmm)
+if(MSYS)
+    target_link_libraries(EclipsedHorizons raylib opengl32 gdi32 winmm)
+else()
+    target_link_libraries(EclipsedHorizons raylib)
+endif()
