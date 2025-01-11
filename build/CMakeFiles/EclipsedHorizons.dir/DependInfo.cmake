@@ -10,16 +10,16 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Dev/projectsCpp/EclipsedHorizons/src/core/camera_controller.cpp" "CMakeFiles/EclipsedHorizons.dir/src/core/camera_controller.cpp.obj" "gcc" "CMakeFiles/EclipsedHorizons.dir/src/core/camera_controller.cpp.obj.d"
   "C:/Dev/projectsCpp/EclipsedHorizons/src/core/game_engine.cpp" "CMakeFiles/EclipsedHorizons.dir/src/core/game_engine.cpp.obj" "gcc" "CMakeFiles/EclipsedHorizons.dir/src/core/game_engine.cpp.obj.d"
+  "C:/Dev/projectsCpp/EclipsedHorizons/src/core/scene.cpp" "CMakeFiles/EclipsedHorizons.dir/src/core/scene.cpp.obj" "gcc" "CMakeFiles/EclipsedHorizons.dir/src/core/scene.cpp.obj.d"
+  "C:/Dev/projectsCpp/EclipsedHorizons/src/entities/entity.cpp" "CMakeFiles/EclipsedHorizons.dir/src/entities/entity.cpp.obj" "gcc" "CMakeFiles/EclipsedHorizons.dir/src/entities/entity.cpp.obj.d"
+  "C:/Dev/projectsCpp/EclipsedHorizons/src/entities/player.cpp" "CMakeFiles/EclipsedHorizons.dir/src/entities/player.cpp.obj" "gcc" "CMakeFiles/EclipsedHorizons.dir/src/entities/player.cpp.obj.d"
+  "C:/Dev/projectsCpp/EclipsedHorizons/src/graphics/level.cpp" "CMakeFiles/EclipsedHorizons.dir/src/graphics/level.cpp.obj" "gcc" "CMakeFiles/EclipsedHorizons.dir/src/graphics/level.cpp.obj.d"
   "C:/Dev/projectsCpp/EclipsedHorizons/src/main.cpp" "CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj" "gcc" "CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj.d"
   "C:/Dev/projectsCpp/EclipsedHorizons/src/utils/globals.cpp" "CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.obj" "gcc" "CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
 set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
-  )
-
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.
