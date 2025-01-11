@@ -27,6 +27,9 @@ private:
 
 	void spawnEntity(const std::string& entityType); // спавна сущности
 
+	void collisionEntity(Entity* entity);
+	void UpdateCollisions(float deltaTime);
+
 	unsigned int maxEntities; // Максимальное количество
 
 	Level* level;						// Уровень (мир)

@@ -38,10 +38,10 @@ enum DirectionState {
 enum ActionState {
 	IDLE		= 0,
 	WALKING		= 2,
-	// RUNNING		= 2,
+	RUNNING		= 2,
 	ATTACKING	= 4,
-	// DEAD		= 0,
-	// INTERACTING = 0
+	DEAD		= 0,
+	INTERACTING = 0
 };
 
 struct AnimationData {

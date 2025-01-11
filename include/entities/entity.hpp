@@ -23,6 +23,8 @@ public:
 	virtual void setVelocity(Vector2 velocity);
 	virtual void setDirection(Vector2 direction);
 
+	virtual void isCollisionWithEntity(Entity* entity);
+
 	virtual void update(float deltaTime);
 	virtual void render();
 

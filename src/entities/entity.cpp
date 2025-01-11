@@ -53,6 +53,22 @@ void Entity::setDirection(Vector2 direction) {
 	this->direction = direction; 
 }
 
+void Entity::isCollisionWithEntity(Entity* entity) {
+	// Метод для проверки столкновений с другой сущностью
+	float distance = Vector2Distance(this->getPosition(), entity->getPosition());
+	float radiusSum = this->getRadiusHitbox() + entity->getRadiusHitbox();
+
+	// Если расстояние меньше суммы радиусов, происходит столкновение
+	if (distance <= radiusSum) {
+		Vector2 normal = Vector2Normalize(Vector2Subtract(this->getPosition(), entity->getPosition()));
+		float penetrationDepth = radiusSum - distance; // Глубина проникновения
+
+		// Сдвигаем обе сущности на половину глубины проникновения
+		this->setPosition(Vector2Add(this->getPosition(), Vector2Scale(normal, penetrationDepth * 0.5f)));
+		entity->setPosition(Vector2Subtract(entity->getPosition(), Vector2Scale(normal, penetrationDepth * 0.5f)));
+	}
+}
+
 void Entity::updateState() {
 	// Обновление состояния анимации
 	if (this->direction.x == 0 && this->direction.y == 0) {
@@ -87,7 +103,7 @@ void Entity::updateAnimation(float deltaTime) {
 	}
 
 	this->frameRect.x = this->currentAnimation.currentFrame * this->frameRect.width;
-	this->frameRect.x = this->currentAnimation.directState * this->frameRect.height;
+	this->frameRect.y = this->currentAnimation.directState * this->frameRect.height;
 }
 
 void Entity::updateMovement(float deltaTime) {
@@ -107,10 +123,18 @@ void Entity::update(float deltaTime) {
 
 void Entity::render() {
 	// Отрисовка текущего кадра анимации
-	DrawTextureRec(
+	DrawTexturePro(
 		this->spriteSheet,
-		this->frameRect,
-		this->position,
+		{this->frameRect.x,
+		 this->frameRect.y,
+		 (float)this->frameRect.width,
+		 (float)this->frameRect.height},
+		{this->position.x - (this->frameRect.width  / 2.f),
+		 this->position.y - (this->frameRect.height / 2.f),
+		 this->frameRect.width,
+		 this->frameRect.height},
+		{0.f, 0.f},
+		0.f,
 		this->tintEntity
 	);
 

@@ -10,6 +10,10 @@ Player::~Player() {
 	// Деструктор
 }
 
+void Player::isCollisionWithEntity(Entity* entity) {
+	Entity::isCollisionWithEntity(entity);
+}
+
 void Player::updateState() {
 	Entity::updateState();
 }

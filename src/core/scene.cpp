@@ -24,7 +24,7 @@ Scene::Scene()
 	);
 	this->cameraController->setZoom(2.f);
 
-	addEntity(this->player);
+	this->addEntity(this->player);
 }
 
 Scene::~Scene() {
@@ -92,11 +92,11 @@ void Scene::spawnEntity(const std::string& entityType) {
 			68.f,
 			0.24f
 		);
-	} else if (entityType == "Cow") {
+	} else if (entityType == "Chicken") {
 		newEntity = new Entity(
 			this->player->getPosition(),
 			LoadTexture("assets/Characters/Free_Chicken_Sprites.png"),
-			{32.f, 32.f},
+			{16.f, 16.f},
 			68.f,
 			0.24f
 		);
@@ -116,6 +116,31 @@ void Scene::sortEntities() {
 
 		return entityA->getPosition().y < entityB->getPosition().y; // Иначе сортируем по Y
 	});
+}
+
+void Scene::collisionEntity(Entity* entity) {
+	this->player->isCollisionWithEntity(entity);
+}
+
+void Scene::UpdateCollisions(float deltaTime) {
+	if (!this->player) return; // Проверка на nullptr
+
+	// Проверяем столкновения между игроком и другими сущностями
+	for (Entity* entity : this->entities) {
+		if (entity && entity != this->player && this->isEntityVisible(entity, this->cameraController->getCamera())) {
+			this->player->isCollisionWithEntity(entity); // Проверяем столкновение
+		}
+	}
+
+	// Проверяем столкновения между всеми сущностями
+	for (size_t i = 0; i < entities.size(); ++i) {
+		if (!entities[i] || !this->isEntityVisible(entities[i], this->cameraController->getCamera())) continue;
+
+		for (size_t j = i + 1; j < entities.size(); ++j) {
+			if (!entities[j] || !this->isEntityVisible(entities[j], this->cameraController->getCamera())) continue;
+			entities[i]->isCollisionWithEntity(entities[j]); // Проверяем столкновение
+		}
+	}
 }
 
 void Scene::processInput() {
@@ -139,6 +164,9 @@ void Scene::update(float deltaTime) {
 			entity->update(deltaTime);
 		}
 	}
+
+	// Проверяем столкновения
+	this->UpdateCollisions(deltaTime);
 }
 
 void Scene::render() {

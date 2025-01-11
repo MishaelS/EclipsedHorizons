@@ -14,6 +14,8 @@ public:
 			float animationSpeed=0.20f );
 	virtual ~Player();
 
+	void isCollisionWithEntity(Entity* entity) override;
+
 	void management();
 	void update(float deltaTime) override;
 	void render() override;
