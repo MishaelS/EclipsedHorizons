@@ -7,3 +7,6 @@
 [submodule "lib/FastNoiseLite"]
 	path = lib/FastNoiseLite
 	url = https://github.com/Auburn/FastNoiseLite.git
+[submodule "lib/MinGW64"]
+	path = lib/MinGW64
+	url = https://github.com/GorvGoyl/MinGW64.git
