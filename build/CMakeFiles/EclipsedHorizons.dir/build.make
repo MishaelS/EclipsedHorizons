@@ -158,11 +158,26 @@ CMakeFiles/EclipsedHorizons.dir/src/graphics/level.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/EclipsedHorizons.dir/src/graphics/level.cpp.s"
 	C:\Dev\projectsCpp\EclipsedHorizons\lib\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\projectsCpp\EclipsedHorizons\src\graphics\level.cpp -o CMakeFiles\EclipsedHorizons.dir\src\graphics\level.cpp.s
 
+CMakeFiles/EclipsedHorizons.dir/src/graphics/visibility_manager.cpp.obj: CMakeFiles/EclipsedHorizons.dir/flags.make
+CMakeFiles/EclipsedHorizons.dir/src/graphics/visibility_manager.cpp.obj: CMakeFiles/EclipsedHorizons.dir/includes_CXX.rsp
+CMakeFiles/EclipsedHorizons.dir/src/graphics/visibility_manager.cpp.obj: C:/Dev/projectsCpp/EclipsedHorizons/src/graphics/visibility_manager.cpp
+CMakeFiles/EclipsedHorizons.dir/src/graphics/visibility_manager.cpp.obj: CMakeFiles/EclipsedHorizons.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\projectsCpp\EclipsedHorizons\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/EclipsedHorizons.dir/src/graphics/visibility_manager.cpp.obj"
+	C:\Dev\projectsCpp\EclipsedHorizons\lib\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EclipsedHorizons.dir/src/graphics/visibility_manager.cpp.obj -MF CMakeFiles\EclipsedHorizons.dir\src\graphics\visibility_manager.cpp.obj.d -o CMakeFiles\EclipsedHorizons.dir\src\graphics\visibility_manager.cpp.obj -c C:\Dev\projectsCpp\EclipsedHorizons\src\graphics\visibility_manager.cpp
+
+CMakeFiles/EclipsedHorizons.dir/src/graphics/visibility_manager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/EclipsedHorizons.dir/src/graphics/visibility_manager.cpp.i"
+	C:\Dev\projectsCpp\EclipsedHorizons\lib\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Dev\projectsCpp\EclipsedHorizons\src\graphics\visibility_manager.cpp > CMakeFiles\EclipsedHorizons.dir\src\graphics\visibility_manager.cpp.i
+
+CMakeFiles/EclipsedHorizons.dir/src/graphics/visibility_manager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/EclipsedHorizons.dir/src/graphics/visibility_manager.cpp.s"
+	C:\Dev\projectsCpp\EclipsedHorizons\lib\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\projectsCpp\EclipsedHorizons\src\graphics\visibility_manager.cpp -o CMakeFiles\EclipsedHorizons.dir\src\graphics\visibility_manager.cpp.s
+
 CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj: CMakeFiles/EclipsedHorizons.dir/flags.make
 CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj: CMakeFiles/EclipsedHorizons.dir/includes_CXX.rsp
 CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj: C:/Dev/projectsCpp/EclipsedHorizons/src/main.cpp
 CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj: CMakeFiles/EclipsedHorizons.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\projectsCpp\EclipsedHorizons\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\projectsCpp\EclipsedHorizons\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj"
 	C:\Dev\projectsCpp\EclipsedHorizons\lib\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj -MF CMakeFiles\EclipsedHorizons.dir\src\main.cpp.obj.d -o CMakeFiles\EclipsedHorizons.dir\src\main.cpp.obj -c C:\Dev\projectsCpp\EclipsedHorizons\src\main.cpp
 
 CMakeFiles/EclipsedHorizons.dir/src/main.cpp.i: cmake_force
@@ -177,7 +192,7 @@ CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.obj: CMakeFiles/EclipsedHo
 CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.obj: CMakeFiles/EclipsedHorizons.dir/includes_CXX.rsp
 CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.obj: C:/Dev/projectsCpp/EclipsedHorizons/src/utils/globals.cpp
 CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.obj: CMakeFiles/EclipsedHorizons.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\projectsCpp\EclipsedHorizons\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\projectsCpp\EclipsedHorizons\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.obj"
 	C:\Dev\projectsCpp\EclipsedHorizons\lib\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.obj -MF CMakeFiles\EclipsedHorizons.dir\src\utils\globals.cpp.obj.d -o CMakeFiles\EclipsedHorizons.dir\src\utils\globals.cpp.obj -c C:\Dev\projectsCpp\EclipsedHorizons\src\utils\globals.cpp
 
 CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.i: cmake_force
@@ -196,6 +211,7 @@ EclipsedHorizons_OBJECTS = \
 "CMakeFiles/EclipsedHorizons.dir/src/entities/entity.cpp.obj" \
 "CMakeFiles/EclipsedHorizons.dir/src/entities/player.cpp.obj" \
 "CMakeFiles/EclipsedHorizons.dir/src/graphics/level.cpp.obj" \
+"CMakeFiles/EclipsedHorizons.dir/src/graphics/visibility_manager.cpp.obj" \
 "CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj" \
 "CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.obj"
 
@@ -208,13 +224,14 @@ bin/EclipsedHorizons.exe: CMakeFiles/EclipsedHorizons.dir/src/core/scene.cpp.obj
 bin/EclipsedHorizons.exe: CMakeFiles/EclipsedHorizons.dir/src/entities/entity.cpp.obj
 bin/EclipsedHorizons.exe: CMakeFiles/EclipsedHorizons.dir/src/entities/player.cpp.obj
 bin/EclipsedHorizons.exe: CMakeFiles/EclipsedHorizons.dir/src/graphics/level.cpp.obj
+bin/EclipsedHorizons.exe: CMakeFiles/EclipsedHorizons.dir/src/graphics/visibility_manager.cpp.obj
 bin/EclipsedHorizons.exe: CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj
 bin/EclipsedHorizons.exe: CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.obj
 bin/EclipsedHorizons.exe: CMakeFiles/EclipsedHorizons.dir/build.make
 bin/EclipsedHorizons.exe: CMakeFiles/EclipsedHorizons.dir/linkLibs.rsp
 bin/EclipsedHorizons.exe: CMakeFiles/EclipsedHorizons.dir/objects1.rsp
 bin/EclipsedHorizons.exe: CMakeFiles/EclipsedHorizons.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Dev\projectsCpp\EclipsedHorizons\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable bin\EclipsedHorizons.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Dev\projectsCpp\EclipsedHorizons\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable bin\EclipsedHorizons.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\EclipsedHorizons.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

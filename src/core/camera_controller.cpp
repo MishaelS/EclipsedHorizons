@@ -10,14 +10,11 @@ CameraController::CameraController(Vector2 position, Vector2 center, float deadZ
 	this->camera.offset = this->center;
 	this->camera.rotation = 0.f;
 	this->camera.zoom = 1.f;
-
+	
 	this->target = this->position;
-
 }
 
-CameraController::~CameraController() {
-	// Конструктор
-}
+CameraController::~CameraController() {}
 
 void CameraController::setZoom(float zoom) {
 	this->camera.zoom = zoom;
@@ -29,6 +26,21 @@ void CameraController::setPosition(Vector2 position) {
 
 Camera2D CameraController::getCamera() const {
 	return this->camera;
+}
+
+void CameraController::update() {
+	this->move();
+	this->checkWorldBounds(WorldWidth * TileSize, WorldHeight * TileSize);
+}
+
+void CameraController::move() {
+	Vector2 cameraTarget = checkDeadZone();
+	this->camera.target.x += (cameraTarget.x - this->camera.target.x) / this->smoothness;
+	this->camera.target.y += (cameraTarget.y - this->camera.target.y) / this->smoothness;
+
+	// Округляем для плавности
+	this->camera.target.x = roundf(this->camera.target.x * 100.f) / 100.f;
+	this->camera.target.y = roundf(this->camera.target.y * 100.f) / 100.f;
 }
 
 void CameraController::checkWorldBounds(unsigned int worldWidth, unsigned int worldHeight) {
@@ -59,19 +71,4 @@ Vector2 CameraController::checkDeadZone() {
 	}
 	
 	return this->target;
-}
-
-void CameraController::movement() {
-	Vector2 cameraTarget = checkDeadZone();
-	
-	this->camera.target.x += (cameraTarget.x - this->camera.target.x) / this->smoothness;
-	this->camera.target.y += (cameraTarget.y - this->camera.target.y) / this->smoothness;
-
-	this->camera.target.x = roundf(this->camera.target.x * 100.f) / 100.f;
-	this->camera.target.y = roundf(this->camera.target.y * 100.f) / 100.f;
-}
-
-void CameraController::update() {
-	this->movement();
-	this->checkWorldBounds(WorldWidth * TileSize, WorldHeight * TileSize);
 }

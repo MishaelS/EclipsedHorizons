@@ -1,32 +1,23 @@
 #include "../include/entities/entity.hpp"
 
-Entity::Entity(Vector2 position, Texture2D spriteSheet, Vector2 frameSize, float movementSpeed, float animationSpeed)
-:	position(position),
-	velocity({0.f, 0.f}),
-	direction({0.f, 0.f}),
-	spriteSheet(spriteSheet),
-	frameRect({0, 0, frameSize.x, frameSize.y}),
-	frameSize(frameSize),
-	isAttacking(false),
-	currentAnimation({IDLE, DOWN, 0, 1, 0, animationSpeed}),
-	movementSpeed(movementSpeed),
-	animationSpeed(animationSpeed),
-	animationTimer(0.f),
-	tintHitbox({255,   0,   0, 64}),
-	tintEntity(WHITE) {
+Entity::Entity(Vector2 position, const std::string& texturePath, Vector2 frameSize, float movementSpeed, float animationSpeed)
+:	position(position), frameSize(frameSize), isAttacking(false),
+	movementSpeed(movementSpeed), animationSpeed(animationSpeed),
+	hitboxColor({255, 255, 255,  64}),
+	entityColor({255, 255, 255, 255}) {
 
-	// Конструктор
+	this->loadTexture(texturePath);
+	this->frameRect = {0, 0, frameSize.x, frameSize.y};
+	this->currentAnimation = {IDLE, DOWN, 0, 1, 0, animationSpeed};
 }
 
-Entity::~Entity() {
-	// Деструктор
-}
+Entity::~Entity() {}
 
-float Entity::getRaduis() const {
+float Entity::getRadius() const {
 	return (this->frameSize.x / 2.f) / 2.f;
 }
 float Entity::getRadiusHitbox(float ratio) const {
-	return this->getRaduis() / ratio;
+	return this->getRadius() / ratio;
 }
 
 Vector2 Entity::getPosition() const {
@@ -53,24 +44,27 @@ void Entity::setDirection(Vector2 direction) {
 	this->direction = direction; 
 }
 
-void Entity::isCollisionWithEntity(Entity* entity) {
-	// Метод для проверки столкновений с другой сущностью
+void Entity::loadTexture(const std::string& path) {
+	this->spriteSheet = LoadTexture(path.c_str());
+	if (this->spriteSheet.id == 0) {
+		TraceLog(LOG_ERROR, "Failed to load texture: %s", path.c_str());
+	}
+}
+
+void Entity::handleCollision(Entity* entity) {
 	float distance = Vector2Distance(this->getPosition(), entity->getPosition());
 	float radiusSum = this->getRadiusHitbox() + entity->getRadiusHitbox();
 
-	// Если расстояние меньше суммы радиусов, происходит столкновение
 	if (distance <= radiusSum) {
 		Vector2 normal = Vector2Normalize(Vector2Subtract(this->getPosition(), entity->getPosition()));
-		float penetrationDepth = radiusSum - distance; // Глубина проникновения
+		float penetrationDepth = radiusSum - distance;
 
-		// Сдвигаем обе сущности на половину глубины проникновения
 		this->setPosition(Vector2Add(this->getPosition(), Vector2Scale(normal, penetrationDepth * 0.5f)));
 		entity->setPosition(Vector2Subtract(entity->getPosition(), Vector2Scale(normal, penetrationDepth * 0.5f)));
 	}
 }
 
 void Entity::updateState() {
-	// Обновление состояния анимации
 	if (this->direction.x == 0 && this->direction.y == 0) {
 		if (this->isAttacking) {
 			this->currentAnimation.actionState = ATTACKING;
@@ -81,7 +75,6 @@ void Entity::updateState() {
 		this->currentAnimation.actionState = WALKING;
 	}
 
-	// Обновление направления взгляда
 		 if (this->direction.x > 0) { this->currentAnimation.directState = RIGHT;	}
 	else if (this->direction.x < 0) { this->currentAnimation.directState = LEFT;	}
 	else if (this->direction.y > 0) { this->currentAnimation.directState = DOWN;	}
@@ -89,7 +82,6 @@ void Entity::updateState() {
 }
 
 void Entity::updateAnimation(float deltaTime) {
-	// Обновление кадра анимации
 	this->animationTimer += deltaTime;
 	if (this->animationTimer >= this->currentAnimation.frameDuration) {
 		this->animationTimer = 0.f;
@@ -107,7 +99,6 @@ void Entity::updateAnimation(float deltaTime) {
 }
 
 void Entity::updateMovement(float deltaTime) {
-	// Обновление позиции
 	this->velocity.x = this->movementSpeed * this->direction.x * deltaTime;
 	this->velocity.y = this->movementSpeed * this->direction.y * deltaTime;
 
@@ -122,26 +113,20 @@ void Entity::update(float deltaTime) {
 }
 
 void Entity::render() {
-	// Отрисовка текущего кадра анимации
 	DrawTexturePro(
 		this->spriteSheet,
-		{this->frameRect.x,
-		 this->frameRect.y,
-		 (float)this->frameRect.width,
-		 (float)this->frameRect.height},
-		{this->position.x - (this->frameRect.width  / 2.f),
-		 this->position.y - (this->frameRect.height / 2.f),
-		 this->frameRect.width,
-		 this->frameRect.height},
+		{this->frameRect.x, this->frameRect.y,
+		 (float)this->frameRect.width, (float)this->frameRect.height},
+		{this->position.x - (this->frameRect.width  / 2.f), this->position.y - (this->frameRect.height / 2.f),
+		 this->frameRect.width, this->frameRect.height},
 		{0.f, 0.f},
 		0.f,
-		this->tintEntity
+		this->entityColor
 	);
 
-	// Отрисовка граници столкновения
 	DrawCircleV(
 		this->getPosition(),
 		this->getRadiusHitbox(),
-		this->tintHitbox
+		this->hitboxColor
 	);
 }

@@ -1,5 +1,6 @@
-CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj: \
- C:\Dev\projectsCpp\EclipsedHorizons\src\main.cpp \
+CMakeFiles/EclipsedHorizons.dir/src/graphics/visibility_manager.cpp.obj: \
+ C:\Dev\projectsCpp\EclipsedHorizons\src\graphics\visibility_manager.cpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/include/graphics/visibility_manager.hpp \
  C:/Dev/projectsCpp/EclipsedHorizons/include/utils/includes.hpp \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/raylib-5.5_win64_mingw-w64/include/raylib.h \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
@@ -267,11 +268,4 @@ CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj: \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_numeric.h \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/any \
- C:/Dev/projectsCpp/EclipsedHorizons/include/utils/globals.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/include/core/game_engine.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/include/core/scene.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/include/graphics/visibility_manager.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/include/core/camera_controller.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/include/graphics/level.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/include/entities/entity.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/include/entities/player.hpp
+ C:/Dev/projectsCpp/EclipsedHorizons/include/utils/globals.hpp

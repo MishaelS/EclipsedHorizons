@@ -77,18 +77,22 @@ void Level::generate() {
 	this->generateObjects();
 }
 
-void Level::render() {
+void Level::render(const VisibilityManager& visibilityManager) {
 	for (int x = 0; x < this->width; x++) {
 		for (int y = 0; y < this->height; y++) {
 			Vector2 position = {(float)(x * this->tileSize), (float)(y * this->tileSize)};
-			TileType tile = this->tiles[x][y];
+			float radius = this->tileSize / 1.2f;
 
-			if (tile == TILE_WATER) DrawTexture(waterTexture, position.x, position.y, WHITE);
-			else if (tile == TILE_SAND) DrawTexture(sandTexture, position.x, position.y, WHITE);
-			else if (tile == TILE_GRASS) DrawTexture(grassTexture, position.x, position.y, WHITE);
+			if (visibilityManager.isVisible(position, radius)) {
+				TileType tile = this->tiles[x][y];
 
-			if (this->tilesStone[x][y] == 1) DrawTexture(stoneTexture, position.x, position.y, WHITE);
-			if (this->tilesTrees[x][y] == 1) DrawTexture(treeTexture, position.x, position.y, WHITE);
+				if (tile == TILE_WATER) DrawTexture(waterTexture, position.x, position.y, WHITE);
+				else if (tile == TILE_SAND) DrawTexture(sandTexture, position.x, position.y, WHITE);
+				else if (tile == TILE_GRASS) DrawTexture(grassTexture, position.x, position.y, WHITE);
+
+				if (this->tilesStone[x][y] == 1) DrawTexture(stoneTexture, position.x, position.y, WHITE);
+				if (this->tilesTrees[x][y] == 1) DrawTexture(treeTexture, position.x, position.y, WHITE);
+			}
 		}
 	}
 }

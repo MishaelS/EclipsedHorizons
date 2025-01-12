@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Dev/projectsCpp/EclipsedHorizons/src/entities/entity.cpp" "CMakeFiles/EclipsedHorizons.dir/src/entities/entity.cpp.obj" "gcc" "CMakeFiles/EclipsedHorizons.dir/src/entities/entity.cpp.obj.d"
   "C:/Dev/projectsCpp/EclipsedHorizons/src/entities/player.cpp" "CMakeFiles/EclipsedHorizons.dir/src/entities/player.cpp.obj" "gcc" "CMakeFiles/EclipsedHorizons.dir/src/entities/player.cpp.obj.d"
   "C:/Dev/projectsCpp/EclipsedHorizons/src/graphics/level.cpp" "CMakeFiles/EclipsedHorizons.dir/src/graphics/level.cpp.obj" "gcc" "CMakeFiles/EclipsedHorizons.dir/src/graphics/level.cpp.obj.d"
+  "C:/Dev/projectsCpp/EclipsedHorizons/src/graphics/visibility_manager.cpp" "CMakeFiles/EclipsedHorizons.dir/src/graphics/visibility_manager.cpp.obj" "gcc" "CMakeFiles/EclipsedHorizons.dir/src/graphics/visibility_manager.cpp.obj.d"
   "C:/Dev/projectsCpp/EclipsedHorizons/src/main.cpp" "CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj" "gcc" "CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj.d"
   "C:/Dev/projectsCpp/EclipsedHorizons/src/utils/globals.cpp" "CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.obj" "gcc" "CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.obj.d"
   )

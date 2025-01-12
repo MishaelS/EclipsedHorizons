@@ -8,21 +8,21 @@
 class Player : public Entity {
 public:
 	Player( Vector2 position,
-			Texture2D spriteSheet,
+			const std::string& texturePath,
 			Vector2 frameSize,
 			float movementSpeed=68.f,
 			float animationSpeed=0.20f );
 	virtual ~Player();
 
-	void isCollisionWithEntity(Entity* entity) override;
+	void loadTexture(const std::string& path) override; // Загружает текстуру игрока
+	void handleCollision(Entity* entity) override; // Обрабатывает столкновение игрока с другой сущностью
 
-	void management();
-	void update(float deltaTime) override;
-	void render() override;
+	void handleInput(); // Обрабатывает ввод игрока
+	void update(float deltaTime) override; // Обновляет состояние игрока
+	void render() override; // Отрисовывает игрока
 
 private:
-	void updateState() override;
-	void updateAnimation(float deltaTime) override;
-	void updateMovement(float deltaTime) override;
-
+	void updateState() override; // Обновляет состояние игрока
+	void updateAnimation(float deltaTime) override; // Обновляет анимацию игрока
+	void updateMovement(float deltaTime) override; // Обновляет движение игрока
 };

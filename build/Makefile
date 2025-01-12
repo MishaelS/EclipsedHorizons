@@ -272,6 +272,30 @@ src/graphics/level.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/src/graphics/level.cpp.s
 .PHONY : src/graphics/level.cpp.s
 
+src/graphics/visibility_manager.obj: src/graphics/visibility_manager.cpp.obj
+.PHONY : src/graphics/visibility_manager.obj
+
+# target to build an object file
+src/graphics/visibility_manager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/src/graphics/visibility_manager.cpp.obj
+.PHONY : src/graphics/visibility_manager.cpp.obj
+
+src/graphics/visibility_manager.i: src/graphics/visibility_manager.cpp.i
+.PHONY : src/graphics/visibility_manager.i
+
+# target to preprocess a source file
+src/graphics/visibility_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/src/graphics/visibility_manager.cpp.i
+.PHONY : src/graphics/visibility_manager.cpp.i
+
+src/graphics/visibility_manager.s: src/graphics/visibility_manager.cpp.s
+.PHONY : src/graphics/visibility_manager.s
+
+# target to generate assembly for a file
+src/graphics/visibility_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/src/graphics/visibility_manager.cpp.s
+.PHONY : src/graphics/visibility_manager.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -347,6 +371,9 @@ help:
 	@echo ... src/graphics/level.obj
 	@echo ... src/graphics/level.i
 	@echo ... src/graphics/level.s
+	@echo ... src/graphics/visibility_manager.obj
+	@echo ... src/graphics/visibility_manager.i
+	@echo ... src/graphics/visibility_manager.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

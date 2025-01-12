@@ -270,6 +270,7 @@ CMakeFiles/EclipsedHorizons.dir/src/core/game_engine.cpp.obj: \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/any \
  C:/Dev/projectsCpp/EclipsedHorizons/include/utils/globals.hpp \
  C:/Dev/projectsCpp/EclipsedHorizons/include/core/scene.hpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/include/graphics/visibility_manager.hpp \
  C:/Dev/projectsCpp/EclipsedHorizons/include/core/camera_controller.hpp \
  C:/Dev/projectsCpp/EclipsedHorizons/include/graphics/level.hpp \
  C:/Dev/projectsCpp/EclipsedHorizons/include/entities/entity.hpp \

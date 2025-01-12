@@ -14,18 +14,17 @@ extern const unsigned int FrameRate;
 // Размер плитки
 extern const unsigned int TileSize;
 
-// Перечисление типо тайлов для растоновки мира
+// Типы тайлов
 enum TileType {
-	TILE_EMPTY, // Пустоа
-	TILE_WATER, // Вода
-	TILE_SAND,  // Песок
-	TILE_GRASS, // Трава
+	TILE_EMPTY,	// Пустоа
+	TILE_WATER,	// Вода
+	TILE_SAND,	// Песок
+	TILE_GRASS,	// Трава
 	TILE_TREE,	// Дерево
-	TILE_STONE  // Камень
+	TILE_STONE	// Камень
 };
 
-// Состояние направление взгляда сущьности для анимации
-// SpriteSheet направление взгляда сущьности расположенны вертикально
+// Направления взгляда сущности
 enum DirectionState {
 	DOWN,
 	RIGHT,
@@ -33,8 +32,7 @@ enum DirectionState {
 	UP
 };
 
-// Состояние действия сущьности для анимации
-// SpriteSheet действия сущьности расположенны горезонтально
+// Состояния действий сущности
 enum ActionState {
 	IDLE		= 0,
 	WALKING		= 2,
@@ -44,11 +42,12 @@ enum ActionState {
 	INTERACTING = 0
 };
 
+// Данные анимации
 struct AnimationData {
-	ActionState		actionState;
-	DirectionState	directState;
-	int frameStart;
-	int frameCount;
-	int currentFrame;
-	float frameDuration;
+	ActionState		actionState; // Состояние действия
+	DirectionState	directState; // Направление взгляда
+	int frameStart;		 // Начальный кадр
+	int frameCount;		 // Количество кадров
+	int currentFrame;	 // Текущий кадр
+	float frameDuration; // Длительность кадра
 };

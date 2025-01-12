@@ -6,51 +6,49 @@
 class Entity {
 public:
 	Entity( Vector2 position,
-			Texture2D spriteSheet,
+			const std::string& texturePath,
 			Vector2 frameSize,
 			float movementSpeed=68.f,
 			float animationSpeed=0.20f );
 	virtual ~Entity();
 
-	virtual float getRaduis() const;
-	virtual float getRadiusHitbox(float ratio=1.f) const;
+	virtual float getRadius() const; // Возвращает радиус сущности
+	virtual float getRadiusHitbox(float ratio=1.f) const; // Возвращает радиус хитбокса
 
-	virtual Vector2 getPosition() const;
-	virtual Vector2 getVelocity() const;
-	virtual Vector2 getDirection() const;
+	virtual Vector2 getPosition() const;  // Возвращает текущую позицию сущности
+	virtual Vector2 getVelocity() const;  // Возвращает текущую скорость сущности
+	virtual Vector2 getDirection() const; // Возвращает текущее направление движения
 	
-	virtual void setPosition(Vector2 position);
-	virtual void setVelocity(Vector2 velocity);
-	virtual void setDirection(Vector2 direction);
+	virtual void setPosition(Vector2 position);	  // Устанавливает позицию сущности
+	virtual void setVelocity(Vector2 velocity);	  // Устанавливает скорость сущности
+	virtual void setDirection(Vector2 direction); // Устанавливает направление движения
 
-	virtual void isCollisionWithEntity(Entity* entity);
+	virtual void loadTexture(const std::string& path); // Загружает текстуру сущности
+	virtual void handleCollision(Entity* entity); // Обрабатывает столкновение с другой сущностью
 
-	virtual void update(float deltaTime);
-	virtual void render();
+	virtual void update(float deltaTime); // Обновляет состояние сущности
+	virtual void render(); // Отрисовывает сущность
 
 protected:
-	// Методы для управления состоянием
-	virtual void updateState();
-	virtual void updateAnimation(float deltaTime);
-	virtual void updateMovement(float deltaTime);
+	virtual void updateState(); // Обновляет состояние сущности (анимация, движение и т.д.)
+	virtual void updateAnimation(float deltaTime); // Обновляет анимацию сущности
+	virtual void updateMovement(float deltaTime); // Обновляет движение сущности
 
-	// Поля для управления ( состоянием сущьности и его анимацией )
-	Vector2 position;
-	Vector2 velocity;
-	Vector2 direction;
+	Vector2 position;  // Позиция сущности
+	Vector2 velocity;  // Скорость сущности
+	Vector2 direction; // Направление движения
 
-	float movementSpeed;
-	float animationSpeed;
-	float animationTimer;
+	float movementSpeed;  // Скорость движения
+	float animationSpeed; // Скорость анимации
+	float animationTimer; // Таймер анимации
 
-	Texture2D spriteSheet;
-	Rectangle frameRect;
-	Vector2 frameSize;
+	Texture2D spriteSheet; // Текстура сущности
+	Rectangle frameRect;   // Прямоугольник текущего кадра
+	Vector2 frameSize;	   // Размер кадра
 
-	bool isAttacking;
-	AnimationData currentAnimation;
+	bool isAttacking; // Флаг, указывающий, атакует ли сущность
+	AnimationData currentAnimation; // Данные текущей анимации
 
-	Color tintHitbox;
-	Color tintEntity;
-
+	Color hitboxColor; // Цвет хитбокса
+	Color entityColor; // Цвет сущности
 };

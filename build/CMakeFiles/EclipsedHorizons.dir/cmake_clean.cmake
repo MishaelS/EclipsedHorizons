@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/EclipsedHorizons.dir/src/entities/player.cpp.obj.d"
   "CMakeFiles/EclipsedHorizons.dir/src/graphics/level.cpp.obj"
   "CMakeFiles/EclipsedHorizons.dir/src/graphics/level.cpp.obj.d"
+  "CMakeFiles/EclipsedHorizons.dir/src/graphics/visibility_manager.cpp.obj"
+  "CMakeFiles/EclipsedHorizons.dir/src/graphics/visibility_manager.cpp.obj.d"
   "CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj"
   "CMakeFiles/EclipsedHorizons.dir/src/main.cpp.obj.d"
   "CMakeFiles/EclipsedHorizons.dir/src/utils/globals.cpp.obj"

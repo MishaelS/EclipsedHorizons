@@ -4,11 +4,11 @@
 #include "../include/core/game_engine.hpp"
 
 int main() {
-    
+
 	GameEngine game(ScreenWidth, ScreenHeight, FrameRate);
-	if (game.initialize()) {
+	if (game.init()) {
 		game.run();
 	}
 
-    return 0;
+	return 0;
 }

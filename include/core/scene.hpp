@@ -3,6 +3,7 @@
 #include "../include/utils/includes.hpp"
 #include "../include/utils/globals.hpp"
 
+#include "../include/graphics/visibility_manager.hpp"
 #include "../include/core/camera_controller.hpp"
 #include "../include/graphics/level.hpp"
 #include "../include/entities/entity.hpp"
@@ -13,28 +14,25 @@ public:
 	Scene();
 	~Scene();
 
-	void processInput();			// Обработка ввода
-	void update(float deltaTime);	// Обновление сцены
-	void render();					// Отрисовка сцены
+	void init();				  // Инициализирует сцену и настройки
+	void handleInput();			  // Обрабатывает ввод пользователя
+	void update(float deltaTime); // Обновляет состояние сцены
+	void render();				  // Отрисовывает сцену
 
 private:
-	unsigned int quantityEntities() const; // Ограничение количество добавляемых существ
-	
-	void sortEntities();				// Метод для сортировки сущностей
-	void addEntity(Entity* entity);		// Добавление сущности
-	void removeEntity(Entity* entity);	// Удаление сущности
-	bool isEntityVisible(Entity* entity, const Camera2D& camera) const; // Проверка видимости сущности
+	unsigned int getEntityCount() const; // Возвращает количество сущностей на сцене
+	void sortEntities();				 // Сортирует сущности для корректной отрисовки
+	void addEntity(Entity* entity);		 // Добавляет сущность на сцену
+	void removeEntity(Entity* entity);	 // Удаляет сущность со сцены
 
-	void spawnEntity(const std::string& entityType); // спавна сущности
+	void spawnEntity(const std::string& entityType); // Создает сущность на сцене
+	void handleCollisions(float deltaTime); // Обрабатывает столкновения между сущностями
 
-	void collisionEntity(Entity* entity);
-	void UpdateCollisions(float deltaTime);
+	unsigned int maxEntities; // Максимальное количество сущностей на сцене
 
-	unsigned int maxEntities; // Максимальное количество
-
-	Level* level;						// Уровень (мир)
-	Player* player;						// Игрок
-	CameraController* cameraController;	// Камера
-	std::vector<Entity*> entities;		// Все сущности
-
+	Level* level;						  // Уровень (мир)
+	Player* player;						  // Игрок
+	CameraController* cameraController;	  // Контроллер камеры
+	VisibilityManager* visibilityManager; // Менеджер видимости
+	std::vector<Entity*> entities;		  // Список сущностей на сцене
 };
