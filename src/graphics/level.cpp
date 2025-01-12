@@ -21,6 +21,10 @@ Level::~Level() {
 	UnloadTexture(this->stoneTexture);
 }
 
+unsigned int Level::getTileSize() const {
+	return this->tileSize;
+}
+
 TileType Level::getTileType(int x, int y) const {
 	if (x >= 0 && x < this->width && y >= 0 && y < this->height) {
 		return this->tiles[x][y];
@@ -31,7 +35,37 @@ TileType Level::getTileType(int x, int y) const {
 
 bool Level::isTileCollidable(int x, int y) const {
 	TileType tile = this->getTileType(x, y);
-	return tile == TILE_WATER || tile == TILE_STONE || this->tilesTrees[x][y] == 1;
+	return tile == TILE_WATER || this->tilesStone[x][y] == 1 || this->tilesTrees[x][y] == 1;
+}
+
+std::vector<Vector2> Level::getCollidableTilesAround(Vector2 position, float radius) const {
+	std::vector<Vector2> collidableTiles;
+
+	// Определяем границы области, в которой нужно проверять тайлы
+	int minX = static_cast<int>((position.x - radius) / this->tileSize);
+	int maxX = static_cast<int>((position.x + radius) / this->tileSize);
+	int minY = static_cast<int>((position.y - radius) / this->tileSize);
+	int maxY = static_cast<int>((position.y + radius) / this->tileSize);
+
+	// Ограничиваем границы уровнем
+	minX = std::max(minX, 0);
+	maxX = std::min(maxX, static_cast<int>(width) - 1);
+	minY = std::max(minY, 0);
+	maxY = std::min(maxY, static_cast<int>(height) - 1);
+
+	// Проверяем только тайлы в этой области
+	for (int x = minX; x <= maxX; ++x) {
+		for (int y = minY; y <= maxY; ++y) {
+			if (this->isTileCollidable(x, y)) {
+				collidableTiles.push_back({
+					static_cast<float>(x * this->tileSize),
+					static_cast<float>(y * this->tileSize)
+				});
+			}
+		}
+	}
+
+	return collidableTiles;
 }
 
 void Level::loadTextures() {

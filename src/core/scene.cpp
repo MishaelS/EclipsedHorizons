@@ -22,6 +22,7 @@ void Scene::init() {
 		 (WorldHeight * TileSize) / 2.f},
 		"assets/Characters/Basic_Charakter_Spritesheet.png",
 		{32.f, 32.f},
+		this->level,
 		86.f,
 		0.20f
 	);
@@ -143,6 +144,7 @@ void Scene::spawnEntity(const std::string& entityType) {
 			this->player->getPosition(),
 			"assets/Characters/Free_Cow_Sprites.png",
 			{32.f, 32.f},
+			this->level,
 			68.f,
 			0.24f
 		);
@@ -151,6 +153,7 @@ void Scene::spawnEntity(const std::string& entityType) {
 			this->player->getPosition(),
 			"assets/Characters/Free_Chicken_Sprites.png",
 			{16.f, 16.f},
+			this->level,
 			68.f,
 			0.24f
 		);

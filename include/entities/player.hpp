@@ -10,6 +10,7 @@ public:
 	Player( Vector2 position,
 			const std::string& texturePath,
 			Vector2 frameSize,
+			Level* level,
 			float movementSpeed=68.f,
 			float animationSpeed=0.20f );
 	virtual ~Player();

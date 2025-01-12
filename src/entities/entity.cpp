@@ -1,10 +1,11 @@
 #include "../include/entities/entity.hpp"
 
-Entity::Entity(Vector2 position, const std::string& texturePath, Vector2 frameSize, float movementSpeed, float animationSpeed)
+Entity::Entity(Vector2 position, const std::string& texturePath, Vector2 frameSize, Level* level, float movementSpeed, float animationSpeed)
 :	position(position), frameSize(frameSize), isAttacking(false),
 	movementSpeed(movementSpeed), animationSpeed(animationSpeed),
 	hitboxColor({255, 255, 255,  64}),
-	entityColor({255, 255, 255, 255}) {
+	entityColor({255, 255, 255, 255}),
+	level(level) {
 
 	this->loadTexture(texturePath);
 	this->frameRect = {0, 0, frameSize.x, frameSize.y};
@@ -42,6 +43,51 @@ void Entity::setVelocity(Vector2 velocity) {
 
 void Entity::setDirection(Vector2 direction) {
 	this->direction = direction; 
+}
+
+void Entity::checkTileCollision(const Level& level) {
+	std::vector<Vector2> collidableTiles = level.getCollidableTilesAround(this->getPosition(), this->getRadius());
+
+	for (const Vector2& tilePos : collidableTiles) {
+		Rectangle tileRect = {
+			tilePos.x,
+			tilePos.y,
+			static_cast<float>(level.getTileSize()),
+			static_cast<float>(level.getTileSize())
+		};
+
+		Vector2 tileCenter = {
+			tilePos.x + level.getTileSize() / 2.f,
+			tilePos.y + level.getTileSize() / 2.f
+		};
+
+		float distance = Vector2Distance(this->position, tileCenter);
+		float radiusSum = this->getRadius() + level.getTileSize() / 2.5f;
+
+		if (distance <= radiusSum) {
+			Vector2 normal = Vector2Normalize(Vector2Subtract(this->position, tileCenter));
+
+			float dx = this->position.x - tileCenter.x;
+			float dy = this->position.y - tileCenter.y;
+
+			float absDx = fabsf(dx);
+			float absDy = fabsf(dy);
+
+			if (absDx > absDy) {
+				if (dx > 0) {
+					this->position.x = tileRect.x + tileRect.width + this->getRadius();
+				} else {
+					this->position.x = tileRect.x - this->getRadius();
+				}
+			} else {
+				if (dy > 0) {
+					this->position.y = tileRect.y + tileRect.height + this->getRadius();
+				} else {
+					this->position.y = tileRect.y - this->getRadius();
+				}
+			}
+		}
+	}
 }
 
 void Entity::loadTexture(const std::string& path) {
@@ -99,17 +145,50 @@ void Entity::updateAnimation(float deltaTime) {
 }
 
 void Entity::updateMovement(float deltaTime) {
-	this->velocity.x = this->movementSpeed * this->direction.x * deltaTime;
-	this->velocity.y = this->movementSpeed * this->direction.y * deltaTime;
+	Vector2 newPosition = this->position;
 
-	this->position.x += this->velocity.x;
-	this->position.y += this->velocity.y;
+	// Вычисляем новую позицию на основе скорости и направления
+	newPosition.x += this->movementSpeed * this->direction.x * deltaTime;
+	newPosition.y += this->movementSpeed * this->direction.y * deltaTime;
+
+	// Проверяем столкновения с тайлами
+	std::vector<Vector2> collidableTiles = level->getCollidableTilesAround(newPosition, this->getRadius());
+
+	for (const Vector2& tilePos : collidableTiles) {
+		Rectangle tileRect = {
+			tilePos.x,
+			tilePos.y,
+			static_cast<float>(level->getTileSize()),
+			static_cast<float>(level->getTileSize())
+		};
+
+		Rectangle entityRect = {
+			newPosition.x - this->frameSize.x / 2.f,
+			newPosition.y - this->frameSize.y / 2.f,
+			this->frameSize.x,
+			this->frameSize.y
+		};
+
+		if (CheckCollisionRecs(entityRect, tileRect)) {
+			// Если столкновение произошло, корректируем позицию только в направлении движения
+			if (this->direction.x != 0) {
+				newPosition.x = this->position.x; // Отменяем движение по X
+			}
+			if (this->direction.y != 0) {
+				newPosition.y = this->position.y; // Отменяем движение по Y
+			}
+		}
+	}
+
+	// Обновляем позицию сущности
+	this->position = newPosition;
 }
 
 void Entity::update(float deltaTime) {
 	this->updateState();
 	this->updateAnimation(deltaTime);
 	this->updateMovement(deltaTime);
+	this->checkTileCollision(*level);
 }
 
 void Entity::render() {

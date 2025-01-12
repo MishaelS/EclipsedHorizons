@@ -1094,7 +1094,9 @@ CMakeFiles/EclipsedHorizons.dir/src/entities/entity.cpp.obj: C:/Dev/projectsCpp/
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_numeric.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/any \
-  C:/Dev/projectsCpp/EclipsedHorizons/include/utils/globals.hpp
+  C:/Dev/projectsCpp/EclipsedHorizons/include/utils/globals.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/include/graphics/level.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/include/graphics/visibility_manager.hpp
 
 CMakeFiles/EclipsedHorizons.dir/src/entities/player.cpp.obj: C:/Dev/projectsCpp/EclipsedHorizons/src/entities/player.cpp \
   C:/Dev/projectsCpp/EclipsedHorizons/include/entities/player.hpp \
@@ -1366,7 +1368,9 @@ CMakeFiles/EclipsedHorizons.dir/src/entities/player.cpp.obj: C:/Dev/projectsCpp/
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/any \
   C:/Dev/projectsCpp/EclipsedHorizons/include/utils/globals.hpp \
-  C:/Dev/projectsCpp/EclipsedHorizons/include/entities/entity.hpp
+  C:/Dev/projectsCpp/EclipsedHorizons/include/entities/entity.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/include/graphics/level.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/include/graphics/visibility_manager.hpp
 
 CMakeFiles/EclipsedHorizons.dir/src/graphics/level.cpp.obj: C:/Dev/projectsCpp/EclipsedHorizons/src/graphics/level.cpp \
   C:/Dev/projectsCpp/EclipsedHorizons/include/graphics/level.hpp \

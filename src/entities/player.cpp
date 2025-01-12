@@ -1,14 +1,12 @@
 #include "../include/entities/player.hpp"
 
-Player::Player(Vector2 position, const std::string& texturePath, Vector2 frameSize, float movementSpeed, float animationSpeed)
-:	Entity(position, texturePath, frameSize, movementSpeed, animationSpeed) {
+Player::Player(Vector2 position, const std::string& texturePath, Vector2 frameSize, Level* level, float movementSpeed, float animationSpeed)
+:	Entity(position, texturePath, frameSize, level, movementSpeed, animationSpeed) {
 
 	// Конструктор
 }
 
-Player::~Player() {
-	// Деструктор
-}
+Player::~Player() {}
 
 void Player::loadTexture(const std::string& path) {
 	Entity::loadTexture(path);

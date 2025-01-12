@@ -3,11 +3,14 @@
 #include "../include/utils/includes.hpp"
 #include "../include/utils/globals.hpp"
 
+#include "../include/graphics/level.hpp"
+
 class Entity {
 public:
 	Entity( Vector2 position,
 			const std::string& texturePath,
 			Vector2 frameSize,
+			Level* level,
 			float movementSpeed=68.f,
 			float animationSpeed=0.20f );
 	virtual ~Entity();
@@ -30,9 +33,13 @@ public:
 	virtual void render(); // Отрисовывает сущность
 
 protected:
+	virtual void checkTileCollision(const Level& level); // Метод, который будет проверять столкновения с тайлами
+
 	virtual void updateState(); // Обновляет состояние сущности (анимация, движение и т.д.)
 	virtual void updateAnimation(float deltaTime); // Обновляет анимацию сущности
 	virtual void updateMovement(float deltaTime); // Обновляет движение сущности
+
+	Level* level; // Уровень (мир) для проверки коллизии
 
 	Vector2 position;  // Позиция сущности
 	Vector2 velocity;  // Скорость сущности

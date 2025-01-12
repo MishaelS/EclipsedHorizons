@@ -10,8 +10,11 @@ public:
 	Level(unsigned int width, unsigned int height, unsigned int tileSize);
 	~Level();
 
+	unsigned int getTileSize() const; // Добавляем объявление метода
 	TileType getTileType(int x, int y) const; // Возвращает тип тайла по координатам
 	bool isTileCollidable(int x, int y) const; // Проверяет, является ли тайл коллизионным
+
+	std::vector<Vector2> getCollidableTilesAround(Vector2 position, float radius) const;
 
 	void generate(); // Генерирует уровень
 	void render(const VisibilityManager& visibilityManager); // Отрисовывает уровень
