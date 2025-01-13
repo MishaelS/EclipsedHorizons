@@ -21,7 +21,7 @@ void Scene::init() {
 		{(WorldWidth  * TileSize) / 2.f,
 		 (WorldHeight * TileSize) / 2.f},
 		"assets/Characters/Basic_Charakter_Spritesheet.png",
-		{32.f, 32.f},
+		{16.f, 16.f},
 		this->level,
 		86.f,
 		0.20f

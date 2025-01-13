@@ -44,8 +44,8 @@ std::vector<Vector2> Level::getCollidableTilesAround(Vector2 position, float rad
 	// Определяем границы области, в которой нужно проверять тайлы
 	int minX = static_cast<int>((position.x - radius) / this->tileSize);
 	int maxX = static_cast<int>((position.x + radius) / this->tileSize);
-	int minY = static_cast<int>((position.y - radius) / this->tileSize);
-	int maxY = static_cast<int>((position.y + radius) / this->tileSize);
+	int minY = static_cast<int>(((position.y + 8.f) - radius) / this->tileSize);
+	int maxY = static_cast<int>(((position.y + 8.f) + radius) / this->tileSize);
 
 	// Ограничиваем границы уровнем
 	minX = std::max(minX, 0);

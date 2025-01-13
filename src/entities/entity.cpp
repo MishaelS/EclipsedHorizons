@@ -50,8 +50,7 @@ void Entity::checkTileCollision(const Level& level) {
 
 	for (const Vector2& tilePos : collidableTiles) {
 		Rectangle tileRect = {
-			tilePos.x,
-			tilePos.y,
+			tilePos.x, tilePos.y,
 			static_cast<float>(level.getTileSize()),
 			static_cast<float>(level.getTileSize())
 		};
@@ -62,8 +61,7 @@ void Entity::checkTileCollision(const Level& level) {
 		};
 
 		float distance = Vector2Distance(this->position, tileCenter);
-		float radiusSum = this->getRadius() + level.getTileSize() / 2.5f;
-
+		float radiusSum = this->getRadius() + level.getTileSize() / 2.f;
 		if (distance <= radiusSum) {
 			Vector2 normal = Vector2Normalize(Vector2Subtract(this->position, tileCenter));
 
@@ -74,17 +72,11 @@ void Entity::checkTileCollision(const Level& level) {
 			float absDy = fabsf(dy);
 
 			if (absDx > absDy) {
-				if (dx > 0) {
-					this->position.x = tileRect.x + tileRect.width + this->getRadius();
-				} else {
-					this->position.x = tileRect.x - this->getRadius();
-				}
+				if (dx > 0) { this->position.x = tileRect.x + tileRect.width + this->getRadius(); }
+					   else { this->position.x = tileRect.x - this->getRadius(); }
 			} else {
-				if (dy > 0) {
-					this->position.y = tileRect.y + tileRect.height + this->getRadius();
-				} else {
-					this->position.y = tileRect.y - this->getRadius();
-				}
+				if (dy > 0) { this->position.y = tileRect.y + tileRect.height + this->getRadius(); } 
+					   else { this->position.y = tileRect.y - this->getRadius(); }
 			}
 		}
 	}
@@ -147,13 +139,10 @@ void Entity::updateAnimation(float deltaTime) {
 void Entity::updateMovement(float deltaTime) {
 	Vector2 newPosition = this->position;
 
-	// Вычисляем новую позицию на основе скорости и направления
 	newPosition.x += this->movementSpeed * this->direction.x * deltaTime;
 	newPosition.y += this->movementSpeed * this->direction.y * deltaTime;
 
-	// Проверяем столкновения с тайлами
 	std::vector<Vector2> collidableTiles = level->getCollidableTilesAround(newPosition, this->getRadius());
-
 	for (const Vector2& tilePos : collidableTiles) {
 		Rectangle tileRect = {
 			tilePos.x,
@@ -170,17 +159,15 @@ void Entity::updateMovement(float deltaTime) {
 		};
 
 		if (CheckCollisionRecs(entityRect, tileRect)) {
-			// Если столкновение произошло, корректируем позицию только в направлении движения
 			if (this->direction.x != 0) {
-				newPosition.x = this->position.x; // Отменяем движение по X
+				newPosition.x = this->position.x;
 			}
 			if (this->direction.y != 0) {
-				newPosition.y = this->position.y; // Отменяем движение по Y
+				newPosition.y = this->position.y;
 			}
 		}
 	}
 
-	// Обновляем позицию сущности
 	this->position = newPosition;
 }
 
@@ -201,11 +188,5 @@ void Entity::render() {
 		{0.f, 0.f},
 		0.f,
 		this->entityColor
-	);
-
-	DrawCircleV(
-		this->getPosition(),
-		this->getRadiusHitbox(),
-		this->hitboxColor
 	);
 }

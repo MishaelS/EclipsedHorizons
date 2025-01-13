@@ -18,11 +18,11 @@ public:
 	virtual float getRadius() const; // Возвращает радиус сущности
 	virtual float getRadiusHitbox(float ratio=1.f) const; // Возвращает радиус хитбокса
 
-	virtual Vector2 getPosition() const;  // Возвращает текущую позицию сущности
+	virtual Vector2 getPosition() const; // Возвращает текущую позицию сущности
 	virtual Vector2 getVelocity() const;  // Возвращает текущую скорость сущности
 	virtual Vector2 getDirection() const; // Возвращает текущее направление движения
 	
-	virtual void setPosition(Vector2 position);	  // Устанавливает позицию сущности
+	virtual void setPosition(Vector2 position); // Устанавливает позицию сущности
 	virtual void setVelocity(Vector2 velocity);	  // Устанавливает скорость сущности
 	virtual void setDirection(Vector2 direction); // Устанавливает направление движения
 
