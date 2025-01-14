@@ -24,8 +24,12 @@ link_directories(${RAYLIB_PATH}/lib)
 # Добавляем все исходные файлы из папки src
 file(GLOB_RECURSE SOURCES "${PROJECT_SOURCE_DIR}/src/*.cpp")
 
+# Собираю raylib
+add_subdirectory(${RAYLIB_PATH})
+
 # Добавляем исполняемый файл
 add_executable(EclipsedHorizons ${SOURCES})
+
 
 # Подключаем Raylib и её зависимости
 if(MSYS)
