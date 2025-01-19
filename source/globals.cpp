@@ -1,7 +1,7 @@
-#include "../include/utils/globals.hpp"
+#include "globals.hpp"
 
-const unsigned int ScreenWidth  = 800;
-const unsigned int ScreenHeight = 512;
-const unsigned int FrameRate = 60;
+const unsigned int SCREEN_WIDTH  = 800;
+const unsigned int SCREEN_HEIGHT = 512;
+const unsigned int FRAME_RATE = 60;
 
-const unsigned float FixedTimeStep = 1.f / 60.f;
+const float FIXED_TIME_STEP = 1.f / 60.f;

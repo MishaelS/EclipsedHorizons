@@ -1,12 +1,10 @@
-#include "../include/utils/includes.hpp"
-#include "../include/utils/globals.hpp"
+#include "source/globals.hpp"
+#include "source/core/game_engine.hpp"
 
 int main() {
-
-	GameEngine game(ScreenWidth, ScreenHeight, FrameRate);
-	if (game.init()) {
-		game.run();
-	}
+	GameEngine game;
+	game.init(SCREEN_WIDTH, SCREEN_HEIGHT, FRAME_RATE);
+	game.run();
 
 	return 0;
 }

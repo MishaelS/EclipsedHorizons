@@ -1,46 +1,41 @@
+# Минимальная требуемая версия CMake
 cmake_minimum_required(VERSION 3.10)
 
+# Название проекта
 project(EclipsedHorizons)
-include(toolchain.cmake)
 
-# Указываем выходные директории
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+# Указываем путь к компилятору Mingw64
+set(CMAKE_C_COMPILER "C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/bin/gcc.exe")
+set(CMAKE_CXX_COMPILER "C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/bin/g++.exe")
+
+# Указываем стандарт языка C++ (например, C++17)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Указываем директории для выходных файлов
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)  # Исполняемые файлы
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)  # Статические библиотеки
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)  # Динамические библиотеки
 
 # Указываем путь к заголовочным файлам
 include_directories(${PROJECT_SOURCE_DIR}/source)
+
+# Указываем путь к заголовочным файлам FastNoiseLite
 include_directories(${PROJECT_SOURCE_DIR}/lib/FastNoiseLite/Cpp)
+
+# Указываем путь к заголовочным файлам nlohmann/json
 include_directories(${PROJECT_SOURCE_DIR}/lib)
 
-# Проверка наличия Raylib
-if(NOT EXISTS ${RAYLIB_PATH})
-	message(FATAL_ERROR "Raylib path is not set correctly: ${RAYLIB_PATH}")
-endif()
+# Указываем путь к Raylib
+set(RAYLIB_PATH "C:/Dev/projectsCpp/EclipsedHorizons/lib/raylib-5.5_win64_mingw-w64")
+include_directories(${RAYLIB_PATH}/include)
+link_directories(${RAYLIB_PATH}/lib)
 
-# Проверка наличия FastNoiseLite и nlohmann/json
-if(NOT EXISTS ${PROJECT_SOURCE_DIR}/lib/FastNoiseLite/Cpp)
-	message(FATAL_ERROR "FastNoiseLite path is not set correctly: ${PROJECT_SOURCE_DIR}/lib/FastNoiseLite/Cpp")
-endif()
-
-if(NOT EXISTS ${PROJECT_SOURCE_DIR}/lib/nlohmann/json.hpp)
-	message(FATAL_ERROR "nlohmann/json path is not set correctly: ${PROJECT_SOURCE_DIR}/lib/nlohmann/json.hpp")
-endif()
-
-# Собираем исходные файлы
+# Добавляем все исходные файлы из папки src
 file(GLOB_RECURSE SOURCES "${PROJECT_SOURCE_DIR}/source/*.cpp")
-
-# Собираем Raylib
-add_subdirectory(${RAYLIB_PATH})
 
 # Добавляем исполняемый файл
 add_executable(EclipsedHorizons ${SOURCES})
 
-# Линковка библиотек
-if(WIN32)
-	target_link_libraries(EclipsedHorizons raylib opengl32 gdi32 winmm)
-else if(MSYS)
-	target_link_libraries(EclipsedHorizons raylib opengl32 gdi32 winmm)
-else()
-	target_link_libraries(EclipsedHorizons raylib)
-endif()
+# Подключаем Raylib и её зависимости
+target_link_libraries(EclipsedHorizons raylib opengl32 gdi32 winmm)

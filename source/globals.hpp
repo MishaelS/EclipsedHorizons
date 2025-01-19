@@ -1,21 +1,7 @@
 #pragma once
 
-extern const unsigned int ScreenWidth;
-extern const unsigned int ScreenHeight;
-extern const unsigned int FrameRate;
+extern const unsigned int SCREEN_WIDTH;
+extern const unsigned int SCREEN_HEIGHT;
+extern const unsigned int FRAME_RATE;
 
-extern const unsigned float FixedTimeStep;
-
-enum DirectionState {
-	DOWN,
-	RIGHT,
-	LEFT,
-	UP
-};
-
-enum ActionState {
-	IDLE,
-	RUNNING,
-	ATTACKING,
-	DEAD
-};
+extern const float FIXED_TIME_STEP;
