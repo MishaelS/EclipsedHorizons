@@ -245,6 +245,12 @@ EclipsedHorizons_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 EclipsedHorizons_SOURCE_DIR:STATIC=C:/Dev/projectsCpp/EclipsedHorizons
 
+//Path to a program.
+MINGW_GCC:FILEPATH=C:/MinGW/bin/gcc.exe
+
+//Path to a program.
+MINGW_GXX:FILEPATH=C:/MinGW/bin/g++.exe
+
 
 ########################
 # INTERNAL cache entries

@@ -1,0 +1,58 @@
+#include "camera_controller.hpp"
+
+CameraController::CameraController(Vector2 screenSize, float zoom) {
+	this->camera.target = {0.f, 0.f};
+	this->camera.offset = {screenSize.x / 2.f, screenSize.y / 2.f};
+	this->camera.rotation = 0.f;
+	this->camera.zoom = zoom;
+	this->zoomLevel = zoom;
+
+	this->deadZone = {
+		screenSize.x / 2.f - 100,
+		screenSize.y / 2.f - 100,
+		200, 200
+	};
+}
+
+CameraController::~CameraController() {}
+
+float CameraController::getZoom() const {
+	return this->zoomLevel;
+}
+
+Camera2D CameraController::getCamera() const {
+	return camera;
+}
+
+void CameraController::setZoom(float zoom) {
+	if (zoom > 0.f) {
+		this->camera.zoom = zoom;
+		this->zoomLevel = zoom;
+	}
+}
+
+void CameraController::setDeadZone(float width, float height) {
+	this->deadZone.width  = width;
+	this->deadZone.height = height;
+	this->deadZone.x = this->camera.offset.x - width  / 2.f;
+	this->deadZone.y = this->camera.offset.y - height / 2.f;
+}
+
+void CameraController::checkAndMoveCamera(Vector2 screenPosition) {
+	if (screenPosition.x < this->deadZone.x) {
+		this->camera.target.x -= (this->deadZone.x - screenPosition.x) / this->camera.zoom;
+	} else if (screenPosition.x > this->deadZone.x + this->deadZone.width) {
+		this->camera.target.x += (screenPosition.x - (this->deadZone.x + this->deadZone.width)) / this->camera.zoom;
+	}
+
+	if (screenPosition.y < this->deadZone.y) {
+		this->camera.target.y -= (this->deadZone.y - screenPosition.y) / this->camera.zoom;
+	} else if (screenPosition.y > this->deadZone.y + this->deadZone.height) {
+		this->camera.target.y += (screenPosition.y - (this->deadZone.y + this->deadZone.height)) / this->camera.zoom;
+	}
+}
+
+void CameraController::update(Vector2 targetPosition) {
+	Vector2 screenPosition = GetWorldToScreen2D(targetPosition, this->camera);
+	this->checkAndMoveCamera(screenPosition);
+}

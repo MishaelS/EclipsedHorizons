@@ -1,0 +1,52 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Configure CMake",
+			"type": "shell",
+			"command": "cmake",
+			"args": [
+				"-G",
+				"MinGW Makefiles",
+				"-DCMAKE_MAKE_PROGRAM=C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/bin/mingw32-make.exe",
+				".."
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"detail": "Настройка проекта с помощью CMake"
+		},
+		{
+			"label": "Build Project",
+			"type": "shell",
+			"command": "cmake",
+			"args": [
+				"--build",
+				"build"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"detail": "Сборка проекта с помощью CMake"
+		},
+		{
+			"label": "Run Project",
+			"type": "shell",
+			"command": "${workspaceFolder}/build/bin/EclipsedHorizons.exe",
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"detail": "Запуск проекта"
+		}
+	]
+}

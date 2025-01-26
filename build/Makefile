@@ -152,6 +152,30 @@ source/core/game_engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/core/game_engine.cpp.s
 .PHONY : source/core/game_engine.cpp.s
 
+source/core/scene.obj: source/core/scene.cpp.obj
+.PHONY : source/core/scene.obj
+
+# target to build an object file
+source/core/scene.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/core/scene.cpp.obj
+.PHONY : source/core/scene.cpp.obj
+
+source/core/scene.i: source/core/scene.cpp.i
+.PHONY : source/core/scene.i
+
+# target to preprocess a source file
+source/core/scene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/core/scene.cpp.i
+.PHONY : source/core/scene.cpp.i
+
+source/core/scene.s: source/core/scene.cpp.s
+.PHONY : source/core/scene.s
+
+# target to generate assembly for a file
+source/core/scene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/core/scene.cpp.s
+.PHONY : source/core/scene.cpp.s
+
 source/core/time_manager.obj: source/core/time_manager.cpp.obj
 .PHONY : source/core/time_manager.obj
 
@@ -248,29 +272,53 @@ source/globals.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/globals.cpp.s
 .PHONY : source/globals.cpp.s
 
-source/utils/animation_state.obj: source/utils/animation_state.cpp.obj
-.PHONY : source/utils/animation_state.obj
+source/graphics/camera_controller.obj: source/graphics/camera_controller.cpp.obj
+.PHONY : source/graphics/camera_controller.obj
 
 # target to build an object file
-source/utils/animation_state.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/utils/animation_state.cpp.obj
-.PHONY : source/utils/animation_state.cpp.obj
+source/graphics/camera_controller.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/camera_controller.cpp.obj
+.PHONY : source/graphics/camera_controller.cpp.obj
 
-source/utils/animation_state.i: source/utils/animation_state.cpp.i
-.PHONY : source/utils/animation_state.i
+source/graphics/camera_controller.i: source/graphics/camera_controller.cpp.i
+.PHONY : source/graphics/camera_controller.i
 
 # target to preprocess a source file
-source/utils/animation_state.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/utils/animation_state.cpp.i
-.PHONY : source/utils/animation_state.cpp.i
+source/graphics/camera_controller.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/camera_controller.cpp.i
+.PHONY : source/graphics/camera_controller.cpp.i
 
-source/utils/animation_state.s: source/utils/animation_state.cpp.s
-.PHONY : source/utils/animation_state.s
+source/graphics/camera_controller.s: source/graphics/camera_controller.cpp.s
+.PHONY : source/graphics/camera_controller.s
 
 # target to generate assembly for a file
-source/utils/animation_state.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/utils/animation_state.cpp.s
-.PHONY : source/utils/animation_state.cpp.s
+source/graphics/camera_controller.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/camera_controller.cpp.s
+.PHONY : source/graphics/camera_controller.cpp.s
+
+source/main.obj: source/main.cpp.obj
+.PHONY : source/main.obj
+
+# target to build an object file
+source/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/main.cpp.obj
+.PHONY : source/main.cpp.obj
+
+source/main.i: source/main.cpp.i
+.PHONY : source/main.i
+
+# target to preprocess a source file
+source/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/main.cpp.i
+.PHONY : source/main.cpp.i
+
+source/main.s: source/main.cpp.s
+.PHONY : source/main.s
+
+# target to generate assembly for a file
+source/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/main.cpp.s
+.PHONY : source/main.cpp.s
 
 # Help Target
 help:
@@ -284,6 +332,9 @@ help:
 	@echo ... source/core/game_engine.obj
 	@echo ... source/core/game_engine.i
 	@echo ... source/core/game_engine.s
+	@echo ... source/core/scene.obj
+	@echo ... source/core/scene.i
+	@echo ... source/core/scene.s
 	@echo ... source/core/time_manager.obj
 	@echo ... source/core/time_manager.i
 	@echo ... source/core/time_manager.s
@@ -296,9 +347,12 @@ help:
 	@echo ... source/globals.obj
 	@echo ... source/globals.i
 	@echo ... source/globals.s
-	@echo ... source/utils/animation_state.obj
-	@echo ... source/utils/animation_state.i
-	@echo ... source/utils/animation_state.s
+	@echo ... source/graphics/camera_controller.obj
+	@echo ... source/graphics/camera_controller.i
+	@echo ... source/graphics/camera_controller.s
+	@echo ... source/main.obj
+	@echo ... source/main.i
+	@echo ... source/main.s
 .PHONY : help
 
 

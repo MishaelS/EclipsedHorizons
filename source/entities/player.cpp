@@ -1,36 +1,30 @@
 #include "Player.hpp"
 
-Player::Player() {
-	this->texture = LoadTexture("../source/assets/sprites/Characters/Basic Charakter Spritesheet.png");
-	this->position = {static_cast<float>(SCREEN_WIDTH) / 2, static_cast<float>(SCREEN_HEIGHT) / 2};
-	this->frameSize = {static_cast<float>(FRAME_WIDTH), static_cast<float>(FRAME_HEIGHT)};
-}
+Player::Player(Texture2D texture, Vector2 position, Rectangle frame, float speed)
+:	Entity(texture, position, frame, speed) {}
 
-Player::~Player() {
-	UnloadTexture(this->texture);
-}
+Player::~Player() {}
+
+float Player::getHealth() const { return this->health; }
+float Player::getMaxHealth() const { return this->maxHealth; }
+
+void Player::setHealth(float health) { this->health = health; }
+void Player::setMaxHealth(float maxHealth) { this->maxHealth = maxHealth; }
 
 void Player::handleInput() {
-	if (IsKeyDown(KEY_RIGHT)) {
-		this->setAnimationState(ActionState::RUN, DirectionState::RIGHT);
-		this->direction = {1, 0};
-	} else if (IsKeyDown(KEY_LEFT)) {
-		this->setAnimationState(ActionState::RUN, DirectionState::LEFT);
-		this->direction = {-1, 0};
-	} else if (IsKeyDown(KEY_UP)) {
-		this->setAnimationState(ActionState::RUN, DirectionState::UP);
-		this->direction = {0, 1};
-	} else if (IsKeyDown(KEY_DOWN)) {
-		this->setAnimationState(ActionState::RUN, DirectionState::DOWN);
-		this->direction = {0, -1};
-	} else {
-		this->setAnimationState(ActionState::IDLE, this->directionState);
-		this->direction = {0, 0};
-	}
+	Entity::handleInput();
+
+	if (IsKeyDown(KEY_RIGHT) || IsKeyDown(KEY_D))		{ this->setDirection({ 1.f,  0.f}); }
+	else if (IsKeyDown(KEY_LEFT) || IsKeyDown(KEY_A))	{ this->setDirection({-1.f,  0.f}); }
+	else if (IsKeyDown(KEY_DOWN) || IsKeyDown(KEY_S))	{ this->setDirection({ 0.f,  1.f}); }
+	else if (IsKeyDown(KEY_UP)   || IsKeyDown(KEY_W))	{ this->setDirection({ 0.f, -1.f}); }
+}
+
+void Player::movement(float deltaTime) {
+	Entity::movement(deltaTime);
 }
 
 void Player::update(float deltaTime) {
-	this->handleInput();
 	Entity::update(deltaTime);
 }
 

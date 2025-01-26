@@ -269,4 +269,8 @@ CMakeFiles/EclipsedHorizons.dir/source/core/game_engine.cpp.obj: \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/any \
  C:/Dev/projectsCpp/EclipsedHorizons/source/globals.hpp \
- C:\Dev\projectsCpp\EclipsedHorizons\source\core\time_manager.hpp
+ C:\Dev\projectsCpp\EclipsedHorizons\source\core\time_manager.hpp \
+ C:\Dev\projectsCpp\EclipsedHorizons\source\core\scene.hpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/camera_controller.hpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/source/entities/player.hpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/source/entities/Entity.hpp

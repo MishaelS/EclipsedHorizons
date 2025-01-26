@@ -268,5 +268,4 @@ CMakeFiles/EclipsedHorizons.dir/source/entities/entity.cpp.obj: \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_numeric.h \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/any \
- C:/Dev/projectsCpp/EclipsedHorizons/source/globals.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/source/utils/animation_state.hpp
+ C:/Dev/projectsCpp/EclipsedHorizons/source/globals.hpp

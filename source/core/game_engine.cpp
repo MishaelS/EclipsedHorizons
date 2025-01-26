@@ -3,14 +3,22 @@
 GameEngine::GameEngine() {}
 
 GameEngine::~GameEngine() {
-	this->isRunning = false;
+	this->shutDown();
+}
 
+void GameEngine::shutDown() {
+	delete this->gameScene;
+	
+	this->isRunning = false;
 	CloseWindow();
 }
 
-void GameEngine::init(unsigned int width, unsigned int height, unsigned int fps) {
-	InitWindow(width, height, "Game Survival");
-	SetTargetFPS(fps);
+void GameEngine::init() {
+	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Game Survival");
+	SetTargetFPS(FRAME_RATE);
+
+	this->gameScene = new Scene();
+	this->gameScene->init();
 
 	this->isRunning = true;
 }
@@ -32,18 +40,19 @@ void GameEngine::run() {
 }
 
 void GameEngine::handleInput() {
-
+	this->gameScene->handleInput();
 }
 
 void GameEngine::update(float deltaTime) {
-
+	this->gameScene->update(deltaTime);
 }
 
 void GameEngine::render() {
 	BeginDrawing();
 		ClearBackground(RAYWHITE);
 
-		
+		this->gameScene->render();
 
+		DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
 	EndDrawing();
 }
