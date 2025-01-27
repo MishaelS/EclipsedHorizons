@@ -179,6 +179,14 @@ CMakeFiles/EclipsedHorizons.dir/source/core/scene.cpp.obj: \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fstream.tcc \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iostream \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/algorithm \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algo.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_heap.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
+ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/unordered_map \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/unordered_map.h \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hashtable.h \
@@ -188,14 +196,6 @@ CMakeFiles/EclipsedHorizons.dir/source/core/scene.cpp.obj: \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/node_handle.h \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/erase_if.h \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/nlohmann/json.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/algorithm \
- C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algo.h \
- C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
- C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_heap.h \
- C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
- C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
- C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
- C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/functional \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/std_function.h \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/array \
@@ -269,6 +269,10 @@ CMakeFiles/EclipsedHorizons.dir/source/core/scene.cpp.obj: \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/any \
  C:/Dev/projectsCpp/EclipsedHorizons/source/globals.hpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/ui_manager.hpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/audio_manager.hpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/texture_manager.hpp \
  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/camera_controller.hpp \
  C:/Dev/projectsCpp/EclipsedHorizons/source/entities/player.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/source/entities/Entity.hpp
+ C:/Dev/projectsCpp/EclipsedHorizons/source/entities/Entity.hpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/animation_manager.hpp

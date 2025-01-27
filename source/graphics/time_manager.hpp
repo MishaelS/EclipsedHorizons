@@ -9,11 +9,14 @@ public:
 	virtual ~TimeManager();
 
 	float getDeltaTime() const;
+	float getFixedTimeStep() const;
+	float getAccumulatedTime() const;
 	bool shouldUpdate() const;
 
 	void pause();
 	void reset();
 	void update();
+	void consumeTime();
 
 private:
 	float fixedTimeStep;

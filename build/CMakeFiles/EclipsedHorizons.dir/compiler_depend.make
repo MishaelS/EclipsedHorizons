@@ -181,6 +181,14 @@ CMakeFiles/EclipsedHorizons.dir/source/core/game_engine.cpp.obj: C:/Dev/projects
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fstream.tcc \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iostream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/algorithm \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algo.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_heap.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/unordered_map \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/unordered_map.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hashtable.h \
@@ -190,14 +198,6 @@ CMakeFiles/EclipsedHorizons.dir/source/core/game_engine.cpp.obj: C:/Dev/projects
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/node_handle.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/erase_if.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/nlohmann/json.hpp \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/algorithm \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algo.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_heap.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/functional \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/std_function.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/array \
@@ -271,11 +271,19 @@ CMakeFiles/EclipsedHorizons.dir/source/core/game_engine.cpp.obj: C:/Dev/projects
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/any \
   C:/Dev/projectsCpp/EclipsedHorizons/source/globals.hpp \
-  C:/Dev/projectsCpp/EclipsedHorizons/source/core/time_manager.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/time_manager.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/core/game_state_manager.hpp \
   C:/Dev/projectsCpp/EclipsedHorizons/source/core/scene.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/ui_manager.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/audio_manager.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/texture_manager.hpp \
   C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/camera_controller.hpp \
   C:/Dev/projectsCpp/EclipsedHorizons/source/entities/player.hpp \
-  C:/Dev/projectsCpp/EclipsedHorizons/source/entities/entity.hpp
+  C:/Dev/projectsCpp/EclipsedHorizons/source/entities/entity.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/animation_manager.hpp
+
+CMakeFiles/EclipsedHorizons.dir/source/core/game_state_manager.cpp.obj: C:/Dev/projectsCpp/EclipsedHorizons/source/core/game_state_manager.cpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/core/game_state_manager.hpp
 
 CMakeFiles/EclipsedHorizons.dir/source/core/scene.cpp.obj: C:/Dev/projectsCpp/EclipsedHorizons/source/core/scene.cpp \
   C:/Dev/projectsCpp/EclipsedHorizons/source/core/scene.hpp \
@@ -457,6 +465,14 @@ CMakeFiles/EclipsedHorizons.dir/source/core/scene.cpp.obj: C:/Dev/projectsCpp/Ec
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fstream.tcc \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iostream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/algorithm \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algo.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_heap.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/unordered_map \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/unordered_map.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hashtable.h \
@@ -466,14 +482,6 @@ CMakeFiles/EclipsedHorizons.dir/source/core/scene.cpp.obj: C:/Dev/projectsCpp/Ec
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/node_handle.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/erase_if.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/nlohmann/json.hpp \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/algorithm \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algo.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_heap.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/functional \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/std_function.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/array \
@@ -547,280 +555,15 @@ CMakeFiles/EclipsedHorizons.dir/source/core/scene.cpp.obj: C:/Dev/projectsCpp/Ec
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/any \
   C:/Dev/projectsCpp/EclipsedHorizons/source/globals.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/ui_manager.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/audio_manager.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/texture_manager.hpp \
   C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/camera_controller.hpp \
   C:/Dev/projectsCpp/EclipsedHorizons/source/entities/player.hpp \
-  C:/Dev/projectsCpp/EclipsedHorizons/source/entities/entity.hpp
+  C:/Dev/projectsCpp/EclipsedHorizons/source/entities/entity.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/animation_manager.hpp
 
-CMakeFiles/EclipsedHorizons.dir/source/core/time_manager.cpp.obj: C:/Dev/projectsCpp/EclipsedHorizons/source/core/time_manager.cpp \
-  C:/Dev/projectsCpp/EclipsedHorizons/source/core/time_manager.hpp \
-  C:/Dev/projectsCpp/EclipsedHorizons/source/includes.hpp \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/raylib-5.5_win64_mingw-w64/include/raylib.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdarg.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_stdarg.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/vadefs.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_mac.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_secapi.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sdks/_mingw_ddk.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/raylib-5.5_win64_mingw-w64/include/raymath.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/math.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cmath \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/requires_hosted.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/os_defines.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/pstl_config.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/cpp_type_traits.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/type_traits.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/math.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/crtdefs.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/std_abs.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdlib.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt_wstdlib.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/limits.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/stdlib_s.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/stdlib.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/malloc.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/errno.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/version.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/specfun.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algobase.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/functexcept.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/exception_defines.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/numeric_traits.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_pair.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/type_traits \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/move.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/utility.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_iterator_base_types.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_iterator_base_funcs.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/concept_check.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/debug/assertions.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_iterator.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/ptr_traits.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/debug/debug.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/predefined_ops.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bit \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/concepts \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/limits \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/gamma.tcc \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/special_function_util.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/bessel_function.tcc \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/beta_function.tcc \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/ell_integral.tcc \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/exp_integral.tcc \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/hypergeometric.tcc \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/legendre_function.tcc \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/modified_bessel_func.tcc \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/poly_hermite.tcc \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/poly_laguerre.tcc \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/riemann_zeta.tcc \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/FastNoiseLite/Cpp/FastNoiseLite.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/string \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stringfwd.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/memoryfwd.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/char_traits.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/postypes.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cwchar \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/wchar.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt_stdio_config.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_off_t.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_stat64.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/swprintf.inl \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/wchar_s.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/allocator.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/new_allocator.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/new \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/exception.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/localefwd.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++locale.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/clocale \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/locale.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdio.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/stdio_s.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iosfwd \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cctype \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/ctype.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/ostream_insert.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/cxxabi_forced.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_function.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/backward/binders.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/refwrap.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/invoke.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/range_access.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/initializer_list \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/basic_string.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/alloc_traits.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/alloc_traits.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_construct.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/string_view \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/functional_hash.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hash_bytes.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/string_view.tcc \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/string_conversions.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstdlib \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstdio \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cerrno \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/charconv.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/basic_string.tcc \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/memory_resource.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstddef \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stddef.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uses_allocator.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uses_allocator_args.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tuple \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/vector \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_uninitialized.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_vector.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_bvector.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/vector.tcc \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/fstream \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/istream \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ios \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/exception \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/exception_ptr.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/cxxabi_init_exception.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/typeinfo \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/nested_exception.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/ios_base.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/atomicity.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr-default.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sys/types.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/process.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt_startup.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/signal.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread_signal.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/time.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sys/timeb.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/sys/timeb_s.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_timeval.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread_time.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread_compat.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread_unistd.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/atomic_word.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_classes.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_classes.tcc \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/system_error \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/error_constants.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/stdexcept \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/streambuf \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/streambuf.tcc \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/basic_ios.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cwctype \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/wctype.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/ctype_base.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/streambuf_iterator.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/ctype_inline.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets.tcc \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/basic_ios.tcc \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ostream \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/ostream.tcc \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/istream.tcc \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/codecvt.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/basic_file.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fstream.tcc \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iostream \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/unordered_map \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/unordered_map.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hashtable.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hashtable_policy.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/aligned_buffer.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/enable_special_members.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/node_handle.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/erase_if.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/nlohmann/json.hpp \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/algorithm \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algo.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_heap.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/functional \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/std_function.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/array \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/compare \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iterator \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stream_iterator.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/memory \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_raw_storage_iter.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/align.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdint.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/unique_ptr.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/shared_ptr.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/shared_ptr_base.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/allocated_ptr.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/concurrence.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/shared_ptr_atomic.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/atomic_base.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/atomic_lockfree_defines.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/backward/auto_ptr.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_memory_defs.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/utility \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_relops.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/forward_list \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/forward_list.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/forward_list.tcc \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/map \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tree.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_map.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_multimap.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/valarray \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_array.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_array.tcc \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_before.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/slice_array.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_after.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/gslice.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/gslice_array.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/mask_array.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/indirect_array.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstdint \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/version \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cassert \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/assert.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstring \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/string.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/string_s.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/filesystem \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_fwd.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/chrono.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ratio \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ctime \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/parse_numbers.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_path.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/locale \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/time_members.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/messages_members.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_conv.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iomanip \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/quoted_string.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/sstream \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/sstream.tcc \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/codecvt \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_dir.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_ops.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/optional \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/numeric \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_numeric.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/any \
-  C:/Dev/projectsCpp/EclipsedHorizons/source/globals.hpp
+CMakeFiles/EclipsedHorizons.dir/source/core/world.cpp.obj: C:/Dev/projectsCpp/EclipsedHorizons/source/core/world.cpp
 
 CMakeFiles/EclipsedHorizons.dir/source/entities/entity.cpp.obj: C:/Dev/projectsCpp/EclipsedHorizons/source/entities/entity.cpp \
   C:/Dev/projectsCpp/EclipsedHorizons/source/entities/entity.hpp \
@@ -1002,6 +745,14 @@ CMakeFiles/EclipsedHorizons.dir/source/entities/entity.cpp.obj: C:/Dev/projectsC
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fstream.tcc \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iostream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/algorithm \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algo.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_heap.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/unordered_map \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/unordered_map.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hashtable.h \
@@ -1011,14 +762,6 @@ CMakeFiles/EclipsedHorizons.dir/source/entities/entity.cpp.obj: C:/Dev/projectsC
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/node_handle.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/erase_if.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/nlohmann/json.hpp \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/algorithm \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algo.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_heap.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/functional \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/std_function.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/array \
@@ -1091,7 +834,8 @@ CMakeFiles/EclipsedHorizons.dir/source/entities/entity.cpp.obj: C:/Dev/projectsC
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_numeric.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/any \
-  C:/Dev/projectsCpp/EclipsedHorizons/source/globals.hpp
+  C:/Dev/projectsCpp/EclipsedHorizons/source/globals.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/animation_manager.hpp
 
 CMakeFiles/EclipsedHorizons.dir/source/entities/player.cpp.obj: C:/Dev/projectsCpp/EclipsedHorizons/source/entities/player.cpp \
   C:/Dev/projectsCpp/EclipsedHorizons/source/entities/player.hpp \
@@ -1273,6 +1017,14 @@ CMakeFiles/EclipsedHorizons.dir/source/entities/player.cpp.obj: C:/Dev/projectsC
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fstream.tcc \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iostream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/algorithm \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algo.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_heap.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/unordered_map \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/unordered_map.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hashtable.h \
@@ -1282,14 +1034,6 @@ CMakeFiles/EclipsedHorizons.dir/source/entities/player.cpp.obj: C:/Dev/projectsC
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/node_handle.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/erase_if.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/nlohmann/json.hpp \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/algorithm \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algo.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_heap.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/functional \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/std_function.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/array \
@@ -1363,9 +1107,552 @@ CMakeFiles/EclipsedHorizons.dir/source/entities/player.cpp.obj: C:/Dev/projectsC
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/any \
   C:/Dev/projectsCpp/EclipsedHorizons/source/globals.hpp \
-  C:/Dev/projectsCpp/EclipsedHorizons/source/entities/entity.hpp
+  C:/Dev/projectsCpp/EclipsedHorizons/source/entities/entity.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/animation_manager.hpp
 
 CMakeFiles/EclipsedHorizons.dir/source/globals.cpp.obj: C:/Dev/projectsCpp/EclipsedHorizons/source/globals.cpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/globals.hpp
+
+CMakeFiles/EclipsedHorizons.dir/source/graphics/animation_manager.cpp.obj: C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/animation_manager.cpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/animation_manager.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/includes.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/raylib-5.5_win64_mingw-w64/include/raylib.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdarg.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_stdarg.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/vadefs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_mac.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_secapi.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sdks/_mingw_ddk.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/raylib-5.5_win64_mingw-w64/include/raymath.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/math.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cmath \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/requires_hosted.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/os_defines.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/pstl_config.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/cpp_type_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/type_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/math.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/crtdefs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/std_abs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdlib.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt_wstdlib.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/limits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/stdlib_s.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/stdlib.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/malloc.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/errno.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/version.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/specfun.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algobase.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/functexcept.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/exception_defines.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/numeric_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_pair.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/type_traits \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/move.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/utility.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_iterator_base_types.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_iterator_base_funcs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/concept_check.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/debug/assertions.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_iterator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/ptr_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/debug/debug.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/predefined_ops.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bit \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/concepts \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/limits \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/gamma.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/special_function_util.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/bessel_function.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/beta_function.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/ell_integral.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/exp_integral.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/hypergeometric.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/legendre_function.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/modified_bessel_func.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/poly_hermite.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/poly_laguerre.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/riemann_zeta.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/FastNoiseLite/Cpp/FastNoiseLite.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/string \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stringfwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/memoryfwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/char_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/postypes.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cwchar \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/wchar.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt_stdio_config.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_off_t.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_stat64.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/swprintf.inl \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/wchar_s.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/allocator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/new_allocator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/new \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/exception.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/localefwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++locale.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/clocale \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/locale.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdio.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/stdio_s.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iosfwd \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cctype \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/ctype.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/ostream_insert.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/cxxabi_forced.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_function.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/backward/binders.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/refwrap.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/invoke.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/range_access.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/initializer_list \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/basic_string.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/alloc_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/alloc_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_construct.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/string_view \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/functional_hash.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hash_bytes.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/string_view.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/string_conversions.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstdlib \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstdio \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cerrno \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/charconv.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/basic_string.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/memory_resource.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstddef \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stddef.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uses_allocator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uses_allocator_args.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tuple \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/vector \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_uninitialized.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_vector.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_bvector.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/vector.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/fstream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/istream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ios \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/exception \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/exception_ptr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/cxxabi_init_exception.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/typeinfo \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/nested_exception.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/ios_base.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/atomicity.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr-default.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sys/types.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/process.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt_startup.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/signal.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread_signal.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/time.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sys/timeb.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/sys/timeb_s.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_timeval.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread_time.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread_compat.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread_unistd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/atomic_word.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_classes.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_classes.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/system_error \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/error_constants.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/stdexcept \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/streambuf \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/streambuf.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/basic_ios.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cwctype \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/wctype.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/ctype_base.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/streambuf_iterator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/ctype_inline.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/basic_ios.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ostream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/ostream.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/istream.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/codecvt.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/basic_file.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fstream.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iostream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/algorithm \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algo.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_heap.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/unordered_map \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/unordered_map.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hashtable.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hashtable_policy.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/aligned_buffer.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/enable_special_members.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/node_handle.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/erase_if.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/nlohmann/json.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/functional \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/std_function.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/array \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/compare \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iterator \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stream_iterator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/memory \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_raw_storage_iter.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/align.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdint.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/unique_ptr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/shared_ptr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/shared_ptr_base.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/allocated_ptr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/concurrence.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/shared_ptr_atomic.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/atomic_base.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/atomic_lockfree_defines.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/backward/auto_ptr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_memory_defs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/utility \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_relops.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/forward_list \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/forward_list.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/forward_list.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/map \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tree.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_map.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_multimap.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/valarray \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_array.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_array.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_before.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/slice_array.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_after.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/gslice.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/gslice_array.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/mask_array.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/indirect_array.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstdint \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/version \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cassert \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/assert.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstring \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/string.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/string_s.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/filesystem \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_fwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/chrono.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ratio \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ctime \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/parse_numbers.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_path.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/locale \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/time_members.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/messages_members.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_conv.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iomanip \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/quoted_string.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/sstream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/sstream.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/codecvt \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_dir.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_ops.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/optional \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/numeric \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_numeric.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/any \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/globals.hpp
+
+CMakeFiles/EclipsedHorizons.dir/source/graphics/audio_manager.cpp.obj: C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/audio_manager.cpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/audio_manager.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/includes.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/raylib-5.5_win64_mingw-w64/include/raylib.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdarg.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_stdarg.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/vadefs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_mac.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_secapi.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sdks/_mingw_ddk.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/raylib-5.5_win64_mingw-w64/include/raymath.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/math.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cmath \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/requires_hosted.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/os_defines.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/pstl_config.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/cpp_type_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/type_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/math.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/crtdefs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/std_abs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdlib.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt_wstdlib.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/limits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/stdlib_s.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/stdlib.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/malloc.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/errno.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/version.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/specfun.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algobase.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/functexcept.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/exception_defines.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/numeric_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_pair.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/type_traits \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/move.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/utility.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_iterator_base_types.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_iterator_base_funcs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/concept_check.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/debug/assertions.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_iterator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/ptr_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/debug/debug.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/predefined_ops.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bit \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/concepts \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/limits \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/gamma.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/special_function_util.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/bessel_function.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/beta_function.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/ell_integral.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/exp_integral.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/hypergeometric.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/legendre_function.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/modified_bessel_func.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/poly_hermite.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/poly_laguerre.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/riemann_zeta.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/FastNoiseLite/Cpp/FastNoiseLite.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/string \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stringfwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/memoryfwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/char_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/postypes.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cwchar \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/wchar.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt_stdio_config.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_off_t.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_stat64.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/swprintf.inl \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/wchar_s.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/allocator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/new_allocator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/new \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/exception.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/localefwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++locale.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/clocale \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/locale.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdio.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/stdio_s.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iosfwd \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cctype \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/ctype.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/ostream_insert.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/cxxabi_forced.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_function.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/backward/binders.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/refwrap.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/invoke.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/range_access.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/initializer_list \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/basic_string.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/alloc_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/alloc_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_construct.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/string_view \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/functional_hash.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hash_bytes.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/string_view.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/string_conversions.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstdlib \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstdio \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cerrno \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/charconv.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/basic_string.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/memory_resource.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstddef \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stddef.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uses_allocator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uses_allocator_args.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tuple \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/vector \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_uninitialized.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_vector.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_bvector.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/vector.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/fstream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/istream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ios \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/exception \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/exception_ptr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/cxxabi_init_exception.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/typeinfo \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/nested_exception.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/ios_base.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/atomicity.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr-default.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sys/types.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/process.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt_startup.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/signal.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread_signal.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/time.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sys/timeb.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/sys/timeb_s.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_timeval.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread_time.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread_compat.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread_unistd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/atomic_word.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_classes.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_classes.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/system_error \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/error_constants.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/stdexcept \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/streambuf \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/streambuf.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/basic_ios.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cwctype \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/wctype.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/ctype_base.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/streambuf_iterator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/ctype_inline.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/basic_ios.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ostream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/ostream.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/istream.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/codecvt.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/basic_file.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fstream.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iostream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/algorithm \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algo.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_heap.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/unordered_map \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/unordered_map.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hashtable.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hashtable_policy.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/aligned_buffer.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/enable_special_members.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/node_handle.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/erase_if.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/nlohmann/json.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/functional \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/std_function.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/array \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/compare \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iterator \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stream_iterator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/memory \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_raw_storage_iter.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/align.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdint.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/unique_ptr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/shared_ptr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/shared_ptr_base.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/allocated_ptr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/concurrence.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/shared_ptr_atomic.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/atomic_base.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/atomic_lockfree_defines.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/backward/auto_ptr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_memory_defs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/utility \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_relops.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/forward_list \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/forward_list.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/forward_list.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/map \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tree.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_map.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_multimap.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/valarray \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_array.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_array.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_before.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/slice_array.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_after.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/gslice.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/gslice_array.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/mask_array.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/indirect_array.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstdint \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/version \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cassert \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/assert.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstring \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/string.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/string_s.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/filesystem \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_fwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/chrono.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ratio \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ctime \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/parse_numbers.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_path.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/locale \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/time_members.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/messages_members.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_conv.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iomanip \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/quoted_string.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/sstream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/sstream.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/codecvt \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_dir.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_ops.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/optional \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/numeric \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_numeric.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/any \
   C:/Dev/projectsCpp/EclipsedHorizons/source/globals.hpp
 
 CMakeFiles/EclipsedHorizons.dir/source/graphics/camera_controller.cpp.obj: C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/camera_controller.cpp \
@@ -1548,6 +1835,14 @@ CMakeFiles/EclipsedHorizons.dir/source/graphics/camera_controller.cpp.obj: C:/De
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fstream.tcc \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iostream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/algorithm \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algo.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_heap.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/unordered_map \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/unordered_map.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hashtable.h \
@@ -1557,6 +1852,260 @@ CMakeFiles/EclipsedHorizons.dir/source/graphics/camera_controller.cpp.obj: C:/De
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/node_handle.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/erase_if.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/nlohmann/json.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/functional \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/std_function.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/array \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/compare \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iterator \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stream_iterator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/memory \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_raw_storage_iter.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/align.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdint.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/unique_ptr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/shared_ptr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/shared_ptr_base.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/allocated_ptr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/concurrence.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/shared_ptr_atomic.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/atomic_base.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/atomic_lockfree_defines.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/backward/auto_ptr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_memory_defs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/utility \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_relops.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/forward_list \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/forward_list.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/forward_list.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/map \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tree.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_map.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_multimap.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/valarray \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_array.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_array.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_before.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/slice_array.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_after.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/gslice.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/gslice_array.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/mask_array.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/indirect_array.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstdint \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/version \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cassert \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/assert.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstring \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/string.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/string_s.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/filesystem \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_fwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/chrono.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ratio \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ctime \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/parse_numbers.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_path.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/locale \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/time_members.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/messages_members.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_conv.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iomanip \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/quoted_string.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/sstream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/sstream.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/codecvt \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_dir.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_ops.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/optional \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/numeric \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_numeric.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/any \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/globals.hpp
+
+CMakeFiles/EclipsedHorizons.dir/source/graphics/texture_manager.cpp.obj: C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/texture_manager.cpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/texture_manager.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/includes.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/raylib-5.5_win64_mingw-w64/include/raylib.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdarg.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_stdarg.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/vadefs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_mac.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_secapi.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sdks/_mingw_ddk.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/raylib-5.5_win64_mingw-w64/include/raymath.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/math.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cmath \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/requires_hosted.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/os_defines.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/pstl_config.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/cpp_type_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/type_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/math.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/crtdefs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/std_abs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdlib.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt_wstdlib.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/limits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/stdlib_s.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/stdlib.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/malloc.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/errno.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/version.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/specfun.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algobase.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/functexcept.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/exception_defines.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/numeric_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_pair.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/type_traits \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/move.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/utility.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_iterator_base_types.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_iterator_base_funcs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/concept_check.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/debug/assertions.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_iterator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/ptr_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/debug/debug.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/predefined_ops.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bit \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/concepts \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/limits \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/gamma.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/special_function_util.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/bessel_function.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/beta_function.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/ell_integral.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/exp_integral.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/hypergeometric.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/legendre_function.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/modified_bessel_func.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/poly_hermite.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/poly_laguerre.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/riemann_zeta.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/FastNoiseLite/Cpp/FastNoiseLite.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/string \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stringfwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/memoryfwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/char_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/postypes.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cwchar \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/wchar.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt_stdio_config.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_off_t.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_stat64.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/swprintf.inl \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/wchar_s.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/allocator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/new_allocator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/new \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/exception.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/localefwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++locale.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/clocale \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/locale.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdio.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/stdio_s.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iosfwd \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cctype \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/ctype.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/ostream_insert.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/cxxabi_forced.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_function.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/backward/binders.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/refwrap.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/invoke.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/range_access.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/initializer_list \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/basic_string.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/alloc_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/alloc_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_construct.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/string_view \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/functional_hash.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hash_bytes.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/string_view.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/string_conversions.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstdlib \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstdio \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cerrno \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/charconv.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/basic_string.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/memory_resource.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstddef \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stddef.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uses_allocator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uses_allocator_args.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tuple \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/vector \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_uninitialized.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_vector.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_bvector.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/vector.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/fstream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/istream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ios \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/exception \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/exception_ptr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/cxxabi_init_exception.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/typeinfo \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/nested_exception.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/ios_base.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/atomicity.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr-default.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sys/types.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/process.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt_startup.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/signal.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread_signal.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/time.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sys/timeb.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/sys/timeb_s.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_timeval.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread_time.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread_compat.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread_unistd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/atomic_word.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_classes.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_classes.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/system_error \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/error_constants.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/stdexcept \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/streambuf \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/streambuf.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/basic_ios.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cwctype \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/wctype.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/ctype_base.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/streambuf_iterator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/ctype_inline.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/basic_ios.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ostream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/ostream.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/istream.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/codecvt.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/basic_file.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fstream.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iostream \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/algorithm \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algo.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
@@ -1565,6 +2114,557 @@ CMakeFiles/EclipsedHorizons.dir/source/graphics/camera_controller.cpp.obj: C:/De
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/unordered_map \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/unordered_map.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hashtable.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hashtable_policy.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/aligned_buffer.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/enable_special_members.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/node_handle.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/erase_if.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/nlohmann/json.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/functional \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/std_function.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/array \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/compare \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iterator \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stream_iterator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/memory \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_raw_storage_iter.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/align.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdint.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/unique_ptr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/shared_ptr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/shared_ptr_base.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/allocated_ptr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/concurrence.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/shared_ptr_atomic.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/atomic_base.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/atomic_lockfree_defines.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/backward/auto_ptr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_memory_defs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/utility \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_relops.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/forward_list \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/forward_list.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/forward_list.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/map \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tree.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_map.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_multimap.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/valarray \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_array.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_array.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_before.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/slice_array.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_after.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/gslice.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/gslice_array.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/mask_array.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/indirect_array.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstdint \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/version \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cassert \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/assert.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstring \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/string.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/string_s.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/filesystem \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_fwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/chrono.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ratio \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ctime \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/parse_numbers.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_path.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/locale \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/time_members.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/messages_members.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_conv.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iomanip \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/quoted_string.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/sstream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/sstream.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/codecvt \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_dir.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_ops.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/optional \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/numeric \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_numeric.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/any \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/globals.hpp
+
+CMakeFiles/EclipsedHorizons.dir/source/graphics/time_manager.cpp.obj: C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/time_manager.cpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/time_manager.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/includes.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/raylib-5.5_win64_mingw-w64/include/raylib.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdarg.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_stdarg.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/vadefs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_mac.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_secapi.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sdks/_mingw_ddk.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/raylib-5.5_win64_mingw-w64/include/raymath.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/math.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cmath \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/requires_hosted.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/os_defines.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/pstl_config.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/cpp_type_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/type_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/math.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/crtdefs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/std_abs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdlib.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt_wstdlib.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/limits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/stdlib_s.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/stdlib.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/malloc.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/errno.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/version.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/specfun.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algobase.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/functexcept.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/exception_defines.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/numeric_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_pair.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/type_traits \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/move.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/utility.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_iterator_base_types.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_iterator_base_funcs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/concept_check.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/debug/assertions.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_iterator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/ptr_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/debug/debug.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/predefined_ops.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bit \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/concepts \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/limits \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/gamma.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/special_function_util.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/bessel_function.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/beta_function.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/ell_integral.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/exp_integral.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/hypergeometric.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/legendre_function.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/modified_bessel_func.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/poly_hermite.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/poly_laguerre.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/riemann_zeta.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/FastNoiseLite/Cpp/FastNoiseLite.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/string \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stringfwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/memoryfwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/char_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/postypes.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cwchar \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/wchar.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt_stdio_config.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_off_t.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_stat64.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/swprintf.inl \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/wchar_s.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/allocator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/new_allocator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/new \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/exception.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/localefwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++locale.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/clocale \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/locale.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdio.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/stdio_s.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iosfwd \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cctype \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/ctype.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/ostream_insert.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/cxxabi_forced.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_function.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/backward/binders.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/refwrap.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/invoke.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/range_access.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/initializer_list \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/basic_string.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/alloc_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/alloc_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_construct.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/string_view \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/functional_hash.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hash_bytes.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/string_view.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/string_conversions.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstdlib \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstdio \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cerrno \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/charconv.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/basic_string.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/memory_resource.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstddef \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stddef.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uses_allocator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uses_allocator_args.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tuple \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/vector \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_uninitialized.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_vector.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_bvector.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/vector.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/fstream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/istream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ios \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/exception \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/exception_ptr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/cxxabi_init_exception.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/typeinfo \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/nested_exception.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/ios_base.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/atomicity.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr-default.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sys/types.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/process.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt_startup.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/signal.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread_signal.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/time.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sys/timeb.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/sys/timeb_s.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_timeval.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread_time.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread_compat.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread_unistd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/atomic_word.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_classes.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_classes.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/system_error \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/error_constants.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/stdexcept \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/streambuf \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/streambuf.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/basic_ios.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cwctype \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/wctype.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/ctype_base.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/streambuf_iterator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/ctype_inline.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/basic_ios.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ostream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/ostream.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/istream.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/codecvt.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/basic_file.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fstream.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iostream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/algorithm \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algo.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_heap.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/unordered_map \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/unordered_map.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hashtable.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hashtable_policy.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/aligned_buffer.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/enable_special_members.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/node_handle.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/erase_if.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/nlohmann/json.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/functional \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/std_function.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/array \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/compare \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iterator \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stream_iterator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/memory \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_raw_storage_iter.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/align.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdint.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/unique_ptr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/shared_ptr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/shared_ptr_base.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/allocated_ptr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/concurrence.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/shared_ptr_atomic.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/atomic_base.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/atomic_lockfree_defines.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/backward/auto_ptr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_memory_defs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/utility \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_relops.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/forward_list \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/forward_list.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/forward_list.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/map \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tree.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_map.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_multimap.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/valarray \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_array.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_array.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_before.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/slice_array.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_after.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/gslice.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/gslice_array.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/mask_array.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/indirect_array.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstdint \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/version \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cassert \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/assert.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstring \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/string.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/string_s.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/filesystem \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_fwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/chrono.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ratio \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ctime \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/parse_numbers.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_path.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/locale \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/time_members.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/messages_members.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_conv.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iomanip \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/quoted_string.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/sstream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/sstream.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/codecvt \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_dir.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fs_ops.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/optional \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/numeric \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_numeric.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/any \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/globals.hpp
+
+CMakeFiles/EclipsedHorizons.dir/source/graphics/ui_manager.cpp.obj: C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/ui_manager.cpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/ui_manager.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/includes.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/raylib-5.5_win64_mingw-w64/include/raylib.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdarg.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_stdarg.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/vadefs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_mac.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_secapi.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sdks/_mingw_ddk.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/raylib-5.5_win64_mingw-w64/include/raymath.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/math.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cmath \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/requires_hosted.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/os_defines.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/pstl_config.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/cpp_type_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/type_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/math.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/crtdefs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/std_abs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdlib.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt_wstdlib.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/limits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/stdlib_s.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/stdlib.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/malloc.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/errno.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/version.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/specfun.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algobase.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/functexcept.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/exception_defines.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/numeric_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_pair.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/type_traits \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/move.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/utility.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_iterator_base_types.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_iterator_base_funcs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/concept_check.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/debug/assertions.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_iterator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/ptr_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/debug/debug.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/predefined_ops.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bit \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/concepts \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/limits \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/gamma.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/special_function_util.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/bessel_function.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/beta_function.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/ell_integral.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/exp_integral.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/hypergeometric.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/legendre_function.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/modified_bessel_func.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/poly_hermite.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/poly_laguerre.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/riemann_zeta.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/FastNoiseLite/Cpp/FastNoiseLite.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/string \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stringfwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/memoryfwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/char_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/postypes.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cwchar \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/wchar.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt_stdio_config.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_off_t.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_mingw_stat64.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/swprintf.inl \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/wchar_s.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/allocator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/new_allocator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/new \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/exception.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/localefwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++locale.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/clocale \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/locale.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdio.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/stdio_s.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iosfwd \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cctype \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/ctype.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/ostream_insert.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/cxxabi_forced.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_function.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/backward/binders.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/refwrap.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/invoke.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/range_access.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/initializer_list \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/basic_string.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/alloc_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/alloc_traits.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_construct.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/string_view \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/functional_hash.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hash_bytes.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/string_view.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/string_conversions.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstdlib \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstdio \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cerrno \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/charconv.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/basic_string.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/memory_resource.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cstddef \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stddef.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uses_allocator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uses_allocator_args.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tuple \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/vector \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_uninitialized.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_vector.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_bvector.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/vector.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/fstream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/istream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ios \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/exception \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/exception_ptr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/cxxabi_init_exception.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/typeinfo \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/nested_exception.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/ios_base.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/atomicity.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr-default.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sys/types.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/process.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt_startup.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/signal.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread_signal.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/time.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sys/timeb.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/sys/timeb_s.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/_timeval.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread_time.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread_compat.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/pthread_unistd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/atomic_word.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_classes.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_classes.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/system_error \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/error_constants.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/stdexcept \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/streambuf \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/streambuf.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/basic_ios.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cwctype \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/wctype.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/ctype_base.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/streambuf_iterator.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/ctype_inline.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/locale_facets.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/basic_ios.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ostream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/ostream.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/istream.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/codecvt.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/basic_file.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fstream.tcc \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iostream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/algorithm \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algo.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_heap.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/unordered_map \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/unordered_map.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hashtable.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hashtable_policy.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/aligned_buffer.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/enable_special_members.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/node_handle.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/erase_if.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/nlohmann/json.hpp \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/functional \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/std_function.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/array \
@@ -1820,6 +2920,14 @@ CMakeFiles/EclipsedHorizons.dir/source/main.cpp.obj: C:/Dev/projectsCpp/Eclipsed
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fstream.tcc \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iostream \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/algorithm \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algo.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_heap.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
+  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/unordered_map \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/unordered_map.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hashtable.h \
@@ -1829,14 +2937,6 @@ CMakeFiles/EclipsedHorizons.dir/source/main.cpp.obj: C:/Dev/projectsCpp/Eclipsed
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/node_handle.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/erase_if.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/nlohmann/json.hpp \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/algorithm \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algo.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_heap.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
-  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/functional \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/std_function.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/array \
@@ -1909,14 +3009,21 @@ CMakeFiles/EclipsedHorizons.dir/source/main.cpp.obj: C:/Dev/projectsCpp/Eclipsed
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_numeric.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
   C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/any \
-  C:/Dev/projectsCpp/EclipsedHorizons/source/core/time_manager.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/time_manager.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/core/game_state_manager.hpp \
   C:/Dev/projectsCpp/EclipsedHorizons/source/core/scene.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/ui_manager.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/audio_manager.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/texture_manager.hpp \
   C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/camera_controller.hpp \
   C:/Dev/projectsCpp/EclipsedHorizons/source/entities/player.hpp \
-  C:/Dev/projectsCpp/EclipsedHorizons/source/entities/entity.hpp
+  C:/Dev/projectsCpp/EclipsedHorizons/source/entities/entity.hpp \
+  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/animation_manager.hpp
 
 
 C:/Dev/projectsCpp/EclipsedHorizons/source/core/game_engine.cpp:
+
+C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/animation_manager.cpp:
 
 C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/valarray_array.tcc:
 
@@ -1925,6 +3032,8 @@ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.
 C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ratio:
 
 C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h:
+
+C:/Dev/projectsCpp/EclipsedHorizons/source/core/world.cpp:
 
 C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/indirect_array.h:
 
@@ -1936,7 +3045,11 @@ C:/Dev/projectsCpp/EclipsedHorizons/source/core/game_engine.hpp:
 
 C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/cmath:
 
+C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/audio_manager.cpp:
+
 C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/vadefs.h:
+
+C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/time_manager.hpp:
 
 C:/Dev/projectsCpp/EclipsedHorizons/lib/raylib-5.5_win64_mingw-w64/include/raylib.h:
 
@@ -1998,6 +3111,8 @@ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/sec_api/sys/timeb_s.h:
 
 C:/Dev/projectsCpp/EclipsedHorizons/lib/raylib-5.5_win64_mingw-w64/include/raymath.h:
 
+C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/time_manager.cpp:
+
 C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/math.h:
 
 C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt.h:
@@ -2052,6 +3167,8 @@ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/corecrt_wstdlib.h:
 
 C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h:
 
+C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/ui_manager.hpp:
+
 C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/exp_integral.tcc:
 
 C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/stdlib.h:
@@ -2089,6 +3206,8 @@ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/tr1/ell_integ
 C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/concept_check.h:
 
 C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/debug/debug.h:
+
+C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/texture_manager.hpp:
 
 C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/slice_array.h:
 
@@ -2344,16 +3463,6 @@ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/fstream.
 
 C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/iostream:
 
-C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hashtable_policy.h:
-
-C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/enable_special_members.h:
-
-C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/quoted_string.h:
-
-C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/erase_if.h:
-
-C:/Dev/projectsCpp/EclipsedHorizons/lib/nlohmann/json.hpp:
-
 C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_algo.h:
 
 C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/ext/concurrence.h:
@@ -2367,6 +3476,18 @@ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/uniform_
 C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h:
 
 C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h:
+
+C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/hashtable_policy.h:
+
+C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/enable_special_members.h:
+
+C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/quoted_string.h:
+
+C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/erase_if.h:
+
+C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/animation_manager.hpp:
+
+C:/Dev/projectsCpp/EclipsedHorizons/lib/nlohmann/json.hpp:
 
 C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/functional:
 
@@ -2389,6 +3510,8 @@ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/memory:
 C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/align.h:
 
 C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/stdint.h:
+
+C:/Dev/projectsCpp/EclipsedHorizons/source/core/game_state_manager.cpp:
 
 C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/unique_ptr.h:
 
@@ -2466,16 +3589,20 @@ C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_num
 
 C:/Dev/projectsCpp/EclipsedHorizons/source/globals.hpp:
 
-C:/Dev/projectsCpp/EclipsedHorizons/source/core/time_manager.hpp:
+C:/Dev/projectsCpp/EclipsedHorizons/source/core/game_state_manager.hpp:
 
 C:/Dev/projectsCpp/EclipsedHorizons/source/core/scene.hpp:
+
+C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/audio_manager.hpp:
 
 C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/camera_controller.hpp:
 
 C:/Dev/projectsCpp/EclipsedHorizons/source/entities/entity.hpp:
 
-C:/Dev/projectsCpp/EclipsedHorizons/source/core/time_manager.cpp:
-
 C:/Dev/projectsCpp/EclipsedHorizons/source/entities/entity.cpp:
 
 C:/Dev/projectsCpp/EclipsedHorizons/source/entities/player.cpp:
+
+C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/texture_manager.cpp:
+
+C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/ui_manager.cpp:

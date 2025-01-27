@@ -152,6 +152,30 @@ source/core/game_engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/core/game_engine.cpp.s
 .PHONY : source/core/game_engine.cpp.s
 
+source/core/game_state_manager.obj: source/core/game_state_manager.cpp.obj
+.PHONY : source/core/game_state_manager.obj
+
+# target to build an object file
+source/core/game_state_manager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/core/game_state_manager.cpp.obj
+.PHONY : source/core/game_state_manager.cpp.obj
+
+source/core/game_state_manager.i: source/core/game_state_manager.cpp.i
+.PHONY : source/core/game_state_manager.i
+
+# target to preprocess a source file
+source/core/game_state_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/core/game_state_manager.cpp.i
+.PHONY : source/core/game_state_manager.cpp.i
+
+source/core/game_state_manager.s: source/core/game_state_manager.cpp.s
+.PHONY : source/core/game_state_manager.s
+
+# target to generate assembly for a file
+source/core/game_state_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/core/game_state_manager.cpp.s
+.PHONY : source/core/game_state_manager.cpp.s
+
 source/core/scene.obj: source/core/scene.cpp.obj
 .PHONY : source/core/scene.obj
 
@@ -176,29 +200,29 @@ source/core/scene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/core/scene.cpp.s
 .PHONY : source/core/scene.cpp.s
 
-source/core/time_manager.obj: source/core/time_manager.cpp.obj
-.PHONY : source/core/time_manager.obj
+source/core/world.obj: source/core/world.cpp.obj
+.PHONY : source/core/world.obj
 
 # target to build an object file
-source/core/time_manager.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/core/time_manager.cpp.obj
-.PHONY : source/core/time_manager.cpp.obj
+source/core/world.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/core/world.cpp.obj
+.PHONY : source/core/world.cpp.obj
 
-source/core/time_manager.i: source/core/time_manager.cpp.i
-.PHONY : source/core/time_manager.i
+source/core/world.i: source/core/world.cpp.i
+.PHONY : source/core/world.i
 
 # target to preprocess a source file
-source/core/time_manager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/core/time_manager.cpp.i
-.PHONY : source/core/time_manager.cpp.i
+source/core/world.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/core/world.cpp.i
+.PHONY : source/core/world.cpp.i
 
-source/core/time_manager.s: source/core/time_manager.cpp.s
-.PHONY : source/core/time_manager.s
+source/core/world.s: source/core/world.cpp.s
+.PHONY : source/core/world.s
 
 # target to generate assembly for a file
-source/core/time_manager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/core/time_manager.cpp.s
-.PHONY : source/core/time_manager.cpp.s
+source/core/world.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/core/world.cpp.s
+.PHONY : source/core/world.cpp.s
 
 source/entities/entity.obj: source/entities/entity.cpp.obj
 .PHONY : source/entities/entity.obj
@@ -272,6 +296,54 @@ source/globals.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/globals.cpp.s
 .PHONY : source/globals.cpp.s
 
+source/graphics/animation_manager.obj: source/graphics/animation_manager.cpp.obj
+.PHONY : source/graphics/animation_manager.obj
+
+# target to build an object file
+source/graphics/animation_manager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/animation_manager.cpp.obj
+.PHONY : source/graphics/animation_manager.cpp.obj
+
+source/graphics/animation_manager.i: source/graphics/animation_manager.cpp.i
+.PHONY : source/graphics/animation_manager.i
+
+# target to preprocess a source file
+source/graphics/animation_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/animation_manager.cpp.i
+.PHONY : source/graphics/animation_manager.cpp.i
+
+source/graphics/animation_manager.s: source/graphics/animation_manager.cpp.s
+.PHONY : source/graphics/animation_manager.s
+
+# target to generate assembly for a file
+source/graphics/animation_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/animation_manager.cpp.s
+.PHONY : source/graphics/animation_manager.cpp.s
+
+source/graphics/audio_manager.obj: source/graphics/audio_manager.cpp.obj
+.PHONY : source/graphics/audio_manager.obj
+
+# target to build an object file
+source/graphics/audio_manager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/audio_manager.cpp.obj
+.PHONY : source/graphics/audio_manager.cpp.obj
+
+source/graphics/audio_manager.i: source/graphics/audio_manager.cpp.i
+.PHONY : source/graphics/audio_manager.i
+
+# target to preprocess a source file
+source/graphics/audio_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/audio_manager.cpp.i
+.PHONY : source/graphics/audio_manager.cpp.i
+
+source/graphics/audio_manager.s: source/graphics/audio_manager.cpp.s
+.PHONY : source/graphics/audio_manager.s
+
+# target to generate assembly for a file
+source/graphics/audio_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/audio_manager.cpp.s
+.PHONY : source/graphics/audio_manager.cpp.s
+
 source/graphics/camera_controller.obj: source/graphics/camera_controller.cpp.obj
 .PHONY : source/graphics/camera_controller.obj
 
@@ -295,6 +367,78 @@ source/graphics/camera_controller.s: source/graphics/camera_controller.cpp.s
 source/graphics/camera_controller.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/camera_controller.cpp.s
 .PHONY : source/graphics/camera_controller.cpp.s
+
+source/graphics/texture_manager.obj: source/graphics/texture_manager.cpp.obj
+.PHONY : source/graphics/texture_manager.obj
+
+# target to build an object file
+source/graphics/texture_manager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/texture_manager.cpp.obj
+.PHONY : source/graphics/texture_manager.cpp.obj
+
+source/graphics/texture_manager.i: source/graphics/texture_manager.cpp.i
+.PHONY : source/graphics/texture_manager.i
+
+# target to preprocess a source file
+source/graphics/texture_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/texture_manager.cpp.i
+.PHONY : source/graphics/texture_manager.cpp.i
+
+source/graphics/texture_manager.s: source/graphics/texture_manager.cpp.s
+.PHONY : source/graphics/texture_manager.s
+
+# target to generate assembly for a file
+source/graphics/texture_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/texture_manager.cpp.s
+.PHONY : source/graphics/texture_manager.cpp.s
+
+source/graphics/time_manager.obj: source/graphics/time_manager.cpp.obj
+.PHONY : source/graphics/time_manager.obj
+
+# target to build an object file
+source/graphics/time_manager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/time_manager.cpp.obj
+.PHONY : source/graphics/time_manager.cpp.obj
+
+source/graphics/time_manager.i: source/graphics/time_manager.cpp.i
+.PHONY : source/graphics/time_manager.i
+
+# target to preprocess a source file
+source/graphics/time_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/time_manager.cpp.i
+.PHONY : source/graphics/time_manager.cpp.i
+
+source/graphics/time_manager.s: source/graphics/time_manager.cpp.s
+.PHONY : source/graphics/time_manager.s
+
+# target to generate assembly for a file
+source/graphics/time_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/time_manager.cpp.s
+.PHONY : source/graphics/time_manager.cpp.s
+
+source/graphics/ui_manager.obj: source/graphics/ui_manager.cpp.obj
+.PHONY : source/graphics/ui_manager.obj
+
+# target to build an object file
+source/graphics/ui_manager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/ui_manager.cpp.obj
+.PHONY : source/graphics/ui_manager.cpp.obj
+
+source/graphics/ui_manager.i: source/graphics/ui_manager.cpp.i
+.PHONY : source/graphics/ui_manager.i
+
+# target to preprocess a source file
+source/graphics/ui_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/ui_manager.cpp.i
+.PHONY : source/graphics/ui_manager.cpp.i
+
+source/graphics/ui_manager.s: source/graphics/ui_manager.cpp.s
+.PHONY : source/graphics/ui_manager.s
+
+# target to generate assembly for a file
+source/graphics/ui_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/ui_manager.cpp.s
+.PHONY : source/graphics/ui_manager.cpp.s
 
 source/main.obj: source/main.cpp.obj
 .PHONY : source/main.obj
@@ -332,12 +476,15 @@ help:
 	@echo ... source/core/game_engine.obj
 	@echo ... source/core/game_engine.i
 	@echo ... source/core/game_engine.s
+	@echo ... source/core/game_state_manager.obj
+	@echo ... source/core/game_state_manager.i
+	@echo ... source/core/game_state_manager.s
 	@echo ... source/core/scene.obj
 	@echo ... source/core/scene.i
 	@echo ... source/core/scene.s
-	@echo ... source/core/time_manager.obj
-	@echo ... source/core/time_manager.i
-	@echo ... source/core/time_manager.s
+	@echo ... source/core/world.obj
+	@echo ... source/core/world.i
+	@echo ... source/core/world.s
 	@echo ... source/entities/entity.obj
 	@echo ... source/entities/entity.i
 	@echo ... source/entities/entity.s
@@ -347,9 +494,24 @@ help:
 	@echo ... source/globals.obj
 	@echo ... source/globals.i
 	@echo ... source/globals.s
+	@echo ... source/graphics/animation_manager.obj
+	@echo ... source/graphics/animation_manager.i
+	@echo ... source/graphics/animation_manager.s
+	@echo ... source/graphics/audio_manager.obj
+	@echo ... source/graphics/audio_manager.i
+	@echo ... source/graphics/audio_manager.s
 	@echo ... source/graphics/camera_controller.obj
 	@echo ... source/graphics/camera_controller.i
 	@echo ... source/graphics/camera_controller.s
+	@echo ... source/graphics/texture_manager.obj
+	@echo ... source/graphics/texture_manager.i
+	@echo ... source/graphics/texture_manager.s
+	@echo ... source/graphics/time_manager.obj
+	@echo ... source/graphics/time_manager.i
+	@echo ... source/graphics/time_manager.s
+	@echo ... source/graphics/ui_manager.obj
+	@echo ... source/graphics/ui_manager.i
+	@echo ... source/graphics/ui_manager.s
 	@echo ... source/main.obj
 	@echo ... source/main.i
 	@echo ... source/main.s

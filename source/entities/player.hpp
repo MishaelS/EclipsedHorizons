@@ -7,7 +7,7 @@
 
 class Player : public Entity {
 public:
-	Player(Texture2D texture, Vector2 position, Rectangle frame, float speed);
+	Player(Texture2D texture, Vector2 position, Rectangle frame, Rectangle box, float speed=86.f, float force=1.f);
 	virtual ~Player();
 
 	float getHealth() const;

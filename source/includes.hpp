@@ -9,5 +9,6 @@
 #include <cstdlib>
 #include <fstream>
 #include <iostream>
+#include <algorithm>
 #include <unordered_map>
 #include <nlohmann/json.hpp>

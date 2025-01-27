@@ -1,6 +1,6 @@
 #include "game_engine.hpp"
 
-GameEngine::GameEngine() {}
+GameEngine::GameEngine() : stateManager(GameStateManager::getInstance()) {}
 
 GameEngine::~GameEngine() {
 	this->shutDown();
@@ -17,6 +17,9 @@ void GameEngine::init() {
 	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Game Survival");
 	SetTargetFPS(FRAME_RATE);
 
+	this->stateManager = GameStateManager::getInstance();
+	this->stateManager.setState(GameState::PLAYING);
+
 	this->gameScene = new Scene();
 	this->gameScene->init();
 
@@ -27,15 +30,17 @@ void GameEngine::run() {
 	TimeManager timeManager(FIXED_TIME_STEP);
 
 	while (this->isRunning && !WindowShouldClose()) {
-		timeManager.update();
+		if (this->stateManager.getState() == GameState::PLAYING) {
+			timeManager.update();
 
-		this->handleInput();
-		while (timeManager.shouldUpdate()) {
-			timeManager.reset();
-			this->update(timeManager.getDeltaTime());
+			this->handleInput();
+			while (timeManager.shouldUpdate()) {
+				this->update(timeManager.getFixedTimeStep());
+				timeManager.consumeTime();
+			}
+
+			this->render();
 		}
-
-		this->render();
 	}
 }
 
@@ -49,10 +54,7 @@ void GameEngine::update(float deltaTime) {
 
 void GameEngine::render() {
 	BeginDrawing();
-		ClearBackground(RAYWHITE);
-
+		ClearBackground({ 45,  45,  45, 255});
 		this->gameScene->render();
-
-		DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
 	EndDrawing();
 }

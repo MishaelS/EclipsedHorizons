@@ -8,6 +8,8 @@ TimeManager::TimeManager(float fps) {
 TimeManager::~TimeManager() {}
 
 float TimeManager::getDeltaTime() const { return this->deltaTime; }
+float TimeManager::getFixedTimeStep() const { return this->fixedTimeStep; }
+float TimeManager::getAccumulatedTime() const { return this->accumulatedTime; }
 bool TimeManager::shouldUpdate() const { return this->accumulatedTime >= this->fixedTimeStep; }
 
 void TimeManager::pause() {
@@ -27,4 +29,8 @@ void TimeManager::update() {
 	this->lastTime = currentTime;
 
 	this->accumulatedTime += this->deltaTime;
+}
+
+void TimeManager::consumeTime() {
+	this->accumulatedTime -= this->fixedTimeStep;
 }

@@ -3,7 +3,8 @@
 #include "../includes.hpp"
 #include "../globals.hpp"
 
-#include "time_manager.hpp"
+#include "../graphics/time_manager.hpp"
+#include "game_state_manager.hpp"
 #include "scene.hpp"
 
 class GameEngine {
@@ -22,5 +23,6 @@ private:
 
 	bool isRunning;
 
+	GameStateManager& stateManager;
 	Scene* gameScene;
 };

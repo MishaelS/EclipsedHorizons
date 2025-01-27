@@ -5,7 +5,7 @@
 
 class CameraController {
 public:
-	CameraController(Vector2 screenSize, float zoom=1.f);
+	CameraController(Vector2 screenSize, float zoom=1.f, float smooth=0.1f);
 	~CameraController();
 
 	float getZoom() const;
@@ -13,13 +13,13 @@ public:
 
 	void setZoom(float zoom);
 	void setDeadZone(float width, float height);
-
 	void update(Vector2 targetPosition);
 
 private:
 	void checkAndMoveCamera(Vector2 screenPosition);
 
 	Camera2D camera;
-	float zoomLevel;
 	Rectangle deadZone;
+	float zoomLevel;
+	float smoothSpeed;
 };
