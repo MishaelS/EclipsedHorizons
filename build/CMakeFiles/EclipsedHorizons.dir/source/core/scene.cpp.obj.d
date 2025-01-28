@@ -269,10 +269,12 @@ CMakeFiles/EclipsedHorizons.dir/source/core/scene.cpp.obj: \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/any \
  C:/Dev/projectsCpp/EclipsedHorizons/source/globals.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/ui_manager.hpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/source/ui/ui_manager.hpp \
  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/audio_manager.hpp \
  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/texture_manager.hpp \
  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/camera_controller.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/source/entities/player.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/source/entities/Entity.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/animation_manager.hpp
+ C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/entity_layer_manager.hpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/source/entities/entity.hpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/animation_manager.hpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/source/entities/collision_manager.hpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/source/entities/player.hpp

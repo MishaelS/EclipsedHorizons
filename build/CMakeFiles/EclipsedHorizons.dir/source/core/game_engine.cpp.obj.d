@@ -272,10 +272,12 @@ CMakeFiles/EclipsedHorizons.dir/source/core/game_engine.cpp.obj: \
  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/time_manager.hpp \
  C:\Dev\projectsCpp\EclipsedHorizons\source\core\game_state_manager.hpp \
  C:\Dev\projectsCpp\EclipsedHorizons\source\core\scene.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/ui_manager.hpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/source/ui/ui_manager.hpp \
  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/audio_manager.hpp \
  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/texture_manager.hpp \
  C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/camera_controller.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/source/entities/player.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/source/entities/Entity.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/animation_manager.hpp
+ C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/entity_layer_manager.hpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/source/entities/entity.hpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/animation_manager.hpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/source/entities/collision_manager.hpp \
+ C:/Dev/projectsCpp/EclipsedHorizons/source/entities/player.hpp

@@ -3,10 +3,13 @@
 #include "../includes.hpp"
 #include "../globals.hpp"
 
-#include "../graphics/ui_manager.hpp"
+#include "../ui/ui_manager.hpp"
 #include "../graphics/audio_manager.hpp"
 #include "../graphics/texture_manager.hpp"
 #include "../graphics/camera_controller.hpp"
+#include "../graphics/entity_layer_manager.hpp"
+
+#include "../entities/collision_manager.hpp"
 #include "../entities/player.hpp"
 
 class Scene {
@@ -25,9 +28,6 @@ public:
 
 private:
 	void shutDown();
-	void updateEntityLayers();
-	void sortEntitiesByHeight();
-	void checkAndResolveCollisions();
 	void drawGrid(int cellSize, int screenWidth, int screenHeight, Color gridColor);
 
 	UIManager uiManager;
@@ -37,5 +37,8 @@ private:
 
 	Player* player;
 	CameraController* gameCamera;
+
+	EntityLayerManager entityLayerManager;
+	CollisionManager collisionManager;
 	std::vector<Entity*> entities;
 };

@@ -1,7 +1,6 @@
-CMakeFiles/EclipsedHorizons.dir/source/main.cpp.obj: \
- C:\Dev\projectsCpp\EclipsedHorizons\source\main.cpp \
- C:\Dev\projectsCpp\EclipsedHorizons\source\globals.hpp \
- C:\Dev\projectsCpp\EclipsedHorizons\source\core/game_engine.hpp \
+CMakeFiles/EclipsedHorizons.dir/source/ui/ui_manager.cpp.obj: \
+ C:\Dev\projectsCpp\EclipsedHorizons\source\ui\ui_manager.cpp \
+ C:\Dev\projectsCpp\EclipsedHorizons\source\ui\ui_manager.hpp \
  C:/Dev/projectsCpp/EclipsedHorizons/source/includes.hpp \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/raylib-5.5_win64_mingw-w64/include/raylib.h \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
@@ -269,15 +268,4 @@ CMakeFiles/EclipsedHorizons.dir/source/main.cpp.obj: \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/bits/stl_numeric.h \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
  C:/Dev/projectsCpp/EclipsedHorizons/lib/mingw64/include/c++/14.2.0/any \
- C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/time_manager.hpp \
- C:\Dev\projectsCpp\EclipsedHorizons\source\core/game_state_manager.hpp \
- C:\Dev\projectsCpp\EclipsedHorizons\source\core/scene.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/source/ui/ui_manager.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/audio_manager.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/texture_manager.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/camera_controller.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/entity_layer_manager.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/source/entities/entity.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/source/graphics/animation_manager.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/source/entities/collision_manager.hpp \
- C:/Dev/projectsCpp/EclipsedHorizons/source/entities/player.hpp
+ C:/Dev/projectsCpp/EclipsedHorizons/source/globals.hpp

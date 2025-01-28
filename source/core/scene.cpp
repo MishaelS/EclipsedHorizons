@@ -65,39 +65,6 @@ void Scene::removeEntity(Entity* entity) {
 	}
 }
 
-void Scene::sortEntitiesByHeight() {
-	std::sort(this->entities.begin(), this->entities.end(), [](Entity* entityA, Entity* entityB) {
-		return entityA->getPosition().y < entityB->getPosition().y;
-	});
-}
-
-void Scene::updateEntityLayers() {
-	for (size_t i = 0; i < this->entities.size(); ++i) {
-		for (size_t j = i + 1; j < this->entities.size(); ++j) {
-			Entity* entityA = this->entities[i];
-			Entity* entityB = this->entities[j];
-
-			float distance = Vector2Distance(entityA->getPosition(), entityB->getPosition());
-
-			if (distance < entityA->getInteractionRadius() || distance < entityB->getInteractionRadius()) {
-				if (entityA->getPosition().y > entityB->getPosition().y) {
-					std::swap(this->entities[i], this->entities[j]);
-				}
-			}
-		}
-	}
-}
-
-void Scene::checkAndResolveCollisions() {
-	for (size_t i = 0; i < this->entities.size(); ++i) {
-		for (size_t j = i + 1; j < this->entities.size(); ++j) {
-			if (this->entities[i]->checkCollision(*this->entities[j])) {
-				this->entities[i]->resolveCollision(*this->entities[j]);
-			}
-		}
-	}
-}
-
 void Scene::handleInput() {
 	this->player->handleInput();
 }
@@ -107,10 +74,10 @@ void Scene::update(float deltaTime) {
 			entity->update(deltaTime);
 		}
 	
-	this->updateEntityLayers();
-	this->sortEntitiesByHeight();
+	this->entityLayerManager.sortEntitiesByHeight(this->entities);
+	this->entityLayerManager.updateEntityLayers(this->entities);
 	this->gameCamera->update(this->player->getPosition());
-	this->checkAndResolveCollisions();
+	this->collisionManager.checkAndResolveCollisions(this->entities);
 }
 
 void Scene::render() {

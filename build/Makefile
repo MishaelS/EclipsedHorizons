@@ -224,6 +224,30 @@ source/core/world.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/core/world.cpp.s
 .PHONY : source/core/world.cpp.s
 
+source/entities/collision_manager.obj: source/entities/collision_manager.cpp.obj
+.PHONY : source/entities/collision_manager.obj
+
+# target to build an object file
+source/entities/collision_manager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/entities/collision_manager.cpp.obj
+.PHONY : source/entities/collision_manager.cpp.obj
+
+source/entities/collision_manager.i: source/entities/collision_manager.cpp.i
+.PHONY : source/entities/collision_manager.i
+
+# target to preprocess a source file
+source/entities/collision_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/entities/collision_manager.cpp.i
+.PHONY : source/entities/collision_manager.cpp.i
+
+source/entities/collision_manager.s: source/entities/collision_manager.cpp.s
+.PHONY : source/entities/collision_manager.s
+
+# target to generate assembly for a file
+source/entities/collision_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/entities/collision_manager.cpp.s
+.PHONY : source/entities/collision_manager.cpp.s
+
 source/entities/entity.obj: source/entities/entity.cpp.obj
 .PHONY : source/entities/entity.obj
 
@@ -368,6 +392,30 @@ source/graphics/camera_controller.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/camera_controller.cpp.s
 .PHONY : source/graphics/camera_controller.cpp.s
 
+source/graphics/entity_layer_manager.obj: source/graphics/entity_layer_manager.cpp.obj
+.PHONY : source/graphics/entity_layer_manager.obj
+
+# target to build an object file
+source/graphics/entity_layer_manager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/entity_layer_manager.cpp.obj
+.PHONY : source/graphics/entity_layer_manager.cpp.obj
+
+source/graphics/entity_layer_manager.i: source/graphics/entity_layer_manager.cpp.i
+.PHONY : source/graphics/entity_layer_manager.i
+
+# target to preprocess a source file
+source/graphics/entity_layer_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/entity_layer_manager.cpp.i
+.PHONY : source/graphics/entity_layer_manager.cpp.i
+
+source/graphics/entity_layer_manager.s: source/graphics/entity_layer_manager.cpp.s
+.PHONY : source/graphics/entity_layer_manager.s
+
+# target to generate assembly for a file
+source/graphics/entity_layer_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/entity_layer_manager.cpp.s
+.PHONY : source/graphics/entity_layer_manager.cpp.s
+
 source/graphics/texture_manager.obj: source/graphics/texture_manager.cpp.obj
 .PHONY : source/graphics/texture_manager.obj
 
@@ -416,30 +464,6 @@ source/graphics/time_manager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/time_manager.cpp.s
 .PHONY : source/graphics/time_manager.cpp.s
 
-source/graphics/ui_manager.obj: source/graphics/ui_manager.cpp.obj
-.PHONY : source/graphics/ui_manager.obj
-
-# target to build an object file
-source/graphics/ui_manager.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/ui_manager.cpp.obj
-.PHONY : source/graphics/ui_manager.cpp.obj
-
-source/graphics/ui_manager.i: source/graphics/ui_manager.cpp.i
-.PHONY : source/graphics/ui_manager.i
-
-# target to preprocess a source file
-source/graphics/ui_manager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/ui_manager.cpp.i
-.PHONY : source/graphics/ui_manager.cpp.i
-
-source/graphics/ui_manager.s: source/graphics/ui_manager.cpp.s
-.PHONY : source/graphics/ui_manager.s
-
-# target to generate assembly for a file
-source/graphics/ui_manager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/graphics/ui_manager.cpp.s
-.PHONY : source/graphics/ui_manager.cpp.s
-
 source/main.obj: source/main.cpp.obj
 .PHONY : source/main.obj
 
@@ -464,6 +488,30 @@ source/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/main.cpp.s
 .PHONY : source/main.cpp.s
 
+source/ui/ui_manager.obj: source/ui/ui_manager.cpp.obj
+.PHONY : source/ui/ui_manager.obj
+
+# target to build an object file
+source/ui/ui_manager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/ui/ui_manager.cpp.obj
+.PHONY : source/ui/ui_manager.cpp.obj
+
+source/ui/ui_manager.i: source/ui/ui_manager.cpp.i
+.PHONY : source/ui/ui_manager.i
+
+# target to preprocess a source file
+source/ui/ui_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/ui/ui_manager.cpp.i
+.PHONY : source/ui/ui_manager.cpp.i
+
+source/ui/ui_manager.s: source/ui/ui_manager.cpp.s
+.PHONY : source/ui/ui_manager.s
+
+# target to generate assembly for a file
+source/ui/ui_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EclipsedHorizons.dir\build.make CMakeFiles/EclipsedHorizons.dir/source/ui/ui_manager.cpp.s
+.PHONY : source/ui/ui_manager.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -485,6 +533,9 @@ help:
 	@echo ... source/core/world.obj
 	@echo ... source/core/world.i
 	@echo ... source/core/world.s
+	@echo ... source/entities/collision_manager.obj
+	@echo ... source/entities/collision_manager.i
+	@echo ... source/entities/collision_manager.s
 	@echo ... source/entities/entity.obj
 	@echo ... source/entities/entity.i
 	@echo ... source/entities/entity.s
@@ -503,18 +554,21 @@ help:
 	@echo ... source/graphics/camera_controller.obj
 	@echo ... source/graphics/camera_controller.i
 	@echo ... source/graphics/camera_controller.s
+	@echo ... source/graphics/entity_layer_manager.obj
+	@echo ... source/graphics/entity_layer_manager.i
+	@echo ... source/graphics/entity_layer_manager.s
 	@echo ... source/graphics/texture_manager.obj
 	@echo ... source/graphics/texture_manager.i
 	@echo ... source/graphics/texture_manager.s
 	@echo ... source/graphics/time_manager.obj
 	@echo ... source/graphics/time_manager.i
 	@echo ... source/graphics/time_manager.s
-	@echo ... source/graphics/ui_manager.obj
-	@echo ... source/graphics/ui_manager.i
-	@echo ... source/graphics/ui_manager.s
 	@echo ... source/main.obj
 	@echo ... source/main.i
 	@echo ... source/main.s
+	@echo ... source/ui/ui_manager.obj
+	@echo ... source/ui/ui_manager.i
+	@echo ... source/ui/ui_manager.s
 .PHONY : help
 
 
